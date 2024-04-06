@@ -2,7 +2,7 @@
 
 ### Summary
 
-Project Hourglass is a countdown time-tracking app that lets professionals working on an hourly billing basis (such as consultants, lawyers, tutors, freelancers, and contractors) to easily monitor the remaining time allocated to their clients or projects.
+Hourglass is a countdown time-tracking app that lets professionals working on an hourly billing basis (such as consultants, lawyers, tutors, freelancers, and contractors) to easily monitor the remaining time allocated to their clients or projects.
 
 ### Project Proposal
 
@@ -69,6 +69,21 @@ After MVP is met, extended functions include:
 |            | SwiftUI | Learned to make tabs and menu lists.                                 |
 |            | Swift   | Refactor blocks and how to reference them                            |
 | 2024-04-01 | Swift   | Figured out how to make an API call and process the JSON             |
+| 2024-04-06 | Project | Project approved                                                     |
+
+#### Development Checklist
+
+[x] Xcode basics
+[x] Swift basics
+[x] SwiftUI
+[ ] Data persistence
+[x] API calls in Swift
+[ ] Program's Logic
+[ ] UI
+[ ] Animation
+[ ] User Testing
+[ ] Launch screen graphics
+[ ] Data storage (CloudKit)
 
 ## UI Mockup
 
