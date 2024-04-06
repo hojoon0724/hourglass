@@ -55,3 +55,7 @@ After MVP is met, extended functions include:
 | 2024-03-30 | SwiftUI | Created a test layout, learned HStack, VStack, Views.                |
 |            | SwiftUI | Learned to make tabs and menu lists.                                 |
 |            | Swift   | Refactor blocks and how to reference them                            |
+
+## UI Mockup
+
+WIP
