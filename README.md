@@ -51,6 +51,5 @@ After MVP is met, extended functions include:
 | Date       | Items          | Notes                                                                          |
 | ---------- | -------------- | ------------------------------------------------------------------------------ |
 | 2024-03-29 | Xcode, Swift   | Learned the fundamentals of Xcode and Swift. Watched videos and documentation. |
-| 2024-03-30 | Swift, SwiftUI | Swift: used Swift Playgrounds to experiment basics and got it to work. \       |
-
-Created a test layout, learned HStack, VStack, Views
+| 2024-03-30 | Swift, SwiftUI | Swift: used Swift Playgrounds to experiment basics and got it to work.         |
+|            |                | Created a test layout, learned HStack, VStack, Views.                          |
