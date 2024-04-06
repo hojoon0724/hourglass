@@ -48,10 +48,10 @@ After MVP is met, extended functions include:
 
 ## Progress Notes
 
-| Date       | Items    | Notes                                                                |
-| ---------- | -------- | -------------------------------------------------------------------- |
-| 2024-03-29 | Xcode    | Learned the fundamentals.                                            |
-|            | Swift    | Learned the basics: arrays, loops, functions, arrays/dictionary, etc |
-| 2024-03-30 | SwiftUI  | Created a test layout, learned HStack, VStack, Views.                |
-|            | SwiftUI  | Learned to make tabs and menu lists.                                 |
-|            | Refactor | Learned how to refactor blocks and how to reference them             |
+| Date       | Items   | Notes                                                                |
+| ---------- | ------- | -------------------------------------------------------------------- |
+| 2024-03-29 | Xcode   | Learned the fundamentals.                                            |
+|            | Swift   | Learned the basics: arrays, loops, functions, arrays/dictionary, etc |
+| 2024-03-30 | SwiftUI | Created a test layout, learned HStack, VStack, Views.                |
+|            | SwiftUI | Learned to make tabs and menu lists.                                 |
+|            | Swift   | Refactor blocks and how to reference them                            |
