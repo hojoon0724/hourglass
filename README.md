@@ -46,6 +46,19 @@ After MVP is met, extended functions include:
 |         |                | end_time      |
 |         |                | modified_time |
 
+## Views
+
+| Name     | Contents                                                               |
+| -------- | ---------------------------------------------------------------------- |
+| Timer    | Entry view: choose the client/project, run the timer                   |
+| Log      | Show + edit all your entries                                           |
+| Clients  | Show the list of your clients, tapping takes you to their summary page |
+|          | -> Add hours to the client’s account                                   |
+|          | -> Show the log for the selected account                               |
+| Settings | Settings                                                               |
+
+---
+
 ## Progress Notes
 
 | Date       | Items   | Notes                                                                |
@@ -55,6 +68,7 @@ After MVP is met, extended functions include:
 | 2024-03-30 | SwiftUI | Created a test layout, learned HStack, VStack, Views.                |
 |            | SwiftUI | Learned to make tabs and menu lists.                                 |
 |            | Swift   | Refactor blocks and how to reference them                            |
+| 2024-04-01 | Swift   | Figured out how to make an API call and process the JSON             |
 
 ## UI Mockup
 
