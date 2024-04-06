@@ -14,9 +14,9 @@ This project began as a programming immersive course's capstone project that req
 
 Swift was chosen for its compatibility with the Apple ecosystem, with future plans to extend it to other Apple devices.
 
-#### UIKit and Xcode:
+#### SwiftUI and Xcode:
 
-The project will utilize UIKit to build the application's user interface and Xcode as the development environment, laying the groundwork for future expansion to other Apple devices.
+The project will utilize SwiftUI to build the application's user interface and Xcode as the development environment, laying the groundwork for future expansion to other Apple devices.
 
 #### Minimum Viable Product:
 
@@ -45,3 +45,12 @@ After MVP is met, extended functions include:
 |         |                | start_time    |
 |         |                | end_time      |
 |         |                | modified_time |
+
+## Progress Notes
+
+| Date       | Items          | Notes                                                                          |
+| ---------- | -------------- | ------------------------------------------------------------------------------ |
+| 2024-03-29 | Xcode, Swift   | Learned the fundamentals of Xcode and Swift. Watched videos and documentation. |
+| 2024-03-30 | Swift, SwiftUI | Swift: used Swift Playgrounds to experiment basics and got it to work. \       |
+
+Created a test layout, learned HStack, VStack, Views
