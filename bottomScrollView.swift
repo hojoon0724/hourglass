@@ -7,12 +7,43 @@
 
 import SwiftUI
 
-struct bottomScrollView: View {
+struct BottomScrollView: View {
+    
+    struct Message: Identifiable {
+        let id = UUID()
+        let text: String
+    }
+
+    @State private var messages: [Message] = [
+        Message(text: "First message"),
+        Message(text: "Second message"),
+        Message(text: "Third message"),
+        Message(text: "Fourth message"),
+        Message(text: "Fifth message"),
+        Message(text: "Sixth message"),
+        Message(text: "Seventh message")
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollViewReader { value in
+            ScrollView {
+                ForEach(messages) { message in
+                    Text(message.text)
+                        .id(message.id)
+                }
+            }
+            .onAppear {
+                value.scrollTo(messages.last?.id)
+            }
+            .onChange(of: messages.count) { _, _ in
+                value.scrollTo(messages.last?.id)
+            }
+        }
+        .frame(height: 50)
     }
 }
 
+
 #Preview {
-    bottomScrollView()
+    BottomScrollView()
 }

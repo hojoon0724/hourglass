@@ -27,5 +27,5 @@ struct Settings: View {
 }
 
 #Preview {
-  Settings()
+  ContentView(selectedTab: "Settings")
 }

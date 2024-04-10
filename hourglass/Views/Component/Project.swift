@@ -8,22 +8,30 @@
 import SwiftUI
 
 struct Project: View {
-  var body: some View {
-    HStack(content: {
+    var body: some View {
+        HStack(content: {
 //      Image("")
 //        .resizable()
 //        .frame(width: 50, height: 50)
-      VStack(alignment: .leading) {
-        Text("Project")
-          .multilineTextAlignment(.leading)
-        Text("00:00:00")
-          .multilineTextAlignment(.leading)
-      }
-      Spacer()
-    })
-  }
+            HStack(alignment: .center) {
+                Text("Project")
+                    .multilineTextAlignment(.leading)
+                Spacer()
+                Text("00:00:00")
+                    .monospaced()
+                    .font(.callout)
+                    .foregroundStyle(Color.red)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 20)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color.yellow)
+                    )
+            }
+        })
+    }
 }
 
 #Preview {
-  Project()
+    Project()
 }
