@@ -10,10 +10,13 @@ import SwiftUI
 let collection: Array = ["1", "2", "3", "4", "5"]
 
 struct Timer: View {
-    @State var timerState: Bool = false
+    @ObservedObject var timerClass: timerClass
+
     var body: some View {
         VStack {
             Spacer()
+
+            ///
             VStack {
                 HStack {
                     Text("Project Name")
@@ -46,20 +49,21 @@ struct Timer: View {
                     Text("00:00:00")
                 }.padding()
             }
+            ///
 
 //            Rectangle()
 //                .fill(Color.black)
 //                .frame(height: 1)
 
             HStack(content: {
-                if timerState == true {
-                    Button(action: stopTimer) {
+                if timerClass.timerRunning == true {
+                    Button(action: timerClass.timerOff) {
                         Image(systemName: "stop.circle.fill")
                     }
                     .font(.largeTitle)
                     .foregroundColor(.red)
                 } else {
-                    Button(action: startTimer) {
+                    Button(action: timerClass.timerOn) {
                         Image(systemName: "play.circle.fill")
                     }
                     .font(.largeTitle)
@@ -80,16 +84,6 @@ struct Timer: View {
 
             Spacer().frame(height: 10)
         }
-    }
-
-    func stopTimer() {
-        print("Timer Stopped")
-        timerState = false
-    }
-
-    func startTimer() {
-        print("Timer Running")
-        timerState = true
     }
 }
 

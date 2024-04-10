@@ -20,6 +20,7 @@
 		1F171D932BC21E1300AB5DA4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D922BC21E1300AB5DA4 /* Settings.swift */; };
 		1F171D982BC2244600AB5DA4 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D972BC2244600AB5DA4 /* Project.swift */; };
 		1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */; };
+		1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46AC2BC6284900F62A27 /* timerModels.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		1F171D992BC2280E00AB5DA4 /* scratch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomScrollView.swift; sourceTree = "<group>"; };
+		1F2A46AC2BC6284900F62A27 /* timerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerModels.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		1F171D892BC214DD00AB5DA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F2A46AC2BC6284900F62A27 /* timerModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
 				1F171D8D2BC215CE00AB5DA4 /* Timer.swift in Sources */,
 				1F171D982BC2244600AB5DA4 /* Project.swift in Sources */,
+				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
