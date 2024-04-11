@@ -13,7 +13,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            Timer(timerClass: timerClass())
+            TimerPage(timerClass: timerClass())
                 .tabItem {
                     Label("Timer", systemImage: "timer")
                 }
