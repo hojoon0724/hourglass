@@ -13,81 +13,32 @@ struct TimerPage: View {
     @ObservedObject var timerClass: timerClass
 
     var body: some View {
-        VStack {
-            Spacer()
-
-            ///
-            ///
+        VStack(spacing: 0, content: {
             ScrollView {
-                VStack {
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:00")
-                    }.padding()
-                    HStack {
-                        Text("Project Name")
-                        Spacer()
-                        Text("00:00:01")
-                    }.padding()
-                }
+                VStack(spacing: 0, content: {
+                    ForEach((0 ..< 4).reversed(), id: \.self) { i in
+                        HStack {
+                            
+                            VStack(alignment: .leading, content: {
+                                Text("Project Name \(i)")
+                                Text("Client").font(.caption)
+                            })
+                            
+                            Spacer()
+                            
+                            Text("00:00:00")
+                        }
+                        .padding()
+                        //                        .background(Color.red)
+                    }
+                    .flippedUpsideDown()
+                })
             }
-            ///
-
-//            Rectangle()
-//                .fill(Color.black)
-//                .frame(height: 1)
-
+            .frame(maxWidth: .infinity)
+//            .background(Color.green)
+            .defaultScrollAnchor(.top)
+            .flippedUpsideDown()
+            
             HStack(content: {
                 if timerClass.timerRunning == true {
                     Button(action: timerClass.timerStop) {
@@ -103,22 +54,17 @@ struct TimerPage: View {
                     .foregroundColor(.green)
                 }
                 Spacer()
-
+                
                 Text(
                     "\(String(format: "%02d", timerClass.hr)):\(String(format: "%02d", timerClass.min)):\(String(format: "%02d", timerClass.sec))")
-                    .monospaced()
-                    .font(.system(size: 24))
+                .monospaced()
+                .font(.system(size: 24))
             })
             .padding()
-//            .border(Color.black)
-
-//            Rectangle()
-//                .fill(Color.black)
-//                .frame(height: 1)
-
+            
             Spacer().frame(height: 10)
         }
-    }
+        )}
 }
 
 #Preview {

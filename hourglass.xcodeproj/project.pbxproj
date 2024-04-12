@@ -22,6 +22,7 @@
 		1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */; };
 		1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46AC2BC6284900F62A27 /* timerModels.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
+		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = bottomScrollView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F2A46AC2BC6284900F62A27 /* timerModels.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = timerModels.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		1F171D8B2BC2153000AB5DA4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
 				1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */,
 				1F171D982BC2244600AB5DA4 /* Project.swift in Sources */,
+				1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */,
 				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
