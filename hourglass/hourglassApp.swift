@@ -5,8 +5,8 @@
 //  Created by Hojoon Kim on 4/6/24.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct hourglassApp: App {

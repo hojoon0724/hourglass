@@ -17,19 +17,25 @@ struct ContentView: View {
                 .tabItem {
                     Label("Timer", systemImage: "timer")
                 }
-                .tag("Timer")
+                .tag("TimerPage")
 
-            Projects()
+            ProjectsPage()
                 .tabItem {
                     Label("Projects", systemImage: "folder.fill")
                 }
-                .tag("Projects")
+                .tag("ProjectsPage")
 
-            Settings()
+            ClientsPage()
+                .tabItem {
+                    Label("Clients", systemImage: "building.2.fill")
+                }
+                .tag("ClientsPage")
+
+            SettingsPage()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
-                .tag("Settings")
+                .tag("SettingsPage")
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Project: View {
+struct ProjectListComponent: View {
     var body: some View {
         HStack(content: {
 //      Image("")
@@ -33,5 +33,5 @@ struct Project: View {
 }
 
 #Preview {
-    Project()
+    ProjectListComponent()
 }

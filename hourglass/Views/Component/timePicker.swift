@@ -23,7 +23,7 @@ struct MultiComponentPicker<Tag: Hashable>: View  {
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
-                ForEach(0 ..< 3
+                ForEach(0 ..< 10
 //                        columns.count
                 ) { index in
                     let column = columns[index]
