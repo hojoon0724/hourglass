@@ -70,7 +70,7 @@ struct TimerPage: View {
                                 // change color to variable
                                 .foregroundColor(.red)
                             Text(
-                                "\(String(format: "%02d", timerClass.hr)):\(String(format: "%02d", timerClass.min)):\(String(format: "%02d", timerClass.sec))")
+                                "\(secondsToFullTime(timerClass.secondsElapsed))")
                                 .monospaced()
                                 .font(.system(size: 24))
 

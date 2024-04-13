@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct runningTimerDetails: View {
+    @State private var showingAlert = false
+
     @State var description: String = ""
 
     @State var projectName: String = ""
@@ -30,19 +32,21 @@ struct runningTimerDetails: View {
                 Section(header: Text("Project")) {
                     HStack(alignment: .center, content: {
                         Text("Description")
-                      TextField("", text: $description)
+                        TextField("", text: $description)
                             .multilineTextAlignment(.trailing)
                     })
                 }
                 Section(header: Text("")) {
-                    HStack(alignment: .center, content: {
-                        Text("Project")
-                        TextField("", text: $projectName)
-                            .multilineTextAlignment(.trailing)
-                    })
+                    
                     HStack(alignment: .center, content: {
                         Text("Client")
                         TextField("", text: $addMinutes)
+                            .multilineTextAlignment(.trailing)
+                    })
+                    
+                    HStack(alignment: .center, content: {
+                        Text("Project")
+                        TextField("", text: $projectName)
                             .multilineTextAlignment(.trailing)
                     })
                 }
@@ -52,9 +56,16 @@ struct runningTimerDetails: View {
                         ColorPicker("Color", selection: $projectColor)
                     }
                 }
-                Button("Add Project", action: {
-                    print("Submitted")
+                Button("Save", action: {
+                    print("Submitted", description, projectName, addMinutes, projectColor)
+                  if(description==""){
+                    
+                    showingAlert = true
+                  }
                 })
+                .alert("Important message", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) { }
+                }
             }
         }
     }

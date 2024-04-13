@@ -35,8 +35,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
+            
                 .tag("SettingsPage")
         }
+        
     }
 }
 

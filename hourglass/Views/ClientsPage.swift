@@ -15,69 +15,49 @@ struct ClientsPage: View {
 
     var body: some View {
         VStack {
-//      Button(action: {
-//        print("Button Pushed")
-//        self.show_modal = true
-//      }) {
-//        Text("Show Modal")
-//      }.sheet(isPresented: self.$show_modal) {
-//        projectAddModal()
-//      }
-
             NavigationSplitView {
                 List {
-                    // Show all projects only
+                    // Show all clients only
 
                     ForEach(allClients) { client in
                         NavigationLink(destination: showClient()) {
-                          VStack(alignment: .leading, content: {
+                            VStack(alignment: .leading, content: {
                                 Text("\(client.name)")
-//                                Spacer()
                                 Text(secondsToFullTime(client.time))
                                     .font(.caption)
                                     .monospaced()
                             })
                         }
                     }
-
-                    // Client header - Project Below
-//                    ForEach(clients) { client in
-//                        Section(header: Text(String(client.name).foregroundColor(.blue))) {
-//                            ForEach(client.projects) { project in
-//                                Text("\(project.name)")
-//                            }
-//                        }
-//                    }
                 }
-                //                    .onDelete(perform: deleteItems)
-                #if os(macOS)
-                .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-                #endif
 
+                #if os(macOS)
+                    .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+                #endif
 //                      add + edit buttons
-                .toolbar {
-                    #if os(iOS)
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
-                        }
-                    #endif
-                    ToolbarItem {
-                        Button(action: {
-                            self.show_modal = true
-                        }) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                        .sheet(isPresented: self.$show_modal) {
-                            projectAddModal()
-                        }
+                    .toolbar {
+                        #if os(iOS)
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                EditButton()
+                            }
+                        #endif
+                        ToolbarItem {
+                            Button(action: {
+                                self.show_modal = true
+                            }) {
+                                Label("Add Item", systemImage: "plus")
+                            }
+                            .sheet(isPresented: self.$show_modal) {
+                                projectAddModal()
+                            }
 
 //            Button(action: addItem) {
 //              Label("Add Item", systemImage: "plus")
 //            }.sheet(isPresented: self.$show_modal, content: {
 //              projectAddModal()
 //            })
+                        }
                     }
-                }
             } detail: {
                 Text("Select an item")
             }
@@ -88,20 +68,20 @@ struct ClientsPage: View {
 //        show_modal = false
 //    }
 
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = Item(timestamp: Date())
-//            modelContext.insert(newItem)
-//        }
-//    }
-//
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            for index in offsets {
-//                modelContext.delete(items[index])
-//            }
-//        }
-//    }
+    private func addItem() {
+        withAnimation {
+            let newItem = Item(timestamp: Date())
+            modelContext.insert(newItem)
+        }
+    }
+
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(items[index])
+            }
+        }
+    }
 }
 
 #Preview {

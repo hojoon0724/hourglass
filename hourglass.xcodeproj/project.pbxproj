@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */; };
-		1F072D422BC5BACB00DED4F0 /* timePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F072D412BC5BACB00DED4F0 /* timePicker.swift */; };
 		1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F072D432BC5D02F00DED4F0 /* modalTest.swift */; };
 		1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D772BC2145600AB5DA4 /* hourglassApp.swift */; };
 		1F171D7A2BC2145600AB5DA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D792BC2145600AB5DA4 /* ContentView.swift */; };
@@ -31,11 +30,13 @@
 		1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17052BC9956D0032AA56 /* ClientsPage.swift */; };
 		1F9C17082BC996490032AA56 /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17072BC996490032AA56 /* showClient.swift */; };
 		1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversion.swift */; };
+		1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */; };
+		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
+		1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = projectAddModal.swift; sourceTree = "<group>"; tabWidth = 4; };
-		1F072D412BC5BACB00DED4F0 /* timePicker.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = timePicker.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F072D432BC5D02F00DED4F0 /* modalTest.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = modalTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F171D742BC2145600AB5DA4 /* hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hourglass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F171D772BC2145600AB5DA4 /* hourglassApp.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = hourglassApp.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -62,6 +63,9 @@
 		1F9C17052BC9956D0032AA56 /* ClientsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsPage.swift; sourceTree = "<group>"; };
 		1F9C17072BC996490032AA56 /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
 		1F9C17092BC997120032AA56 /* timeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversion.swift; sourceTree = "<group>"; };
+		1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTimerLogData.swift; sourceTree = "<group>"; };
+		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
+		1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formPickerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +84,6 @@
 			children = (
 				1F171D762BC2145600AB5DA4 /* hourglass */,
 				1F8F3BDB2BC24F8F00F47F8F /* README.md */,
-				1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */,
-				1F072D432BC5D02F00DED4F0 /* modalTest.swift */,
-				1F171D992BC2280E00AB5DA4 /* scratch.playground */,
-				1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */,
 				1F171D752BC2145600AB5DA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +99,7 @@
 		1F171D762BC2145600AB5DA4 /* hourglass */ = {
 			isa = PBXGroup;
 			children = (
+				1FEEDF122BCA338200E28DF3 /* scratch */,
 				1F171D8B2BC2153000AB5DA4 /* Constants */,
 				1F171D8A2BC214E600AB5DA4 /* Controllers */,
 				1F171D892BC214DD00AB5DA4 /* Models */,
@@ -158,6 +159,7 @@
 				1F9C16FF2BC9734B0032AA56 /* testData.swift */,
 				1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */,
 				1F9C17092BC997120032AA56 /* timeConversion.swift */,
+				1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -167,10 +169,22 @@
 			children = (
 				1F171D972BC2244600AB5DA4 /* Project.swift */,
 				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
-				1F072D412BC5BACB00DED4F0 /* timePicker.swift */,
 				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
+				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		1FEEDF122BCA338200E28DF3 /* scratch */ = {
+			isa = PBXGroup;
+			children = (
+				1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */,
+				1F072D432BC5D02F00DED4F0 /* modalTest.swift */,
+				1F171D992BC2280E00AB5DA4 /* scratch.playground */,
+				1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */,
+				1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */,
+			);
+			path = scratch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F171D7A2BC2145600AB5DA4 /* ContentView.swift in Sources */,
-				1F072D422BC5BACB00DED4F0 /* timePicker.swift in Sources */,
 				1F171D7C2BC2145600AB5DA4 /* Item.swift in Sources */,
+				1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */,
 				1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */,
+				1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */,
 				1F9C17002BC9734B0032AA56 /* testData.swift in Sources */,
 				1F9C16FE2BC9720A0032AA56 /* runningTimerDetails.swift in Sources */,
 				1F171D8F2BC2176100AB5DA4 /* ProjectsPage.swift in Sources */,
@@ -260,6 +275,7 @@
 				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
 				1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */,
+				1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */,
 				1F171D982BC2244600AB5DA4 /* Project.swift in Sources */,
 				1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */,
 				1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */,

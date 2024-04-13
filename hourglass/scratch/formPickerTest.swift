@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct formPickerTest: View {
+    @State private var selected: String = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Form {
+                Picker("Client", selection: $selected) {
+                    if selected == "" {
+                        Text("")
+                    }
+                    ForEach(allClients, id: \.id) { client in
+                        Text(client.name)
+                    }
+                }
+                Button("Submit", action: {
+                    print(selected)
+                })
+            }
+        }
     }
 }
 
