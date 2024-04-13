@@ -20,4 +20,8 @@ func showTwoDigits(_ number: Int) -> (String) {
     return (String(format: "%02d", number))
 }
 
-secondsToHoursMinutesSeconds(87928)
+secondsToHoursMinutesSeconds(87928)[0]
+secondsToHoursMinutesSeconds(87928)[1]
+secondsToHoursMinutesSeconds(87928)[2]
+
+print(Date())
