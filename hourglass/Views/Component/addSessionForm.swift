@@ -43,23 +43,27 @@ struct addSessionForm: View {
                         let filteredClients = allClients.filter { $0.name == clientName }
                         selectedClient = filteredClients[0]
                         print(selectedClient!)
+                        print(allProjects.filter { $0.clientName == clientName })
                     }
-//                    Picker("Project", selection: $projectName) {
-//                        ForEach(allProjects.filter { $0.clientName == clientName }) { project in
-//                            Text(project.name)
-//                        }
-//                    }
-//                    .pickerStyle(.automatic)
+                    Picker("Project", selection: $projectName) {
+                        ForEach(allProjects.filter { $0.clientName == clientName }) { project in
+                            Text(project.name)
+                        }
+                    }
+                    .pickerStyle(.automatic)
                 }
                 Section(header: Text("Time")) {
                     HStack(alignment: .center, content: {
                         Text("Start")
+                        Spacer()
+                        DatePicker("", selection: $startTime)
 //                        TextField("00:00:00", text: $startTime)
                             .multilineTextAlignment(.trailing)
                     })
                     HStack(alignment: .center, content: {
                         Text("End")
-//                        TextField("00:00:00", text: $endTime)
+                        Spacer()
+                        DatePicker("", selection: $endTime)
                             .multilineTextAlignment(.trailing)
                     })
                 }
@@ -71,6 +75,7 @@ struct addSessionForm: View {
                     print("projectName \(projectName)")
                     print("projectId \(projectId)")
                     print("startTime \(startTime)")
+                    print(Date())
                 })
             }
         })
