@@ -30,6 +30,7 @@
 		1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17052BC9956D0032AA56 /* ClientsPage.swift */; };
 		1F9C17082BC996490032AA56 /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17072BC996490032AA56 /* showClient.swift */; };
 		1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversion.swift */; };
+		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
 		1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */; };
 		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
 		1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */; };
@@ -63,6 +64,7 @@
 		1F9C17052BC9956D0032AA56 /* ClientsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsPage.swift; sourceTree = "<group>"; };
 		1F9C17072BC996490032AA56 /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
 		1F9C17092BC997120032AA56 /* timeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversion.swift; sourceTree = "<group>"; };
+		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
 		1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTimerLogData.swift; sourceTree = "<group>"; };
 		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
 		1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formPickerTest.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		1F171D8A2BC214E600AB5DA4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */,
 				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 				1F9C17082BC996490032AA56 /* showClient.swift in Sources */,
+				1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

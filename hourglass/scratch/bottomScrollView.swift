@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BottomScrollView: View {
-    
     struct Message: Identifiable {
         let id = UUID()
         let text: String
@@ -21,9 +20,9 @@ struct BottomScrollView: View {
         Message(text: "Fourth message"),
         Message(text: "Fifth message"),
         Message(text: "Sixth message"),
-        Message(text: "Seventh message")
+        Message(text: "Seventh message"),
     ]
-    
+
     var body: some View {
         ScrollViewReader { value in
             ScrollView {
@@ -39,10 +38,9 @@ struct BottomScrollView: View {
                 value.scrollTo(messages.last?.id)
             }
         }
-        .frame(height: 50)
+        .frame(height: 250)
     }
 }
-
 
 #Preview {
     BottomScrollView()

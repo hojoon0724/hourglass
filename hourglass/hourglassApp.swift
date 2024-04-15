@@ -27,6 +27,7 @@ struct hourglassApp: App {
         WindowGroup {
             ContentView()
         }
+//        .modelContainer(for: timerModel.self)
         .modelContainer(sharedModelContainer)
     }
 }

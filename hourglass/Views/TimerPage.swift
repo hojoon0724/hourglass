@@ -83,7 +83,7 @@ struct TimerPage: View {
                     })
                 })
                 .padding()
-//                .background(Color.blue)
+                //                .background(Color.blue)
                 .sheet(isPresented: self.$show_modal_project) {
                     projectAddModal()
 
