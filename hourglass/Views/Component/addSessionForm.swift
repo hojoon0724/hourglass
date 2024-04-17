@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct addSessionForm: View {
-    @State private var selectedClient: Client? = nil
+    @State private var selectedClient: TestClient? = nil
 
     @State private var id = UUID()
 
@@ -35,18 +35,18 @@ struct addSessionForm: View {
             Form {
                 Section(header: Text("Project")) {
                     Picker("Client", selection: $clientName) {
-                        ForEach(allClients, id: \.name) { client in
+                        ForEach(allTestClients, id: \.name) { client in
                             Text(client.name)
                         }
                     }
                     .onChange(of: clientName) {
-                        let filteredClients = allClients.filter { $0.name == clientName }
+                        let filteredClients = allTestClients.filter { $0.name == clientName }
                         selectedClient = filteredClients[0]
                         print(selectedClient!)
-                        print(allProjects.filter { $0.clientName == clientName })
+                        print(allTestProjects.filter { $0.clientName == clientName })
                     }
                     Picker("Project", selection: $projectName) {
-                        ForEach(allProjects.filter { $0.clientName == clientName }) { project in
+                        ForEach(allTestProjects.filter { $0.clientName == clientName }) { project in
                             Text(project.name)
                         }
                     }

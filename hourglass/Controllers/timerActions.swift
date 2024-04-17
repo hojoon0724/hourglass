@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 //
-//class timerActions: ObservableObject {
+// class timerActions: ObservableObject {
 //    @Bindable var timerClass: timerClass
 //
 //    init(timerClass: timerClass) {
@@ -52,4 +52,4 @@ import SwiftUI
 //        timerClass.sec = (seconds % 3600) % 60
 //        print("sec2FT", timerClass.hr, timerClass.min, timerClass.sec)
 //    }
-//}
+// }

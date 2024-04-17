@@ -19,7 +19,7 @@ struct ClientsPage: View {
                 List {
                     // Show all clients only
 
-                    ForEach(allClients) { client in
+                    ForEach(allTestClients) { client in
                         NavigationLink(destination: showClient()) {
                             VStack(alignment: .leading, content: {
                                 Text("\(client.name)")
@@ -30,6 +30,7 @@ struct ClientsPage: View {
                         }
                     }
                 }
+                .navigationTitle("Clients")
 
                 #if os(macOS)
                     .navigationSplitViewColumnWidth(min: 180, ideal: 200)
@@ -50,23 +51,14 @@ struct ClientsPage: View {
                             .sheet(isPresented: self.$show_modal) {
                                 projectAddModal()
                             }
-
-//            Button(action: addItem) {
-//              Label("Add Item", systemImage: "plus")
-//            }.sheet(isPresented: self.$show_modal, content: {
-//              projectAddModal()
-//            })
                         }
                     }
             } detail: {
                 Text("Select an item")
+                    .navigationTitle("Clients")
             }
         }
     }
-
-//    private func closeModal() {
-//        show_modal = false
-//    }
 
     private func addItem() {
         withAnimation {

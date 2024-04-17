@@ -24,7 +24,7 @@ secondsToHoursMinutesSeconds(87928)[2]
 
 print(Date())
 
-let filteredArray = allProjects.filter { $0.clientId == "E893AF78-7C9C-4417-A1DC-F97B82DD7A57" }
+let filteredArray = allTestProjects.filter { $0.clientId == "E893AF78-7C9C-4417-A1DC-F97B82DD7A57" }
 
 filteredArray.forEach { project in
     print(project.name, project.clientId)

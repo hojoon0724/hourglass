@@ -28,7 +28,7 @@ struct ProjectsPage: View {
                 List {
                     // Show all projects only
 
-                    ForEach(allProjects) { project in
+                    ForEach(allTestProjects) { project in
                         NavigationLink(destination: showProject(project: project)) {
                             Image(systemName: "circle.fill")
                                 .foregroundColor(project.color)
@@ -50,6 +50,7 @@ struct ProjectsPage: View {
 //                        }
 //                    }
                 }
+                .navigationTitle("Projects")
                 //                    .onDelete(perform: deleteItems)
                 #if os(macOS)
                 .navigationSplitViewColumnWidth(min: 180, ideal: 200)

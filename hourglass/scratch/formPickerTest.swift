@@ -17,7 +17,7 @@ struct formPickerTest: View {
                     if selected == "" {
                         Text("")
                     }
-                    ForEach(allClients, id: \.id) { client in
+                    ForEach(allTestClients, id: \.id) { client in
                         Text(client.name)
                     }
                 }

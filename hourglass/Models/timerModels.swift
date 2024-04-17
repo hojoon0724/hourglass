@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+import SwiftData
 
 class timerClass: ObservableObject {
     // on-off switch

@@ -19,8 +19,8 @@ struct showProject: View {
     @State var projectClientName: String
     @State var projectColor: Color
 
-    var project: Project
-    init(project: Project) {
+    var project: TestProject
+    init(project: TestProject) {
         self.project = project
         _projectName = State(initialValue: project.name)
         _projectClientName = State(initialValue: project.clientName)
@@ -53,12 +53,11 @@ struct showProject: View {
                     })
 
                     Picker("Client", selection: $selectedFlavor) {
-                        ForEach(allClients) { client in
+                        ForEach(allTestClients) { client in
                             Text(client.name)
                         }
                     }
                     .pickerStyle(.automatic)
-
                 }
 
                 Section(header: Text("Color")) {
@@ -79,5 +78,5 @@ struct showProject: View {
 }
 
 #Preview {
-    showProject(project: allProjects[1])
+    showProject(project: allTestProjects[1])
 }
