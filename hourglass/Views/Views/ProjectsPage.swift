@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ProjectsPage: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     @State private var show_modal: Bool = false
 
     var body: some View {
@@ -107,5 +106,6 @@ struct ProjectsPage: View {
 }
 
 #Preview {
-    ContentView(selectedTab: "ProjectsPage")
+    ProjectsPage()
+//    ContentView(selectedTab: "ProjectsPage")
 }

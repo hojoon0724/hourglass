@@ -15,6 +15,9 @@ final class Client {
     let color: String
     var time: Int
     var sessions = [Session]()
+    var timeUsed: Int {
+        return sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) }
+    }
 
     init(id: UUID = UUID(), name: String, color: String, time: Int) {
         self.id = id

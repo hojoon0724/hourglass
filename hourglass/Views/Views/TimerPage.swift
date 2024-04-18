@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  TimerPage.swift
 //  hourglass
 //
 //  Created by Hojoon Kim on 4/6/24.

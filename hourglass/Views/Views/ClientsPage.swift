@@ -21,7 +21,7 @@ struct ClientsPage: View {
                         NavigationLink(destination: showClient(client: client)) {
                             VStack(alignment: .leading, content: {
                                 Text("\(client.name)")
-                                Text(secondsToFullTime(client.time))
+                                Text(secondsToFullTime(client.time - client.timeUsed))
                                     .font(.caption)
                                     .monospaced()
                             })
@@ -75,6 +75,6 @@ struct ClientsPage: View {
 }
 
 #Preview {
-    ClientsPage()
+    ContentView(selectedTab: "ClientsPage")
         .modelContainer(SampleData.shared.modelContainer)
 }

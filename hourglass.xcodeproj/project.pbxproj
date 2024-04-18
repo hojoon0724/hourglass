@@ -135,13 +135,10 @@
 		1F171D882BC2147500AB5DA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F171D942BC21FA200AB5DA4 /* Component */,
-				1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */,
-				1F171D8E2BC2176100AB5DA4 /* ProjectsPage.swift */,
-				1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */,
-				1F9C17012BC980450032AA56 /* showProject.swift */,
-				1F9C17052BC9956D0032AA56 /* ClientsPage.swift */,
-				1F9C17072BC996490032AA56 /* showClient.swift */,
+				1F171D942BC21FA200AB5DA4 /* Components */,
+				1F75F1C82BD1A3AC0099F127 /* DetailsPages */,
+				1F75F1C72BD1A18A0099F127 /* ModalPages */,
+				1F75F1C62BD1A14A0099F127 /* Views */,
 				1F0D004B2BCF6D49004FFD30 /* TimeScratchView.swift */,
 			);
 			path = Views;
@@ -179,15 +176,42 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		1F171D942BC21FA200AB5DA4 /* Component */ = {
+		1F171D942BC21FA200AB5DA4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				1F171D972BC2244600AB5DA4 /* Project.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1F75F1C62BD1A14A0099F127 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */,
+				1F171D8E2BC2176100AB5DA4 /* ProjectsPage.swift */,
+				1F9C17052BC9956D0032AA56 /* ClientsPage.swift */,
+				1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F75F1C72BD1A18A0099F127 /* ModalPages */ = {
+			isa = PBXGroup;
+			children = (
 				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
 				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
 				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
 			);
-			path = Component;
+			path = ModalPages;
+			sourceTree = "<group>";
+		};
+		1F75F1C82BD1A3AC0099F127 /* DetailsPages */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C17072BC996490032AA56 /* showClient.swift */,
+				1F9C17012BC980450032AA56 /* showProject.swift */,
+			);
+			path = DetailsPages;
 			sourceTree = "<group>";
 		};
 		1FEEDF122BCA338200E28DF3 /* scratch */ = {

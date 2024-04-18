@@ -20,11 +20,11 @@ struct ContentView: View {
                 }
                 .tag("TimerPage")
 
-            ProjectsPage()
-                .tabItem {
-                    Label("Projects", systemImage: "folder.fill")
-                }
-                .tag("ProjectsPage")
+//            ProjectsPage()
+//                .tabItem {
+//                    Label("Projects", systemImage: "folder.fill")
+//                }
+//                .tag("ProjectsPage")
 
             ClientsPage()
                 .tabItem {
@@ -41,12 +41,12 @@ struct ContentView: View {
         }
     }
 
-    private func startTime() {
-        withAnimation {
-            let newTime = Session(running: true, startTime: .now, endTime: .now, secondsElapsed: 0)
-            modelContext.insert(newTime)
-        }
-    }
+//    private func startTime() {
+//        withAnimation {
+//            let newTime = Session(running: true, startTime: .now, editedTimestamp: .now)
+//            modelContext.insert(newTime)
+//        }
+//    }
 }
 
 #Preview {

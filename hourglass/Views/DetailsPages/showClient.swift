@@ -15,39 +15,52 @@ struct showClient: View {
 
     var sortedSessions: [Session] {
         client.sessions.sorted { first, second in
-            first.startTime < second.startTime
+            first.startTime > second.startTime
         }
     }
 
     var body: some View {
         Form {
+//            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+//                Text("Client")
+//                Spacer()
+//                TextField("Name", text: $client.name)
+//                    .multilineTextAlignment(.trailing)
+//            })
             HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-                Text("Client")
+                Text("Lifetime Time")
                 Spacer()
-                TextField("Name", text: $client.name)
-                    .multilineTextAlignment(.trailing)
+                Text("\(secondsToFullTime(client.time))")
+                    .monospaced()
+            })
+            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                Text("Used Time")
+                Spacer()
+                Text("\(secondsToFullTime(client.timeUsed))")
+                    .monospaced()
             })
             HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
                 Text("Remaining Time")
                 Spacer()
-                Text("\(secondsToFullTime($client.time.wrappedValue))")
+                Text("\(secondsToFullTime(client.time - client.timeUsed))")
                     .monospaced()
             })
+
             if !client.sessions.isEmpty {
                 Section("Sessions") {
                     ForEach(sortedSessions) { session in
                         VStack {
                             HStack {
                                 Text(String("\(session.startTime.formatted())"))
-
                                 Spacer()
-                                Text(String("\(session.endTime?.formatted() ?? "")"))
+                                Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
                             }
                         }
                     }
                 }
             }
         }
+        .navigationTitle(client.name)
     }
 }
 

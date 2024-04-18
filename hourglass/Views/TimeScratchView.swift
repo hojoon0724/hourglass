@@ -14,7 +14,7 @@ struct TimeScratchView: View {
 
     @Bindable var time: Session
     @Environment(\.modelContext) private var modelContext
-    @State var newTime = Session(running: false, startTime: .now, endTime: nil, secondsElapsed: nil)
+    @State var newTime = Session(running: false, startTime: .now, endTime: nil, secondsElapsed: nil, editedTimestamp: .now)
 
     @State var counter = 0
 
