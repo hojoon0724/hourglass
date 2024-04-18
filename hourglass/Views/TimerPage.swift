@@ -5,10 +5,13 @@
 //  Created by Hojoon Kim on 4/6/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct TimerPage: View {
+    @Query(sort: \Session.startTime) private var sessions: [Session]
     @State private var show_modal_project: Bool = false
+
     @ObservedObject var timerClass: timerClass
 
     var body: some View {
@@ -17,7 +20,7 @@ struct TimerPage: View {
             ScrollView {
                 VStack(spacing: 0, content: {
                     // Replace with data - maybe refactor as component
-                    ForEach((0 ..< 4).reversed(), id: \.self) { i in
+                    ForEach(sessions) { session in
                         HStack {
                             HStack(content: {
                                 Image(systemName: "circle.fill")
@@ -26,13 +29,14 @@ struct TimerPage: View {
                                     .padding(.trailing, 10)
 
                                 VStack(alignment: .leading, content: {
-                                    Text("Project Name \(i)")
-                                    Text("Client").font(.caption)
+                                    Text("\(session.startTime.formatted(date: .numeric, time: .standard))")
+                                    Text(session.client != nil ? "\(session.client!.name)" : "")
+                                        .font(.caption)
                                 })
                             })
                             Spacer()
 
-                            Text("00:00:00")
+                            Text(session.secondsElapsed != nil ? secondsToFullTime(session.secondsElapsed!) : "Running")
                         }
                         .padding()
                     }
@@ -97,4 +101,5 @@ struct TimerPage: View {
 
 #Preview {
     ContentView()
+        .modelContainer(SampleData.shared.modelContainer)
 }

@@ -30,8 +30,6 @@ struct addSessionForm: View {
 
     var body: some View {
         VStack(alignment: .leading, content: {
-            Text("sessionTitle")
-                .padding()
             Form {
                 Section(header: Text("Project")) {
                     Picker("Client", selection: $clientName) {

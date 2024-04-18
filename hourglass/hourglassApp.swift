@@ -12,7 +12,7 @@ import SwiftUI
 struct hourglassApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Time.self,
+            Session.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

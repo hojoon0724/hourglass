@@ -10,10 +10,11 @@ import SwiftUI
 
 struct TimeScratchView: View {
     var timer: Timer?
+    let formatter = DateFormatter()
 
-    @Bindable var time: Time
+    @Bindable var time: Session
     @Environment(\.modelContext) private var modelContext
-    @State var newTime = Time(running: false, startTime: .now, endTime: nil, secondsElapsed: nil)
+    @State var newTime = Session(running: false, startTime: .now, endTime: nil, secondsElapsed: nil)
 
     @State var counter = 0
 
@@ -32,10 +33,10 @@ struct TimeScratchView: View {
                 Spacer()
             }
             Spacer()
-            Text(String(describing: newTime.running))
-            Text(String(describing: newTime.startTime))
-            Text(String(describing: newTime.endTime))
-            Text(String(describing: newTime.secondsElapsed))
+            Text(String(newTime.running))
+            Text(newTime.startTime.formatted(date: .abbreviated, time: .standard))
+            Text(newTime.endTime != nil ? "\(newTime.endTime!.formatted(date: .abbreviated, time: .standard))" : "")
+            Text(String(newTime.secondsElapsed ?? 0))
             Spacer()
             Spacer()
         }
@@ -66,10 +67,10 @@ struct TimeScratchView: View {
         newTime.endTime = .now
         newTime.secondsElapsed = Int((newTime.endTime?.timeIntervalSince(newTime.startTime))!)
 
-        print("\(newTime.running)/\(newTime.startTime)/\(String(describing: newTime.endTime))/\(String(describing: newTime.secondsElapsed))")
+        print("\(newTime.running)/\(newTime.startTime)/\(String(describing: newTime.endTime))/\(String(newTime.secondsElapsed ?? 0))")
     }
 }
 
 #Preview {
-    TimeScratchView(time: SampleData.shared.time)
+    TimeScratchView(time: SampleData.shared.session)
 }

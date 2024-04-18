@@ -43,7 +43,7 @@ struct ContentView: View {
 
     private func startTime() {
         withAnimation {
-            let newTime = Time(running: true, startTime: .now, endTime: .now, secondsElapsed: 0)
+            let newTime = Session(running: true, startTime: .now, endTime: .now, secondsElapsed: 0)
             modelContext.insert(newTime)
         }
     }

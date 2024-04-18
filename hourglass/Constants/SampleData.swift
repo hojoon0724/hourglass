@@ -22,7 +22,8 @@ class SampleData {
     // private makes the creation only possible inside the class. avoids confusion
     private init() {
         let schema = Schema([
-            Time.self,
+            Session.self,
+            Client.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 
@@ -36,13 +37,18 @@ class SampleData {
     }
 
     func insertSampleData() {
-        for time in Time.sampleData {
-            context.insert(time)
-            print(time.running)
-            print(time.startTime)
-            print(time.endTime)
-            print(time.secondsElapsed)
+        for session in Session.sampleData {
+            context.insert(session)
         }
+        for client in Client.sampleData {
+            context.insert(client)
+        }
+
+        Session.sampleData[0].client = Client.sampleData[0]
+        Session.sampleData[1].client = Client.sampleData[0]
+        Session.sampleData[2].client = Client.sampleData[1]
+        Session.sampleData[3].client = Client.sampleData[1]
+        Session.sampleData[4].client = Client.sampleData[2]
 
         do {
             try context.save()
@@ -51,7 +57,11 @@ class SampleData {
         }
     }
 
-    var time: Time {
-        Time.sampleData[0]
+    var session: Session {
+        Session.sampleData[0]
+    }
+
+    var client: Client {
+        Client.sampleData[0]
     }
 }

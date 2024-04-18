@@ -10,17 +10,15 @@ import SwiftUI
 
 struct ClientsPage: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(sort: \Client.name) private var clients: [Client]
     @State private var show_modal: Bool = false
 
     var body: some View {
         VStack {
             NavigationSplitView {
                 List {
-                    // Show all clients only
-
-                    ForEach(allTestClients) { client in
-                        NavigationLink(destination: showClient()) {
+                    ForEach(clients) { client in
+                        NavigationLink(destination: showClient(client: client)) {
                             VStack(alignment: .leading, content: {
                                 Text("\(client.name)")
                                 Text(secondsToFullTime(client.time))
@@ -70,7 +68,7 @@ struct ClientsPage: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(clients[index])
             }
         }
     }
@@ -78,4 +76,5 @@ struct ClientsPage: View {
 
 #Preview {
     ClientsPage()
+        .modelContainer(SampleData.shared.modelContainer)
 }
