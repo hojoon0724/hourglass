@@ -22,6 +22,7 @@
 		1F171D982BC2244600AB5DA4 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D972BC2244600AB5DA4 /* Project.swift */; };
 		1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */; };
 		1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46AC2BC6284900F62A27 /* timerModels.swift */; };
+		1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75F1C92BD1E1050099F127 /* SessionActions.swift */; };
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
@@ -60,6 +61,7 @@
 		1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = bottomScrollView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F2A46AC2BC6284900F62A27 /* timerModels.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = timerModels.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		1F75F1C92BD1E1050099F127 /* SessionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActions.swift; sourceTree = "<group>"; };
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */,
+				1F75F1C92BD1E1050099F127 /* SessionActions.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */,
 				1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */,
 				1F171D932BC21E1300AB5DA4 /* SettingsPage.swift in Sources */,
+				1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */,
 				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
 				1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */,
 				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
