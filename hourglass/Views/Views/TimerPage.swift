@@ -94,11 +94,10 @@ struct TimerPage: View {
             .padding()
             .sheet(isPresented: self.$show_modal_project) {
                 projectAddModal()
-
-                // Spacer between timer and TabView
             }
+            // Spacer between timer and TabView
+            Spacer().frame(height: 10)
         })
-        Spacer().frame(height: 10)
 //        })
     }
 

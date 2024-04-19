@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab = "Timer"
+    @State var selectedTab = "TimerPage"
     @Environment(\.modelContext) private var modelContext
 
     var body: some View {
