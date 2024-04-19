@@ -264,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1F171D6F2BC2145600AB5DA4 /* Build configuration list for PBXProject "hourglass" */;
+			buildConfigurationList = 1F171D6F2BC2145600AB5DA4 /* Build configuration list for PBXProject "Hourglass" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -528,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F171D6F2BC2145600AB5DA4 /* Build configuration list for PBXProject "hourglass" */ = {
+		1F171D6F2BC2145600AB5DA4 /* Build configuration list for PBXProject "Hourglass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F171D832BC2145800AB5DA4 /* Debug */,
