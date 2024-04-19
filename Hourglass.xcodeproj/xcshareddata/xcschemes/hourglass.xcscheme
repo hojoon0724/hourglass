@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
-               BuildableName = "hourglass.app"
-               BlueprintName = "hourglass"
+               BuildableName = "Hourglass.app"
+               BlueprintName = "Hourglass"
                ReferencedContainer = "container:hourglass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
-            BuildableName = "hourglass.app"
-            BlueprintName = "hourglass"
+            BuildableName = "Hourglass.app"
+            BlueprintName = "Hourglass"
             ReferencedContainer = "container:hourglass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
-            BuildableName = "hourglass.app"
-            BlueprintName = "hourglass"
+            BuildableName = "Hourglass.app"
+            BlueprintName = "Hourglass"
             ReferencedContainer = "container:hourglass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
