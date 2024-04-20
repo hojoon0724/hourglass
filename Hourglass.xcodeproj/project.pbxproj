@@ -36,7 +36,9 @@
 		1F9C17082BC996490032AA56 /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17072BC996490032AA56 /* showClient.swift */; };
 		1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversion.swift */; };
 		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
-		1FB493202BD21BDB0023D689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB4931F2BD21BDB0023D689 /* LaunchScreen.storyboard */; };
+		1FD1DFC52BD359D900E19500 /* addClientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* addClientForm.swift */; };
+		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
+		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */; };
 		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
 		1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */; };
@@ -76,7 +78,9 @@
 		1F9C17072BC996490032AA56 /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
 		1F9C17092BC997120032AA56 /* timeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversion.swift; sourceTree = "<group>"; };
 		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
-		1FB4931F2BD21BDB0023D689 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1FD1DFC42BD359D900E19500 /* addClientForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addClientForm.swift; sourceTree = "<group>"; };
+		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
+		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTimerLogData.swift; sourceTree = "<group>"; };
 		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
 		1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formPickerTest.swift; sourceTree = "<group>"; };
@@ -125,7 +129,7 @@
 				1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */,
 				1F171D7F2BC2145700AB5DA4 /* hourglass.entitlements */,
 				1F171D802BC2145700AB5DA4 /* Preview Content */,
-				1FB4931F2BD21BDB0023D689 /* LaunchScreen.storyboard */,
+				1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */,
 			);
 			path = hourglass;
 			sourceTree = "<group>";
@@ -156,6 +160,7 @@
 				1F2A46AC2BC6284900F62A27 /* timerModels.swift */,
 				1F819CDB2BCF4C74003BE519 /* ClientModel.swift */,
 				1F819CDD2BCF55C4003BE519 /* SessionModel.swift */,
+				1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
 				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
 				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
+				1FD1DFC42BD359D900E19500 /* addClientForm.swift */,
 			);
 			path = ModalPages;
 			sourceTree = "<group>";
@@ -300,7 +306,7 @@
 			files = (
 				1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */,
 				1F171D822BC2145700AB5DA4 /* Preview Assets.xcassets in Resources */,
-				1FB493202BD21BDB0023D689 /* LaunchScreen.storyboard in Resources */,
+				1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */,
 				1F171D7E2BC2145700AB5DA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +334,7 @@
 				1F171D932BC21E1300AB5DA4 /* SettingsPage.swift in Sources */,
 				1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */,
 				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
+				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
 				1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */,
 				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
@@ -340,6 +347,7 @@
 				1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */,
 				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 				1F9C17082BC996490032AA56 /* showClient.swift in Sources */,
+				1FD1DFC52BD359D900E19500 /* addClientForm.swift in Sources */,
 				1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,7 +489,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -522,7 +530,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

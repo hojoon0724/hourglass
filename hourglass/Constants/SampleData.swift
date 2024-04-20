@@ -24,6 +24,7 @@ class SampleData {
         let schema = Schema([
             Session.self,
             Client.self,
+            TimeAddition.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 
@@ -43,12 +44,21 @@ class SampleData {
         for client in Client.sampleData {
             context.insert(client)
         }
+        for timeAddition in TimeAddition.sampleData {
+            context.insert(timeAddition)
+        }
 
         Session.sampleData[0].client = Client.sampleData[0]
         Session.sampleData[1].client = Client.sampleData[0]
         Session.sampleData[2].client = Client.sampleData[1]
         Session.sampleData[3].client = Client.sampleData[1]
         Session.sampleData[4].client = Client.sampleData[2]
+
+        TimeAddition.sampleData[0].client = Client.sampleData[0]
+        TimeAddition.sampleData[1].client = Client.sampleData[1]
+        TimeAddition.sampleData[2].client = Client.sampleData[2]
+        TimeAddition.sampleData[3].client = Client.sampleData[3]
+        TimeAddition.sampleData[4].client = Client.sampleData[4]
 
         do {
             try context.save()
@@ -63,5 +73,9 @@ class SampleData {
 
     var client: Client {
         Client.sampleData[0]
+    }
+
+    var timeAddition: TimeAddition {
+        TimeAddition.sampleData[0]
     }
 }

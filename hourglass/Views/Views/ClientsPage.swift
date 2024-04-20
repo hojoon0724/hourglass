@@ -13,7 +13,7 @@ struct ClientsPage: View {
     @Query(sort: \Client.name) private var clients: [Client]
     @State private var show_modal: Bool = false
 
-    var body: some View {
+    var body: some View {           
         VStack {
             NavigationSplitView {
                 List {
@@ -21,15 +21,15 @@ struct ClientsPage: View {
                         NavigationLink(destination: showClient(client: client)) {
                             VStack(alignment: .leading, content: {
                                 Text("\(client.name)")
-                                Text(secondsToFullTime(client.time - client.timeUsed))
+                                Text(secondsToFullTime(client.timeAdded - client.timeUsed))
                                     .font(.caption)
                                     .monospaced()
                             })
                         }
                     }
+                    .onDelete(perform: deleteItems)
                 }
                 .navigationTitle("Clients")
-
                 #if os(macOS)
                     .navigationSplitViewColumnWidth(min: 180, ideal: 200)
                 #endif
@@ -43,11 +43,14 @@ struct ClientsPage: View {
                         ToolbarItem {
                             Button(action: {
                                 self.show_modal = true
-                            }) {
+                            }
+                            ) {
                                 Label("Add Item", systemImage: "plus")
                             }
                             .sheet(isPresented: self.$show_modal) {
-                                projectAddModal()
+                                NavigationStack {
+                                    addClientForm()
+                                }
                             }
                         }
                     }
@@ -55,13 +58,6 @@ struct ClientsPage: View {
                 Text("Select an item")
                     .navigationTitle("Clients")
             }
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
         }
     }
 

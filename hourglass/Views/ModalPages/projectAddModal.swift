@@ -18,7 +18,7 @@ struct projectAddModal: View {
     var body: some View {
         VStack {
             HStack(content: {
-                Text("New Project")
+                Text("New Client")
                     .padding()
                 Spacer()
             })
@@ -52,7 +52,7 @@ struct projectAddModal: View {
                         ColorPicker("Color", selection: $projectColor)
                     }
                 }
-                Button("Add Project", action: {
+                Button("Add Client", action: {
                     print("Submitted", projectName, addHours, addMinutes, projectColor)
                 })
             }

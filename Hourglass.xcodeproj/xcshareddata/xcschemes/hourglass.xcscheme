@@ -18,7 +18,7 @@
                BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
                BuildableName = "Hourglass.app"
                BlueprintName = "Hourglass"
-               ReferencedContainer = "container:hourglass.xcodeproj">
+               ReferencedContainer = "container:Hourglass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
             BuildableName = "Hourglass.app"
             BlueprintName = "Hourglass"
-            ReferencedContainer = "container:hourglass.xcodeproj">
+            ReferencedContainer = "container:Hourglass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "1F171D732BC2145600AB5DA4"
             BuildableName = "Hourglass.app"
             BlueprintName = "Hourglass"
-            ReferencedContainer = "container:hourglass.xcodeproj">
+            ReferencedContainer = "container:Hourglass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

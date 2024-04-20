@@ -19,32 +19,35 @@ struct showClient: View {
         }
     }
 
+    var sortedAdditions: [TimeAddition] {
+        client.timeAdditions.sorted { first, second in
+            first.timeStamp > second.timeStamp
+        }
+    }
+
     var body: some View {
-        Form {
-//            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-//                Text("Client")
-//                Spacer()
-//                TextField("Name", text: $client.name)
-//                    .multilineTextAlignment(.trailing)
-//            })
-            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-                Text("Lifetime Time")
-                Spacer()
-                Text("\(secondsToFullTime(client.time))")
-                    .monospaced()
-            })
-            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-                Text("Used Time")
-                Spacer()
-                Text("\(secondsToFullTime(client.timeUsed))")
-                    .monospaced()
-            })
+        List {
             HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
                 Text("Remaining Time")
                 Spacer()
-                Text("\(secondsToFullTime(client.time - client.timeUsed))")
+                Text("\(secondsToFullTime(client.timeAdded - client.timeUsed))")
                     .monospaced()
             })
+
+            Section("Lifetime") {
+                HStack(alignment: .center, content: {
+                    Text("Added")
+                    Spacer()
+                    Text("\(secondsToFullTime(client.timeAdded))")
+                        .monospaced()
+                })
+                HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                    Text("Used")
+                    Spacer()
+                    Text("\(secondsToFullTime(client.timeUsed))")
+                        .monospaced()
+                })
+            }
 
             if !client.sessions.isEmpty {
                 Section("Sessions") {
@@ -54,6 +57,22 @@ struct showClient: View {
                                 Text(String("\(session.startTime.formatted())"))
                                 Spacer()
                                 Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
+                                    .monospaced()
+                            }
+                        }
+                    }
+                }
+            }
+
+            if !client.timeAdditions.isEmpty {
+                Section("Time Additions") {
+                    ForEach(sortedAdditions) { addition in
+                        VStack {
+                            HStack {
+                                Text(String("\(addition.timeStamp.formatted())"))
+                                Spacer()
+                                Text(String("\(secondsToFullTime(addition.timeAdded))"))
+                                    .monospaced()
                             }
                         }
                     }
@@ -61,6 +80,9 @@ struct showClient: View {
             }
         }
         .navigationTitle(client.name)
+        .onAppear {
+            print("showClient")
+        }
     }
 }
 
