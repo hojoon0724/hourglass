@@ -13,7 +13,7 @@ struct TimerPage: View {
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
 
     @State private var newSession: Session = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
-    @State private var show_modal_project: Bool = false
+    @State private var newSessionModal: Bool = false
     @State var clock: Int = 0
     @State var timer: Timer?
 
@@ -50,7 +50,7 @@ struct TimerPage: View {
                 .defaultScrollAnchor(.top)
                 .flippedUpsideDown()
                 //            Button + Timer - Refactor as component
-                Button(action: { self.show_modal_project = true }, label: {
+                Button(action: { self.newSessionModal = true }, label: {
                     HStack(content: {
                         // Button - Dynamic
                         if newSession.running == false {
@@ -82,45 +82,34 @@ struct TimerPage: View {
                             })
 
                             HStack(content: {
-                                Text("Project Name - Client").font(.footnote)
-
+                                Text("\(newSession.client?.name ?? "")").font(.footnote)
                             })
                         })
                     })
                     .padding()
-                    .sheet(isPresented: self.$show_modal_project) {
-                        projectAddModal()
+                    .sheet(isPresented: self.$newSessionModal) {
+                        showSession(session: newSession)
                     }
                 })
-                //                Spacer between timer and TabView
-//                            Spacer().frame(height: 10)
+                .buttonStyle(PlainButtonStyle())
+                .border(width: 1, edges: [.top], color: .gray.opacity(0.5))
             })
         }
     }
 
     func startSession() {
-        print("Session START")
         newSession = Session(running: true, startTime: .now, editedTimestamp: .now)
-        print(newSession.running)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            clock = Int(
-                Date.now.timeIntervalSince(newSession.startTime)
+            clock = Int(Date.now.timeIntervalSince(newSession.startTime)
             )
-            print(Date.now)
-            print(clock)
         }
     }
 
     func stopSession() {
-        print("Session STOP")
         newSession.running = false
         newSession.endTime = .now
         newSession.secondsElapsed = Int((newSession.endTime?.timeIntervalSince(newSession.startTime))!)
         timer?.invalidate()
-        print(newSession.running)
-        print(newSession.secondsElapsed!)
-        print(newSession.startTime)
-        print(newSession.endTime!)
         modelContext.insert(newSession)
         clock = 0
     }

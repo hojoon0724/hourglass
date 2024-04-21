@@ -10,21 +10,18 @@ import SwiftUI
 
 struct showSession: View {
     @Bindable var session: Session
-    @Query(sort: \Client.name) private var clientList: [Client]
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
+    @Query(sort: \Client.name) private var clientList: [Client]
     @State private var now: Date = .now
-    @State private var selectedClient: String = ""
 
     var body: some View {
         Form {
             Section(header: Text("Time")) {
                 HStack(content: {
-                    Text("Start")
-                    Spacer()
-                    DatePicker("", selection: $session.startTime)
+                    DatePicker("Start", selection: $session.startTime)
                         .onChange(of: session.startTime) {
                             session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
                         }
@@ -32,11 +29,12 @@ struct showSession: View {
                 HStack(content: {
                     Text("End")
                     Spacer()
-
-                    if session.running == true {
+                    if session.running == false && session.endTime == nil {
+                    } else if session.endTime == nil {
                         Button("Stop Timer") {
                             print("stop timer button pressed")
                         }
+
                     } else {
                         DatePicker("", selection: Binding<Date>($session.endTime)!)
                             .onChange(of: session.endTime) {
@@ -54,16 +52,13 @@ struct showSession: View {
             }
 
             Section(header: Text("")) {
-                Picker("Client", selection: $selectedClient) {
-                    Text("None").tag(Optional<String>(nil))
-                    ForEach(clientList, id: \.name) { client in
-                        Text(client.name)
+                Picker("Client", selection: $session.client) {
+                    Text("None").tag(nil as Client?)
+                    ForEach(clientList) { client in
+                        Text(client.name).tag(client as Client?)
                     }
                 }
                 .pickerStyle(.automatic)
-            }
-            Button("Print") {
-                print($selectedClient)
             }
         }
         .navigationTitle("Session")

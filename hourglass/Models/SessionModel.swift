@@ -25,12 +25,6 @@ final class Session {
         self.editedTimestamp = editedTimestamp
     }
 
-    func runOnChange() {
-        if endTime != nil {
-            print("end time is \(endTime!)")
-        }
-    }
-
     static let sampleData = [
         Session(running: false,
                 startTime: Date(timeIntervalSinceReferenceDate: 734955053),

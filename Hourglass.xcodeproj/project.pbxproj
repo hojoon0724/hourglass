@@ -25,6 +25,7 @@
 		1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75F1C92BD1E1050099F127 /* SessionActions.swift */; };
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
+		1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86A9DA2BD4C2DE00718DDA /* borders.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
 		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
 		1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16FB2BC96AC50032AA56 /* darkMode.swift */; };
@@ -68,6 +69,7 @@
 		1F75F1C92BD1E1050099F127 /* SessionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActions.swift; sourceTree = "<group>"; };
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		1F86A9DA2BD4C2DE00718DDA /* borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borders.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
 		1F9C16FB2BC96AC50032AA56 /* darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = darkMode.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				1F9C17092BC997120032AA56 /* timeConversion.swift */,
 				1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */,
 				1F0D00492BCF6BB4004FFD30 /* SampleData.swift */,
+				1F86A9DA2BD4C2DE00718DDA /* borders.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
 				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
 				1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */,
+				1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */,
 				1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */,
 				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
