@@ -64,8 +64,11 @@ struct showClient: View {
                 }
             }
 
-            if !client.timeAdditions.isEmpty {
-                Section("Time Additions") {
+            Section("Time Additions") {
+                Button("Add Time") {
+                    print("add time function")
+                }
+                if !client.timeAdditions.isEmpty {
                     ForEach(sortedAdditions) { addition in
                         VStack {
                             HStack {
@@ -80,9 +83,6 @@ struct showClient: View {
             }
         }
         .navigationTitle(client.name)
-        .onAppear {
-            print("showClient")
-        }
     }
 }
 

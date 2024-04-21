@@ -20,16 +20,6 @@ struct addClientForm: View {
     @State var timeInSec: Int = 0
 
     var body: some View {
-//        VStack {
-//            HStack(content: {
-//                Text("New Client")
-//                    .padding()
-//                Spacer()
-//            })
-//            .font(.largeTitle)
-//            .fontWeight(.bold)
-//            .multilineTextAlignment(.leading)
-
         Form {
             Section(header: Text("Client")) {
                 HStack(alignment: .center, content: {
@@ -71,25 +61,6 @@ struct addClientForm: View {
                 }
             }
         }
-
-//                Section(header: Text("Color")) {
-//                    VStack {
-//                        ColorPicker("Choose a color", selection: $clientColor)
-//                            .onTapGesture {
-//                                print(color)
-//                            }
-//                            .onChange(of: color, {
-//                                print(color)
-//                            })
-//                    }
-//                }
-//                Button("Add Client", action: {
-//                    newTimeAddition.timeAdded = fullTimeToSeconds(hours, minutes, 0)
-//                    modelContext.insert(newClient)
-//                    modelContext.insert(newTimeAddition)
-//                    newClient.timeAdditions.append(newTimeAddition)
-//                    dismiss()
-//                })
     }
 }
 

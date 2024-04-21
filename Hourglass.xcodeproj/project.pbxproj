@@ -38,6 +38,7 @@
 		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
 		1FD1DFC52BD359D900E19500 /* addClientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* addClientForm.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
+		1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC82BD464AC00E19500 /* showSession.swift */; };
 		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */; };
 		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
@@ -80,6 +81,7 @@
 		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
 		1FD1DFC42BD359D900E19500 /* addClientForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addClientForm.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
+		1FD1DFC82BD464AC00E19500 /* showSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSession.swift; sourceTree = "<group>"; };
 		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTimerLogData.swift; sourceTree = "<group>"; };
 		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				1F9C17072BC996490032AA56 /* showClient.swift */,
 				1F9C17012BC980450032AA56 /* showProject.swift */,
+				1FD1DFC82BD464AC00E19500 /* showSession.swift */,
 			);
 			path = DetailsPages;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */,
 				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
 				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
+				1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */,
 				1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */,
 				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
 				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,

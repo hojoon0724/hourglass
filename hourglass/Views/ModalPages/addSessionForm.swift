@@ -37,17 +37,17 @@ struct addSessionForm: View {
                             Text(client.name)
                         }
                     }
-                    .onChange(of: clientName) {
-                        let filteredClients = allTestClients.filter { $0.name == clientName }
-                        selectedClient = filteredClients[0]
-                        print(selectedClient!)
-                        print(allTestProjects.filter { $0.clientName == clientName })
-                    }
-                    Picker("Project", selection: $projectName) {
-                        ForEach(allTestProjects.filter { $0.clientName == clientName }) { project in
-                            Text(project.name)
-                        }
-                    }
+//                    .onChange(of: clientName) {
+//                        let filteredClients = allTestClients.filter { $0.name == clientName }
+//                        selectedClient = filteredClients[0]
+//                        print(selectedClient!)
+//                        print(allTestProjects.filter { $0.clientName == clientName })
+//                    }
+//                    Picker("Project", selection: $projectName) {
+//                        ForEach(allTestProjects.filter { $0.clientName == clientName }) { project in
+//                            Text(project.name)
+//                        }
+//                    }
                     .pickerStyle(.automatic)
                 }
                 Section(header: Text("Time")) {
