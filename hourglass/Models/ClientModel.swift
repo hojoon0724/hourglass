@@ -14,12 +14,12 @@ final class Client {
     @Attribute(.unique) var name: String
     var color: String
 
-    var timeAdditions = [TimeAddition]()
+    @Relationship(deleteRule: .cascade) var timeAdditions = [TimeAddition]()
     var timeAdded: Int {
         return timeAdditions.reduce(0) { $0 + ($1.timeAdded) }
     }
 
-    var sessions = [Session]()
+    @Relationship(deleteRule: .cascade) var sessions = [Session]()
     var timeUsed: Int {
         return sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) }
     }

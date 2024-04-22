@@ -26,6 +26,7 @@
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
 		1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86A9DA2BD4C2DE00718DDA /* borders.swift */; };
+		1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
 		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
 		1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16FB2BC96AC50032AA56 /* darkMode.swift */; };
@@ -37,13 +38,14 @@
 		1F9C17082BC996490032AA56 /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17072BC996490032AA56 /* showClient.swift */; };
 		1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversion.swift */; };
 		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
-		1FD1DFC52BD359D900E19500 /* addClientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* addClientForm.swift */; };
+		1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* newClientModal.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
 		1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC82BD464AC00E19500 /* showSession.swift */; };
 		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */; };
 		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
 		1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */; };
+		1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,7 @@
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		1F86A9DA2BD4C2DE00718DDA /* borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borders.swift; sourceTree = "<group>"; };
+		1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTimeAdditionModal.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
 		1F9C16FB2BC96AC50032AA56 /* darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = darkMode.swift; sourceTree = "<group>"; };
@@ -81,13 +84,14 @@
 		1F9C17072BC996490032AA56 /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
 		1F9C17092BC997120032AA56 /* timeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversion.swift; sourceTree = "<group>"; };
 		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
-		1FD1DFC42BD359D900E19500 /* addClientForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addClientForm.swift; sourceTree = "<group>"; };
+		1FD1DFC42BD359D900E19500 /* newClientModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newClientModal.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
 		1FD1DFC82BD464AC00E19500 /* showSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSession.swift; sourceTree = "<group>"; };
-		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTimerLogData.swift; sourceTree = "<group>"; };
 		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
 		1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formPickerTest.swift; sourceTree = "<group>"; };
+		1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSessionModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		1F171D882BC2147500AB5DA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1FFEAE482BD5E1150070AAD7 /* Deprecated */,
 				1F171D942BC21FA200AB5DA4 /* Components */,
 				1F75F1C82BD1A3AC0099F127 /* DetailsPages */,
 				1F75F1C72BD1A18A0099F127 /* ModalPages */,
@@ -215,10 +220,9 @@
 		1F75F1C72BD1A18A0099F127 /* ModalPages */ = {
 			isa = PBXGroup;
 			children = (
-				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
-				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
-				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
-				1FD1DFC42BD359D900E19500 /* addClientForm.swift */,
+				1FD1DFC42BD359D900E19500 /* newClientModal.swift */,
+				1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */,
+				1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */,
 			);
 			path = ModalPages;
 			sourceTree = "<group>";
@@ -227,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				1F9C17072BC996490032AA56 /* showClient.swift */,
-				1F9C17012BC980450032AA56 /* showProject.swift */,
 				1FD1DFC82BD464AC00E19500 /* showSession.swift */,
 			);
 			path = DetailsPages;
@@ -250,6 +253,17 @@
 				1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */,
 			);
 			path = scratch;
+			sourceTree = "<group>";
+		};
+		1FFEAE482BD5E1150070AAD7 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C17012BC980450032AA56 /* showProject.swift */,
+				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
+				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
+				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 				1F171D7A2BC2145600AB5DA4 /* ContentView.swift in Sources */,
 				1F171D7C2BC2145600AB5DA4 /* Item.swift in Sources */,
 				1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */,
+				1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */,
 				1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */,
 				1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */,
 				1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */,
@@ -351,11 +366,12 @@
 				1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */,
 				1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */,
 				1F171D982BC2244600AB5DA4 /* Project.swift in Sources */,
+				1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */,
 				1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */,
 				1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */,
 				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 				1F9C17082BC996490032AA56 /* showClient.swift in Sources */,
-				1FD1DFC52BD359D900E19500 /* addClientForm.swift in Sources */,
+				1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */,
 				1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

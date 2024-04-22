@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="561px" height="693px" viewBox="0 0 561 693" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="623px" height="673px" viewBox="0 0 623 673" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Group 3</title>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="App-Icon-Square" transform="translate(-232, -166)" fill="#FFFFFF">
-            <g id="Group-3" transform="translate(232, 166)">
-                <polygon id="Fill-2" points="414.2223 0 414.2223 229.121 297.0233 346.32 414.2223 463.52 414.2223 692.641 477.9483 692.641 560.2413 692.641 477.9483 610.349 477.9483 82.292 560.2413 0"></polygon>
-                <polygon id="Fill-1" points="0 0 82.292 82.292 82.292 610.349 0 692.641 82.292 692.641 146.019 692.641 146.019 463.52 263.219 346.32 146.019 229.121 146.019 0"></polygon>
+        <g id="App-Icon-Square" transform="translate(-201, -176)" fill="#FFFFFF">
+            <g id="Group-3" transform="translate(201, 176)">
+                <polygon id="Fill-1" points="0 0 119.11 119.11 119.11 553.063 0 672.173 119.11 672.173 183.661 672.173 183.661 455.197 302.771 336.087 183.661 216.977 183.661 0"></polygon>
+                <polygon id="Fill-2" points="438.525 0 438.525 216.977 319.415 336.087 438.525 455.197 438.525 672.173 503.077 672.173 622.187 672.173 503.077 553.063 503.077 119.11 622.187 0"></polygon>
             </g>
         </g>
     </g>

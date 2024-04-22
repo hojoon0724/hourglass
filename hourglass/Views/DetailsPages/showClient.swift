@@ -13,6 +13,10 @@ struct showClient: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
+    @State var confirmationShow = false
+    @State var addTimeModal = false
+    @State var deleteConfirmationShow = false
+
     var sortedSessions: [Session] {
         client.sessions.sorted { first, second in
             first.startTime > second.startTime
@@ -27,12 +31,21 @@ struct showClient: View {
 
     var body: some View {
         List {
+            Section("") {
+                HStack {
+                    Text("Name")
+                    Spacer()
+                    TextField("Required", text: $client.name, prompt: Text("Required"))
+                        .multilineTextAlignment(.trailing)
+                }
+            }
             HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
                 Text("Remaining Time")
                 Spacer()
                 Text("\(secondsToFullTime(client.timeAdded - client.timeUsed))")
                     .monospaced()
             })
+            .opacity(0.5)
 
             Section("Lifetime") {
                 HStack(alignment: .center, content: {
@@ -41,12 +54,14 @@ struct showClient: View {
                     Text("\(secondsToFullTime(client.timeAdded))")
                         .monospaced()
                 })
+                .opacity(0.5)
                 HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
                     Text("Used")
                     Spacer()
                     Text("\(secondsToFullTime(client.timeUsed))")
                         .monospaced()
                 })
+                .opacity(0.5)
             }
 
             if !client.sessions.isEmpty {
@@ -59,6 +74,7 @@ struct showClient: View {
                                 Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
                                     .monospaced()
                             }
+                            .opacity(0.5)
                         }
                     }
                 }
@@ -66,8 +82,14 @@ struct showClient: View {
 
             Section("Time Additions") {
                 Button("Add Time") {
-                    print("add time function")
+                    addTimeModal = true
                 }
+                .sheet(isPresented: self.$addTimeModal) {
+                    NavigationStack {
+                        newTimeAdditionModal(clientPassed: client)
+                    }
+                }
+
                 if !client.timeAdditions.isEmpty {
                     ForEach(sortedAdditions) { addition in
                         VStack {
@@ -77,12 +99,25 @@ struct showClient: View {
                                 Text(String("\(secondsToFullTime(addition.timeAdded))"))
                                     .monospaced()
                             }
+                            .opacity(0.5)
                         }
                     }
                 }
             }
+
+            Button("Delete Client", role: .destructive) {
+                deleteConfirmationShow = true
+            }
         }
         .navigationTitle(client.name)
+        .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
+            Button("Yes, delete it.", role: .destructive) {
+                modelContext.delete(client)
+                dismiss()
+            }
+        } message: {
+            Text("Are you sure? You can't undo this.")
+        }
     }
 }
 

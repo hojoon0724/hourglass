@@ -13,7 +13,7 @@ struct ClientsPage: View {
     @Query(sort: \Client.name) private var clients: [Client]
     @State private var show_modal: Bool = false
 
-    var body: some View {           
+    var body: some View {
         VStack {
             NavigationSplitView {
                 List {
@@ -49,7 +49,7 @@ struct ClientsPage: View {
                             }
                             .sheet(isPresented: self.$show_modal) {
                                 NavigationStack {
-                                    addClientForm()
+                                    newClientModal()
                                 }
                             }
                         }

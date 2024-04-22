@@ -41,14 +41,17 @@ struct TimerPage: View {
                                         .font(.caption)
                                 })
                             })
+
                             Spacer()
                         }
                         .flippedUpsideDown()
                     }
+//                    .onDelete(perform: deleteSession)
                 }
                 .frame(maxWidth: .infinity)
                 .defaultScrollAnchor(.top)
                 .flippedUpsideDown()
+
                 //            Button + Timer - Refactor as component
                 Button(action: { self.newSessionModal = true }, label: {
                     HStack(content: {

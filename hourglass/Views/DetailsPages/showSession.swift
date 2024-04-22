@@ -17,6 +17,8 @@ struct showSession: View {
     @Query(sort: \Client.name) private var clientList: [Client]
     @State private var now: Date = .now
 
+    @State var confirmationShow = false
+
     var body: some View {
         Form {
             Section(header: Text("Time")) {
@@ -60,6 +62,10 @@ struct showSession: View {
                 }
                 .pickerStyle(.automatic)
             }
+
+            Button("Delete Session", role: .destructive) {
+                confirmationShow = true
+            }
         }
         .navigationTitle("Session")
         .toolbar {
@@ -69,6 +75,15 @@ struct showSession: View {
                     dismiss()
                 }
             }
+        }
+        .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
+            Button("Yes, delete it.", role: .destructive) {
+                print(session.startTime)
+                modelContext.delete(session)
+                dismiss()
+            }
+        } message: {
+            Text("Are you sure? You can't undo this.")
         }
     }
 }
