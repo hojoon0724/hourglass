@@ -63,16 +63,6 @@ struct newTimeAdditionModal: View {
                     newTimeAddition.timeAdded = fullTimeToSeconds(hours ?? 0, minutes ?? 0, 0)
                     modelContext.insert(newTimeAddition)
                     clientPassed.timeAdditions.append(newTimeAddition)
-
-                    print(clientPassed)
-                    print(newTimeAddition.id)
-                    print(newTimeAddition.timeStamp)
-                    print(newTimeAddition.timeAdded)
-                    print(newTimeAddition.client ?? "")
-
-//                    modelContext.insert(newTimeAddition)
-//                    clientPassed.timeAdditions.append(newTimeAddition)
-
                     dismiss()
                 }
                 .disabled(clientPassed.name.isEmpty)

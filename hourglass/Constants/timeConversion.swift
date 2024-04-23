@@ -14,6 +14,13 @@ func fullTimeToSeconds(_ hour: Int, _ minute: Int, _ second: Int) -> Int {
 }
 
 func secondsToFullTime(_ seconds: Int) -> String {
+    if seconds < 0 {
+        let positiveSeconds = seconds * -1
+        let hr = convertToTwoDigits(positiveSeconds / 3600)
+        let min = convertToTwoDigits((positiveSeconds % 3600) / 60)
+        let sec = convertToTwoDigits((positiveSeconds % 3600) % 60)
+        return "-\(hr):\(min):\(sec)"
+    }
     let hr = convertToTwoDigits(seconds / 3600)
     let min = convertToTwoDigits((seconds % 3600) / 60)
     let sec = convertToTwoDigits((seconds % 3600) % 60)

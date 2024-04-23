@@ -92,13 +92,14 @@ struct showClient: View {
 
                 if !client.timeAdditions.isEmpty {
                     ForEach(sortedAdditions) { addition in
-                        VStack {
+                        NavigationLink(destination: showTimeAddition(timeAddition: addition)) {
                             HStack {
                                 Text(String("\(addition.timeStamp.formatted())"))
                                 Spacer()
                                 Text(String("\(secondsToFullTime(addition.timeAdded))"))
                                     .monospaced()
                             }
+
                             .opacity(0.5)
                         }
                     }
@@ -116,13 +117,13 @@ struct showClient: View {
                 dismiss()
             }
         } message: {
-            Text("Are you sure? You can't undo this.")
+            Text("Are you sure? This will delete the client and all associated data. This cannot be undone.")
         }
     }
 }
 
 #Preview {
-    NavigationStack {
+    NavigationView {
         showClient(client: SampleData.shared.client)
     }
 }

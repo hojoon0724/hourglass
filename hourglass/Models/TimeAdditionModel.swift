@@ -10,14 +10,12 @@ import SwiftData
 
 @Model
 final class TimeAddition {
-    var id: UUID
     var timeStamp: Date
     var timeAdded: Int
     var rate: Int?
     var client: Client?
 
-    init(id: UUID = UUID(), timeStamp: Date, timeAdded: Int, rate: Int? = nil, client: Client? = nil) {
-        self.id = id
+    init(timeStamp: Date, timeAdded: Int, rate: Int? = nil, client: Client? = nil) {
         self.timeStamp = timeStamp
         self.timeAdded = timeAdded
         self.rate = rate

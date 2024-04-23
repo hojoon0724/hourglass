@@ -15,7 +15,7 @@ struct ClientsPage: View {
 
     var body: some View {
         VStack {
-            NavigationSplitView {
+            NavigationView {
                 List {
                     ForEach(clients) { client in
                         NavigationLink(destination: showClient(client: client)) {
@@ -26,6 +26,7 @@ struct ClientsPage: View {
                                     .monospaced()
                             })
                         }
+                        .listRowBackground(client.timeAdded < 14400 ? Color.yellow : Color.clear).ignoresSafeArea()
                     }
                     .onDelete(perform: deleteItems)
                 }
@@ -54,9 +55,9 @@ struct ClientsPage: View {
                             }
                         }
                     }
-            } detail: {
-                Text("Select an item")
-                    .navigationTitle("Clients")
+//            } detail: {
+//                Text("Select an item")
+//                    .navigationTitle("Clients")
             }
         }
     }

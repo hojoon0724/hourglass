@@ -78,7 +78,6 @@ struct showSession: View {
         }
         .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
             Button("Yes, delete it.", role: .destructive) {
-                print(session.startTime)
                 modelContext.delete(session)
                 dismiss()
             }
