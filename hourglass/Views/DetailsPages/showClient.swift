@@ -31,7 +31,7 @@ struct showClient: View {
 
     var body: some View {
         List {
-            Section("") {
+            Section {
                 HStack {
                     Text("Name")
                     Spacer()
@@ -110,6 +110,7 @@ struct showClient: View {
                 deleteConfirmationShow = true
             }
         }
+        .listStyle(.grouped)
         .navigationTitle(client.name)
         .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
             Button("Yes, delete it.", role: .destructive) {

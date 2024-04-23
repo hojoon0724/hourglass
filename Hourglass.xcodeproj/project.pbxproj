@@ -22,6 +22,7 @@
 		1F171D982BC2244600AB5DA4 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D972BC2244600AB5DA4 /* Project.swift */; };
 		1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */; };
 		1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46AC2BC6284900F62A27 /* timerModels.swift */; };
+		1F43C0A82BD82C1B001C869D /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F43C0A72BD82C1B001C869D /* EmailController.swift */; };
 		1F4EB4402BD7118700326041 /* showTimeAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EB43F2BD7118700326041 /* showTimeAddition.swift */; };
 		1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75F1C92BD1E1050099F127 /* SessionActions.swift */; };
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
@@ -69,6 +70,7 @@
 		1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = bottomScrollView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F2A46AC2BC6284900F62A27 /* timerModels.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = timerModels.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		1F43C0A72BD82C1B001C869D /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		1F4EB43F2BD7118700326041 /* showTimeAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showTimeAddition.swift; sourceTree = "<group>"; };
 		1F75F1C92BD1E1050099F127 /* SessionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActions.swift; sourceTree = "<group>"; };
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				1FEEDF0C2BCA254E00E28DF3 /* testTimerLogData.swift */,
 				1F0D00492BCF6BB4004FFD30 /* SampleData.swift */,
 				1F86A9DA2BD4C2DE00718DDA /* borders.swift */,
+				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				1FEEDF0D2BCA254E00E28DF3 /* testTimerLogData.swift in Sources */,
 				1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */,
 				1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */,
+				1F43C0A82BD82C1B001C869D /* EmailController.swift in Sources */,
 				1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */,
 				1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */,
 				1F9C17002BC9734B0032AA56 /* testData.swift in Sources */,

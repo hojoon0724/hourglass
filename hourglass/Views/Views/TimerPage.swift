@@ -48,6 +48,7 @@ struct TimerPage: View {
                     }
 //                    .onDelete(perform: deleteSession)
                 }
+                .listStyle(.grouped)
                 .frame(maxWidth: .infinity)
                 .defaultScrollAnchor(.top)
                 .flippedUpsideDown()

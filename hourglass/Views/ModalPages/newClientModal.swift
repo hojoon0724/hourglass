@@ -22,7 +22,7 @@ struct newClientModal: View {
     @State var confirmationShow = false
 
     var body: some View {
-        Form {
+        List {
             Section(header: Text("Client")) {
                 HStack(alignment: .center, content: {
                     Text("Name")
@@ -46,6 +46,7 @@ struct newClientModal: View {
                 })
             }
         }
+        .listStyle(.grouped)
         .navigationTitle("New Client")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {

@@ -19,9 +19,43 @@ struct SettingsPage: View {
             .fontWeight(.bold)
             .multilineTextAlignment(.leading)
             List {
-                Text("setting1")
-                Text("setting2")
+                Section {
+//                    NavigationLink {
+                    Text("Notification")
+                    HStack {
+                        Text("Alert below")
+                        Spacer()
+                        Text("02:00:00")
+                            .monospaced()
+                    }
+//                    }
+                } header: {
+                    Text("Not functional yet")
+                }
+
+                Section {
+                    Button(action: {
+                        EmailController.shared.sendEmail(subject: "Hourglass Feedback", body: "", to: "hojoon.kim@iCloud.com")
+                    }) {
+                        Text("Email Feedback")
+                    }
+                } header: {
+                    Text("Feedback")
+                } footer: {
+                    Text("Help me make it better! \nSend me your feature requests or bug reports anytime")
+                }
+
+                Section {
+                } footer: {
+                    HStack {
+                        Spacer()
+                        Text("Version 0.1")
+                            .font(.subheadline)
+                        Spacer()
+                    }
+                }
             }
+            .listStyle(.grouped)
         })
     }
 }

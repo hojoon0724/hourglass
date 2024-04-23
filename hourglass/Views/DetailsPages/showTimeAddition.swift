@@ -22,7 +22,7 @@ struct showTimeAddition: View {
     @State var confirmationShow = false
 
     var body: some View {
-        Form {
+        List {
             Section(header: Text("Time to add")) {
                 HStack(alignment: .center, content: {
                     Text("Hours")
@@ -45,6 +45,7 @@ struct showTimeAddition: View {
                 confirmationShow = true
             }
         }
+        .listStyle(.grouped)
         .navigationTitle("Time Addition")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {

@@ -20,7 +20,7 @@ struct showSession: View {
     @State var confirmationShow = false
 
     var body: some View {
-        Form {
+        List {
             Section(header: Text("Time")) {
                 HStack(content: {
                     DatePicker("Start", selection: $session.startTime)
@@ -68,6 +68,7 @@ struct showSession: View {
             }
         }
         .navigationTitle("Session")
+        .listStyle(.grouped)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {

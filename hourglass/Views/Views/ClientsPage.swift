@@ -31,6 +31,7 @@ struct ClientsPage: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
+                .listStyle(.grouped)
                 .navigationTitle("Clients")
                 #if os(macOS)
                     .navigationSplitViewColumnWidth(min: 180, ideal: 200)

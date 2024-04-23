@@ -31,7 +31,7 @@ struct newTimeAdditionModal: View {
     @State private var now: Date = .now
 
     var body: some View {
-        Form {
+        List {
             Section(header: Text("Client")) {
                 HStack(alignment: .center, content: {
                     Text("Name")
@@ -56,6 +56,7 @@ struct newTimeAdditionModal: View {
                 })
             }
         }
+        .listStyle(.grouped)
         .navigationTitle("New Client")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {

@@ -49,6 +49,7 @@ struct ProjectsPage: View {
 //                        }
 //                    }
                 }
+                .listStyle(.grouped)
                 .navigationTitle("Projects")
                 //                    .onDelete(perform: deleteItems)
                 #if os(macOS)
