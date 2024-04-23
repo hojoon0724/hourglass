@@ -26,7 +26,8 @@ struct ClientsPage: View {
                                     .monospaced()
                             })
                         }
-                        .listRowBackground(client.timeAdded < 14400 ? Color.yellow : Color.clear).ignoresSafeArea()
+                        .listRowBackground(client.timeAdded < 14400 ? Color.yellow : nil)
+                        .foregroundColor(client.timeAdded < 14400 ? .black : nil)
                     }
                     .onDelete(perform: deleteItems)
                 }
