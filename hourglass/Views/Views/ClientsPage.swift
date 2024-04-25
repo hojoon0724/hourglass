@@ -18,13 +18,10 @@ struct ClientsPage: View {
             List {
                 ForEach(clients) { client in
                     NavigationLink(destination: showClient(client: client)) {
-//                            VStack(alignment: .leading, content: {
-//                                Text("\(client.name)")
-//                                Text(secondsToFullTime(client.timeAdded - client.timeUsed))
-//                                    .font(.caption)
-//                                    .monospaced()
-//                            })
                         HStack {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(customColors[client.color])
+                                .shadow(radius: 3)
                             Text("\(client.name)")
                             Spacer()
                             Text(secondsToFullTime(client.timeAdded - client.timeUsed))
@@ -51,7 +48,6 @@ struct ClientsPage: View {
                     ToolbarItem {
                         Button("Add Item", systemImage: "plus") {
                             self.show_modal = true
-                            
                         }
                         .sheet(isPresented: self.$show_modal) {
                             NavigationStack {

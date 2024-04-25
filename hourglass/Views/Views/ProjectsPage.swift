@@ -32,6 +32,7 @@ struct ProjectsPage: View {
                             Image(systemName: "circle.fill")
                                 .foregroundColor(project.color)
                                 .padding(.trailing, 10)
+                                .shadow(radius: 3)
                             VStack(alignment: .leading, content: {
                                 Text("\(project.name)")
                                 Text("\(project.clientName)")

@@ -12,6 +12,7 @@ struct showClient: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    var colorList: Array = colorArray
 
     @State var confirmationShow = false
     @State var addTimeModal = false
@@ -37,6 +38,22 @@ struct showClient: View {
                     Spacer()
                     TextField("Required", text: $client.name, prompt: Text("Required"))
                         .multilineTextAlignment(.trailing)
+                        .textInputAutocapitalization(.words)
+                }
+                HStack {
+                    Picker("Color", selection: $client.color) {
+                        ForEach(colorList, id: \.self) { color in
+                            HStack {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(customColors[color])
+                                    .padding(.trailing, 10)
+                                    .shadow(radius: 3)
+                                    .tag(color as String)
+                                Text(color)
+                            }
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
                 }
             }
             HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
@@ -109,6 +126,11 @@ struct showClient: View {
             Button("Delete Client", role: .destructive) {
                 deleteConfirmationShow = true
             }
+        }
+        .onAppear {
+//            ForEach(colorList) { color in
+//                print(color)
+//            }
         }
         .listStyle(.grouped)
         .navigationTitle(client.name)

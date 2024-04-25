@@ -29,8 +29,9 @@ struct TimerPage: View {
                             HStack(content: {
                                 Image(systemName: "circle.fill")
                                     // change color to variable
-                                    .foregroundColor(.red)
+                                    .foregroundColor(customColors[session.client?.color ?? "None"])
                                     .padding(.trailing, 10)
+                                    .shadow(radius: 3)
 
                                 VStack(alignment: .leading, content: {
                                     Text(session.secondsElapsed != nil ? secondsToFullTime(session.secondsElapsed!) : "Running")
@@ -76,12 +77,11 @@ struct TimerPage: View {
                     VStack(alignment: .trailing, content: {
                         HStack(content: {
                             Image(systemName: "circle.fill")
-                                // change color to variable
-                                .foregroundColor(.red)
+                                .foregroundColor(customColors[newSession.client?.color ?? "None"])
+                                .shadow(radius: 3)
                             Text("\(secondsToFullTime(clock))")
                                 .monospaced()
                                 .font(.system(size: 24))
-
                         })
 
                         HStack(content: {
@@ -99,7 +99,7 @@ struct TimerPage: View {
                 }
                 .border(width: 1, edges: [.top], color: .gray.opacity(0.5))
             })
-            }
+        }
     }
 
     func startSession() {

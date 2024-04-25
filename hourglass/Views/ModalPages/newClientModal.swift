@@ -28,6 +28,7 @@ struct newClientModal: View {
                     Text("Name")
                     TextField("Required", text: $newClient.name, prompt: Text("Required"))
                         .multilineTextAlignment(.trailing)
+                        .textInputAutocapitalization(.words)
                 })
             }
 

@@ -53,18 +53,23 @@ struct showSession: View {
                 })
             }
 
-            Section(header: Text("")) {
-                Picker("Client", selection: $session.client) {
-                    Text("None").tag(nil as Client?)
-                    ForEach(clientList) { client in
-                        Text(client.name).tag(client as Client?)
+            Section {
+                HStack {
+                    Text("Client")
+                    Spacer()
+                        .foregroundColor(customColors[session.client?.color ?? "None"])
+                    Picker("", selection: $session.client) {
+                        Text("None").tag(nil as Client?)
+                        ForEach(clientList) { client in
+                            Text(client.name).tag(client as Client?)
+                        }
                     }
+                    .pickerStyle(.automatic)
                 }
-                .pickerStyle(.automatic)
-            }
 
-            Button("Delete Session", role: .destructive) {
-                confirmationShow = true
+                Button("Delete Session", role: .destructive) {
+                    confirmationShow = true
+                }
             }
         }
         .navigationTitle("Session")
