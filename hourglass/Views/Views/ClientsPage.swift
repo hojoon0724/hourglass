@@ -14,53 +14,53 @@ struct ClientsPage: View {
     @State private var show_modal: Bool = false
 
     var body: some View {
-        VStack {
-            NavigationView {
-                List {
-                    ForEach(clients) { client in
-                        NavigationLink(destination: showClient(client: client)) {
-                            VStack(alignment: .leading, content: {
-                                Text("\(client.name)")
-                                Text(secondsToFullTime(client.timeAdded - client.timeUsed))
-                                    .font(.caption)
-                                    .monospaced()
-                            })
+        NavigationStack {
+            List {
+                ForEach(clients) { client in
+                    NavigationLink(destination: showClient(client: client)) {
+//                            VStack(alignment: .leading, content: {
+//                                Text("\(client.name)")
+//                                Text(secondsToFullTime(client.timeAdded - client.timeUsed))
+//                                    .font(.caption)
+//                                    .monospaced()
+//                            })
+                        HStack {
+                            Text("\(client.name)")
+                            Spacer()
+                            Text(secondsToFullTime(client.timeAdded - client.timeUsed))
+                                .font(.subheadline)
+                                .monospaced()
                         }
-                        .listRowBackground(client.timeAdded < 14400 ? Color.yellow : nil)
-                        .foregroundColor(client.timeAdded < 14400 ? .black : nil)
                     }
-                    .onDelete(perform: deleteItems)
+                    .listRowBackground(client.timeAdded <= 3600 ? Color.red : client.timeAdded <= 7200 ? Color.yellow : nil)
+                    .foregroundColor(client.timeAdded <= 3600 ? Color.white : client.timeAdded <= 7200 ? Color.black : nil)
                 }
-                .listStyle(.grouped)
-                .navigationTitle("Clients")
-                #if os(macOS)
-                    .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-                #endif
+                .onDelete(perform: deleteItems)
+            }
+            .listStyle(.grouped)
+            #if os(macOS)
+                .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+            #endif
 //                      add + edit buttons
-                    .toolbar {
-                        #if os(iOS)
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                EditButton()
-                            }
-                        #endif
-                        ToolbarItem {
-                            Button(action: {
-                                self.show_modal = true
-                            }
-                            ) {
-                                Label("Add Item", systemImage: "plus")
-                            }
-                            .sheet(isPresented: self.$show_modal) {
-                                NavigationStack {
-                                    newClientModal()
-                                }
+                .toolbar {
+                    #if os(iOS)
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton()
+                        }
+                    #endif
+                    ToolbarItem {
+                        Button("Add Item", systemImage: "plus") {
+                            self.show_modal = true
+                            
+                        }
+                        .sheet(isPresented: self.$show_modal) {
+                            NavigationStack {
+                                newClientModal()
                             }
                         }
+                        .navigationTitle("Clients")
                     }
-//            } detail: {
-//                Text("Select an item")
-//                    .navigationTitle("Clients")
-            }
+                }
         }
     }
 

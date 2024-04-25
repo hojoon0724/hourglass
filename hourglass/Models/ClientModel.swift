@@ -33,27 +33,27 @@ final class Client {
     static let sampleData = [
         Client(
             id: UUID(uuidString: "9A45A7C6-B833-4C41-B34D-8DDDDCAB8C18")!,
-            name: "Digital Dynamics",
+            name: "Boring Company",
             color: "000000"
         ),
         Client(
             id: UUID(uuidString: "21A5BC17-6843-495F-A73C-AD3E4B95CF96")!,
-            name: "GlobalTech Enterprises",
+            name: "HudsonAlpha",
             color: "000000"
         ),
         Client(
             id: UUID(uuidString: "F219D5ED-1C59-40E5-B243-4B6A16B8F36B")!,
-            name: "InnovateX Solutions",
+            name: "Scuderia Ferrari",
             color: "000000"
         ),
         Client(
             id: UUID(uuidString: "9245B764-725C-4911-8F7F-FBB9A107EBC9")!,
-            name: "SmartTech Solutions",
+            name: "Syncopy",
             color: "000000"
         ),
         Client(
             id: UUID(uuidString: "E893AF78-7C9C-4417-A1DC-F97B82DD7A57")!,
-            name: "TechSolutions",
+            name: "NBCUniversal",
             color: "000000"
         ),
     ]

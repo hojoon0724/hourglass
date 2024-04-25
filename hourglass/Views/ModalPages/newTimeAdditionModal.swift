@@ -57,7 +57,7 @@ struct newTimeAdditionModal: View {
             }
         }
         .listStyle(.grouped)
-        .navigationTitle("New Client")
+//        .navigationTitle("New Client")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {
@@ -70,20 +70,27 @@ struct newTimeAdditionModal: View {
             }
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
-                    confirmationShow = true
+                    dismiss()
                 }
             }
-        }
-        .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
-            Button("Yes, delete it.", role: .destructive) {
-                dismiss()
-            }
-        } message: {
-            Text("Are you sure? You can't undo this.")
         }
     }
 }
 
 #Preview {
-    newTimeAdditionModal(clientPassed: SampleData.shared.client)
+    NavigationStack {
+        VStack {
+            Spacer()
+            Button("Show Modal") {
+            }
+            .padding()
+        }
+        .sheet(isPresented: .constant(true)) {
+            NavigationView {
+                newTimeAdditionModal(clientPassed: SampleData.shared.client)
+                    .modelContainer(SampleData.shared.modelContainer)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
 }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "HourglassLogo.svg",
+      "filename" : "Hourglass - App Symbol.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Hourglass - App Symbol 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Hourglass - App Symbol 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

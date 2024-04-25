@@ -72,7 +72,6 @@ struct showSession: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
-                    session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
                     dismiss()
                 }
             }
