@@ -56,12 +56,13 @@ struct showClient: View {
                     .pickerStyle(.navigationLink)
                 }
             }
-            HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+
+            HStack {
                 Text("Remaining Time")
                 Spacer()
                 Text("\(secondsToFullTime(client.timeAdded - client.timeUsed))")
                     .monospaced()
-            })
+            }
             .opacity(0.5)
 
             Section("Lifetime") {
@@ -83,16 +84,20 @@ struct showClient: View {
 
             if !client.sessions.isEmpty {
                 Section("Sessions") {
-                    ForEach(sortedSessions) { session in
-                        VStack {
-                            HStack {
-                                Text(String("\(session.startTime.formatted())"))
-                                Spacer()
-                                Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
-                                    .monospaced()
-                            }
-                            .opacity(0.5)
+                    ForEach(sortedSessions.prefix(5)) { session in
+                        HStack {
+                            Text(String("\(session.startTime.formatted())"))
+                            Spacer()
+                            Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
+                                .monospaced()
                         }
+                        .opacity(0.5)
+                    }
+                    if sortedSessions.count > 5 {
+                        Button("See all sessions") {
+                            showAllSessions()
+                        }
+                    } else {
                     }
                 }
             }

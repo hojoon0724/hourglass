@@ -20,5 +20,51 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D525A6F-2573-49E1-821E-6C40C55A0D7A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hourglass/Views/DetailsPages/showTimeAddition.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "showTimeAddition"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9D525A6F-2573-49E1-821E-6C40C55A0D7A - 59366e65ce94772f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Hourglass.showTimeAddition.now : Foundation.Date"
+                  moduleName = "Hourglass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Views/DetailsPages/showTimeAddition.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17">
+               </Location>
+               <Location
+                  uuid = "9D525A6F-2573-49E1-821E-6C40C55A0D7A - 7a4e8a60ee1bbf1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hourglass.showTimeAddition.init(timeAddition: Hourglass.TimeAddition, confirmationShow: Swift.Bool) -&gt; Hourglass.showTimeAddition"
+                  moduleName = "Hourglass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Views/DetailsPages/showTimeAddition.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

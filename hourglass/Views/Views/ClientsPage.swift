@@ -29,8 +29,8 @@ struct ClientsPage: View {
                                 .monospaced()
                         }
                     }
-                    .listRowBackground(client.timeAdded <= 3600 ? Color.red : client.timeAdded <= 7200 ? Color.yellow : nil)
-                    .foregroundColor(client.timeAdded <= 3600 ? Color.white : client.timeAdded <= 7200 ? Color.black : nil)
+                    .listRowBackground(client.timeAdded - client.timeUsed <= 3600 ? Color.red : client.timeAdded - client.timeUsed <= 7200 ? Color.yellow : nil)
+                    .foregroundColor(client.timeAdded - client.timeUsed <= 3600 ? Color.white : client.timeAdded - client.timeUsed <= 7200 ? Color.black : nil)
                 }
                 .onDelete(perform: deleteItems)
             }

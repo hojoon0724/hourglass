@@ -12,8 +12,8 @@ struct newClientModal: View {
     @Environment(\.dismiss) private var dismiss
     @State var newClient: Client = Client(name: "", color: "")
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
-    @State var hours: Int?
-    @State var minutes: Int?
+    @State var hours: Double = 0
+    @State var minutes: Double = 0
 
     @State var clientColor = Color.gray
 
@@ -31,20 +31,29 @@ struct newClientModal: View {
                         .textInputAutocapitalization(.words)
                 })
             }
-
-            Section(header: Text("Initial Time")) {
-                HStack(alignment: .center, content: {
-                    Text("Hours")
-                    TextField("Enter Hours", value: $hours, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-                HStack(alignment: .center, content: {
-                    Text("Minutes")
-                    TextField("Enter Minutes", value: $minutes, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
+            Section{
+                HStack {
+                    Spacer()
+                    Text("Time to add")
+                        .font(.title3)
+                    Spacer()
+                    TextFieldStepper(
+                        doubleValue: $hours,
+                        unit: "h",
+                        label: ""
+                    )
+                    
+                    TextFieldStepper(
+                        doubleValue: $minutes,
+                        unit: "m",
+                        label: "",
+                        maximum: 59
+                    )
+                    Spacer()
+                }
+                .padding()
+            } header: {
+                Text("Initial Time")
             }
         }
         .listStyle(.grouped)
@@ -52,7 +61,7 @@ struct newClientModal: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {
-                    newTimeAddition.timeAdded = fullTimeToSeconds(hours ?? 0, minutes ?? 0, 0)
+                    newTimeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
                     modelContext.insert(newClient)
                     modelContext.insert(newTimeAddition)
                     newClient.timeAdditions.append(newTimeAddition)

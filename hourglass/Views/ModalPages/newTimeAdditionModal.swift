@@ -19,8 +19,9 @@ struct newTimeAdditionModal: View {
     }
 
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
-    @State var hours: Int?
-    @State var minutes: Int?
+
+    @State private var hours: Double = 0
+    @State private var minutes: Double = 0
 
     @State var clientColor = Color.gray
 
@@ -31,46 +32,58 @@ struct newTimeAdditionModal: View {
     @State private var now: Date = .now
 
     var body: some View {
-        List {
-            Section(header: Text("Client")) {
-                HStack(alignment: .center, content: {
-                    Text("Name")
-                    Spacer()
-                    Text("\(clientPassed.name)")
-                        .multilineTextAlignment(.trailing)
-                })
+        VStack {
+            List {
+                Section(header: Text("Client")) {
+                    HStack(alignment: .center, content: {
+                        Text("Name")
+                        Spacer()
+                        Text("\(clientPassed.name)")
+                            .multilineTextAlignment(.trailing)
+                    })
+                }
+                Section {
+                    HStack {
+                        Spacer()
+                        Text("Time to add")
+                            .font(.title3)
+                        Spacer()
+                        TextFieldStepper(
+                            doubleValue: $hours,
+                            unit: "h",
+                            label: ""
+                        )
+
+                        TextFieldStepper(
+                            doubleValue: $minutes,
+                            unit: "m",
+                            label: "",
+                            maximum: 59
+                        )
+                        Spacer()
+                    }
+                    .padding()
+                } header: {
+                    Text("Additional Time")
+                }
             }
 
-            Section(header: Text("Time to add")) {
-                HStack(alignment: .center, content: {
-                    Text("Hours")
-                    TextField("Enter Hours", value: $hours, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-                HStack(alignment: .center, content: {
-                    Text("Minutes")
-                    TextField("Enter Minutes", value: $minutes, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-            }
-        }
-        .listStyle(.grouped)
-//        .navigationTitle("New Client")
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Add") {
-                    newTimeAddition.timeAdded = fullTimeToSeconds(hours ?? 0, minutes ?? 0, 0)
-                    modelContext.insert(newTimeAddition)
-                    clientPassed.timeAdditions.append(newTimeAddition)
-                    dismiss()
+            .listStyle(.grouped)
+            //        .navigationTitle("New Client")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add") {
+                        newTimeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+                        modelContext.insert(newTimeAddition)
+                        clientPassed.timeAdditions.append(newTimeAddition)
+                        dismiss()
+                    }
+                    .disabled(clientPassed.name.isEmpty)
                 }
-                .disabled(clientPassed.name.isEmpty)
-            }
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
             }
         }

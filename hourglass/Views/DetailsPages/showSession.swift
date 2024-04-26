@@ -26,6 +26,7 @@ struct showSession: View {
                     DatePicker("Start", selection: $session.startTime)
                         .onChange(of: session.startTime) {
                             session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
+                            session.editedTimestamp = .now
                         }
                 })
                 HStack(content: {
@@ -41,6 +42,7 @@ struct showSession: View {
                         DatePicker("", selection: Binding<Date>($session.endTime)!)
                             .onChange(of: session.endTime) {
                                 session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
+                                session.editedTimestamp = .now
                             }
                     }
 
@@ -65,11 +67,18 @@ struct showSession: View {
                         }
                     }
                     .pickerStyle(.automatic)
+                    .onChange(of: session.client) {
+                        session.editedTimestamp = .now
+                    }
                 }
+            }
 
+            Section {
                 Button("Delete Session", role: .destructive) {
                     confirmationShow = true
                 }
+            } footer: {
+                Text("Last edited: \(session.editedTimestamp.formatted())")
             }
         }
         .navigationTitle("Session")

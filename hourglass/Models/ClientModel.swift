@@ -33,7 +33,7 @@ final class Client {
     static let sampleData = [
         Client(
             id: UUID(uuidString: "9A45A7C6-B833-4C41-B34D-8DDDDCAB8C18")!,
-            name: "Boring Company",
+            name: "The Boring Company",
             color: "Black"
         ),
         Client(

@@ -16,33 +16,55 @@ struct showTimeAddition: View {
 
     @State private var now: Date = .now
 
-    @State private var hours: Int = 0
-    @State private var minutes: Int = 0
+    @State private var hours: Double = 0
+    @State private var minutes: Double = 0
 
     @State var confirmationShow = false
 
     var body: some View {
         List {
-            Section(header: Text("Time to add")) {
-                HStack(alignment: .center, content: {
-                    Text("Hours")
-                    TextField("Enter Hours", value: $hours, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-                HStack(alignment: .center, content: {
-                    Text("Minutes")
-                    TextField("Enter Minutes", value: $minutes, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-            }
+//            Section(header: Text("Time to add")) {
+//                HStack(alignment: .center, content: {
+//                    Text("Hours")
+//                    TextField("Enter Hours", value: $hours, format: .number)
+//                        .keyboardType(.numberPad)
+//                        .multilineTextAlignment(.trailing)
+//                })
+//                HStack(alignment: .center, content: {
+//                    Text("Minutes")
+//                    TextField("Enter Minutes", value: $minutes, format: .number)
+//                        .keyboardType(.numberPad)
+//                        .multilineTextAlignment(.trailing)
+//                })
+//            }
+            HStack {
+                Spacer()
+                Text("Time added")
+                    .font(.title3)
+                Spacer()
+                TextFieldStepper(
+                    doubleValue: $hours,
+                    unit: "h",
+                    label: ""
+                )
 
-            Section(header: Text("Last edited: \(timeAddition.timeStamp.formatted())")) {
+                TextFieldStepper(
+                    doubleValue: $minutes,
+                    unit: "m",
+                    label: "",
+                    maximum: 59
+                )
+                Spacer()
             }
-
-            Button("Delete Time Addition", role: .destructive) {
-                confirmationShow = true
+            .padding()
+            Section {
+                Button("Delete Time Addition", role: .destructive) {
+                    confirmationShow = true
+                }
+            } header: {
+                Spacer()
+            } footer: {
+                Text("Last edited: \(timeAddition.timeStamp.formatted())")
             }
         }
         .listStyle(.grouped)
@@ -50,7 +72,7 @@ struct showTimeAddition: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
-                    timeAddition.timeAdded = fullTimeToSeconds(hours, minutes, 0)
+                    timeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
                     timeAddition.timeStamp = now
                     dismiss()
                 }
@@ -65,8 +87,8 @@ struct showTimeAddition: View {
             Text("Are you sure? You can't undo this.")
         }
         .onAppear(perform: {
-            hours = timeAddition.timeAdded / 3600
-            minutes = (timeAddition.timeAdded % 3600) / 3600
+            hours = Double(timeAddition.timeAdded / 3600)
+            minutes = Double((timeAddition.timeAdded % 3600) / 3600)
         })
     }
 }
