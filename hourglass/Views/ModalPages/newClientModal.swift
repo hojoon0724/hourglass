@@ -15,6 +15,8 @@ struct newClientModal: View {
     @State var hours: Double = 0
     @State var minutes: Double = 0
 
+    var colorList: Array = colorArray
+
     @State var clientColor = Color.gray
 
     @State var timeInSec: Int = 0
@@ -51,6 +53,21 @@ struct newClientModal: View {
                         .multilineTextAlignment(.trailing)
                         .textInputAutocapitalization(.words)
                 })
+                HStack {
+                    Picker("Color", selection: $newClient.color) {
+                        ForEach(colorList, id: \.self) { color in
+                            HStack {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(customColors[color])
+                                    .padding(.trailing, 10)
+                                    .shadow(radius: 3)
+                                    .tag(color as String)
+                                Text(color)
+                            }
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+                }
             }
         }
         .listStyle(.grouped)
