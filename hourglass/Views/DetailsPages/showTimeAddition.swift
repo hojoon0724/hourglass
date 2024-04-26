@@ -22,21 +22,7 @@ struct showTimeAddition: View {
     @State var confirmationShow = false
 
     var body: some View {
-        List {
-//            Section(header: Text("Time to add")) {
-//                HStack(alignment: .center, content: {
-//                    Text("Hours")
-//                    TextField("Enter Hours", value: $hours, format: .number)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.trailing)
-//                })
-//                HStack(alignment: .center, content: {
-//                    Text("Minutes")
-//                    TextField("Enter Minutes", value: $minutes, format: .number)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.trailing)
-//                })
-//            }
+        VStack {
             HStack {
                 Spacer()
                 Text("Time added")
@@ -54,21 +40,37 @@ struct showTimeAddition: View {
                     label: "",
                     maximum: 59
                 )
-                Spacer()
             }
             .padding()
-            Section {
-                Button("Delete Time Addition", role: .destructive) {
-                    confirmationShow = true
+            List {
+                //            Section(header: Text("Time to add")) {
+                //                HStack(alignment: .center, content: {
+                //                    Text("Hours")
+                //                    TextField("Enter Hours", value: $hours, format: .number)
+                //                        .keyboardType(.numberPad)
+                //                        .multilineTextAlignment(.trailing)
+                //                })
+                //                HStack(alignment: .center, content: {
+                //                    Text("Minutes")
+                //                    TextField("Enter Minutes", value: $minutes, format: .number)
+                //                        .keyboardType(.numberPad)
+                //                        .multilineTextAlignment(.trailing)
+                //                })
+                //            }
+
+                Section {
+                    Button("Delete Time Addition", role: .destructive) {
+                        confirmationShow = true
+                    }
+                } header: {
+                    Spacer()
+                } footer: {
+                    Text("Last edited: \(timeAddition.timeStamp.formatted())")
                 }
-            } header: {
-                Spacer()
-            } footer: {
-                Text("Last edited: \(timeAddition.timeStamp.formatted())")
             }
+            .listStyle(.grouped)
+            .navigationTitle("Time Addition")
         }
-        .listStyle(.grouped)
-        .navigationTitle("Time Addition")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {

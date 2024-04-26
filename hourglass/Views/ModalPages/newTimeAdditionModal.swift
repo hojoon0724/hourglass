@@ -33,6 +33,25 @@ struct newTimeAdditionModal: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                Text("Time to add")
+                    .font(.title3)
+                Spacer()
+                TextFieldStepper(
+                    doubleValue: $hours,
+                    unit: "h",
+                    label: ""
+                )
+
+                TextFieldStepper(
+                    doubleValue: $minutes,
+                    unit: "m",
+                    label: "",
+                    maximum: 59
+                )
+            }
+            .padding()
             List {
                 Section(header: Text("Client")) {
                     HStack(alignment: .center, content: {
@@ -41,30 +60,6 @@ struct newTimeAdditionModal: View {
                         Text("\(clientPassed.name)")
                             .multilineTextAlignment(.trailing)
                     })
-                }
-                Section {
-                    HStack {
-                        Spacer()
-                        Text("Time to add")
-                            .font(.title3)
-                        Spacer()
-                        TextFieldStepper(
-                            doubleValue: $hours,
-                            unit: "h",
-                            label: ""
-                        )
-
-                        TextFieldStepper(
-                            doubleValue: $minutes,
-                            unit: "m",
-                            label: "",
-                            maximum: 59
-                        )
-                        Spacer()
-                    }
-                    .padding()
-                } header: {
-                    Text("Additional Time")
                 }
             }
 

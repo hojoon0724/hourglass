@@ -22,6 +22,27 @@ struct newClientModal: View {
     @State var confirmationShow = false
 
     var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Time to add")
+                    .font(.title3)
+                Spacer()
+                TextFieldStepper(
+                    doubleValue: $hours,
+                    unit: "h",
+                    label: ""
+                )
+
+                TextFieldStepper(
+                    doubleValue: $minutes,
+                    unit: "m",
+                    label: "",
+                    maximum: 59
+                )
+            }
+            .padding()
+        }
         List {
             Section(header: Text("Client")) {
                 HStack(alignment: .center, content: {
@@ -31,33 +52,10 @@ struct newClientModal: View {
                         .textInputAutocapitalization(.words)
                 })
             }
-            Section{
-                HStack {
-                    Spacer()
-                    Text("Time to add")
-                        .font(.title3)
-                    Spacer()
-                    TextFieldStepper(
-                        doubleValue: $hours,
-                        unit: "h",
-                        label: ""
-                    )
-                    
-                    TextFieldStepper(
-                        doubleValue: $minutes,
-                        unit: "m",
-                        label: "",
-                        maximum: 59
-                    )
-                    Spacer()
-                }
-                .padding()
-            } header: {
-                Text("Initial Time")
-            }
         }
         .listStyle(.grouped)
         .navigationTitle("New Client")
+
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {

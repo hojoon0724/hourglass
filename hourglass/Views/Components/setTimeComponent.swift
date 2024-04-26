@@ -26,7 +26,6 @@ struct setTimeComponent: View {
                 maximum: 59
             )
         }
-        
     }
 }
 
