@@ -31,121 +31,131 @@ struct showClient: View {
     }
 
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Text("Name")
-                    Spacer()
-                    TextField("Required", text: $client.name, prompt: Text("Required"))
-                        .multilineTextAlignment(.trailing)
-                        .textInputAutocapitalization(.words)
-                }
-                HStack {
-                    Picker("Color", selection: $client.color) {
-                        ForEach(colorList, id: \.self) { color in
-                            HStack {
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(customColors[color])
-                                    .padding(.trailing, 10)
-                                    .shadow(radius: 3)
-                                    .tag(color as String)
-                                Text(color)
+        NavigationStack {
+            List {
+                Section {
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        TextField("Required", text: $client.name, prompt: Text("Required"))
+                            .multilineTextAlignment(.trailing)
+                            .textInputAutocapitalization(.words)
+                    }
+                    HStack {
+                        Picker("Color", selection: $client.color) {
+                            ForEach(colorList, id: \.self) { color in
+                                HStack {
+                                    Image(systemName: "circle.fill")
+                                        .foregroundColor(customColors[color])
+                                        .padding(.trailing, 10)
+                                        .shadow(radius: 3)
+                                        .tag(color as String)
+                                    Text(color)
+                                }
                             }
                         }
+                        .pickerStyle(.navigationLink)
                     }
-                    .pickerStyle(.navigationLink)
+                    Toggle(isOn: $client.active) {
+                        Text("Active")
+                    }
+                    Button("print") {
+                        print(client)
+                    }
                 }
-            }
 
-            HStack {
-                Text("Remaining Time")
-                Spacer()
-                Text("\(secondsToFullTime(client.timeAdded - client.timeUsed))")
-                    .monospaced()
-            }
-            .opacity(0.5)
-
-            Section("Lifetime") {
-                HStack(alignment: .center, content: {
-                    Text("Added")
+                HStack {
+                    Text("Remaining Time")
                     Spacer()
-                    Text("\(secondsToFullTime(client.timeAdded))")
+                    Text("\(secondsToFullTime(client.timeAdded - client.timeUsed))")
                         .monospaced()
-                })
+                }
                 .opacity(0.5)
-                HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-                    Text("Used")
-                    Spacer()
-                    Text("\(secondsToFullTime(client.timeUsed))")
-                        .monospaced()
-                })
-                .opacity(0.5)
-            }
 
-            if !client.sessions.isEmpty {
-                Section("Sessions") {
-                    ForEach(sortedSessions.prefix(5)) { session in
-                        HStack {
-                            Text(String("\(session.startTime.formatted())"))
-                            Spacer()
-                            Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
-                                .monospaced()
-                        }
-                        .opacity(0.5)
-                    }
-                    if sortedSessions.count > 5 {
-                        Button("See all sessions") {
-                            showAllSessions()
-                        }
-                    } else {
-                    }
-                }
-            }
-
-            Section("Time Additions") {
-                Button("Add Time") {
-                    addTimeModal = true
-                }
-                .sheet(isPresented: self.$addTimeModal) {
-                    NavigationStack {
-                        newTimeAdditionModal(clientPassed: client)
-                    }
+                Section("Lifetime") {
+                    HStack(alignment: .center, content: {
+                        Text("Added")
+                        Spacer()
+                        Text("\(secondsToFullTime(client.timeAdded))")
+                            .monospaced()
+                    })
+                    .opacity(0.5)
+                    HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                        Text("Used")
+                        Spacer()
+                        Text("\(secondsToFullTime(client.timeUsed))")
+                            .monospaced()
+                    })
+                    .opacity(0.5)
                 }
 
-                if !client.timeAdditions.isEmpty {
-                    ForEach(sortedAdditions) { addition in
-                        NavigationLink(destination: showTimeAddition(timeAddition: addition)) {
+                if !client.sessions.isEmpty {
+                    Section("Sessions") {
+                        ForEach(sortedSessions.prefix(3)) { session in
                             HStack {
-                                Text(String("\(addition.timeStamp.formatted())"))
+                                Text(String("\(session.startTime.formatted())"))
                                 Spacer()
-                                Text(String("\(secondsToFullTime(addition.timeAdded))"))
+                                Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
                                     .monospaced()
                             }
-
                             .opacity(0.5)
+                        }
+
+                        if sortedSessions.count > 3 {
+                            NavigationLink(destination: showAllSessions(sortedSessions: sortedSessions)) {
+                                Text("See all sessions")
+                                    .foregroundColor(.blue)
+                            }
+                        } else {
                         }
                     }
                 }
-            }
 
-            Button("Delete Client", role: .destructive) {
-                deleteConfirmationShow = true
+                Section("Time Additions") {
+                    Button("Add more time") {
+                        addTimeModal = true
+                    }
+                    .sheet(isPresented: self.$addTimeModal) {
+                        NavigationStack {
+                            newTimeAdditionModal(clientPassed: client)
+                        }
+                    }
+
+                    if !client.timeAdditions.isEmpty {
+                        ForEach(sortedAdditions) { addition in
+                            NavigationLink(destination: showTimeAddition(timeAddition: addition)) {
+                                HStack {
+                                    Text(String("\(addition.timeStamp.formatted())"))
+                                    Spacer()
+                                    Text(String("\(secondsToFullTime(addition.timeAdded))"))
+                                        .monospaced()
+                                }
+
+                                .opacity(0.5)
+                            }
+                        }
+                    }
+                }
+
+                Button("Delete Client", role: .destructive) {
+                    deleteConfirmationShow = true
+                }
             }
-        }
-        .onAppear {
-//            ForEach(colorList) { color in
-//                print(color)
-//            }
-        }
-        .listStyle(.grouped)
-        .navigationTitle(client.name)
-        .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
-            Button("Yes, delete it.", role: .destructive) {
-                modelContext.delete(client)
-                dismiss()
+            .onAppear {
+                //            ForEach(colorList) { color in
+                //                print(color)
+                //            }
             }
-        } message: {
-            Text("Are you sure? This will delete the client and all associated data. This cannot be undone.")
+            .listStyle(.grouped)
+            .navigationTitle(client.name)
+            .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
+                Button("Yes, delete it.", role: .destructive) {
+                    modelContext.delete(client)
+                    dismiss()
+                }
+            } message: {
+                Text("Are you sure? This will delete the client and all associated data. This cannot be undone.")
+            }
         }
     }
 }
@@ -153,5 +163,6 @@ struct showClient: View {
 #Preview {
     NavigationView {
         showClient(client: SampleData.shared.client)
+            .modelContainer(SampleData.shared.modelContainer)
     }
 }

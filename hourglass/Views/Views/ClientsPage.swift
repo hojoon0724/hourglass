@@ -16,23 +16,31 @@ struct ClientsPage: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(clients) { client in
-                    NavigationLink(destination: showClient(client: client)) {
-                        HStack {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(customColors[client.color])
-                                .shadow(radius: 3)
-                            Text("\(client.name)")
-                            Spacer()
-                            Text(secondsToFullTime(client.timeAdded - client.timeUsed))
-                                .font(.subheadline)
-                                .monospaced()
+                Section {
+                    ForEach(clients) { client in
+                        NavigationLink(destination: showClient(client: client)) {
+                            HStack {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(customColors[client.color])
+                                    .shadow(radius: 3)
+                                Text("\(client.name)")
+                                Spacer()
+                                Text(secondsToFullTime(client.timeAdded - client.timeUsed))
+                                    .font(.subheadline)
+                                    .monospaced()
+                            }
                         }
+                        .listRowBackground(client.timeAdded - client.timeUsed <= 3600 ? Color.red : client.timeAdded - client.timeUsed <= 7200 ? Color.yellow : nil)
+                        .foregroundColor(client.timeAdded - client.timeUsed <= 3600 ? Color.white : client.timeAdded - client.timeUsed <= 7200 ? Color.black : nil)
                     }
-                    .listRowBackground(client.timeAdded - client.timeUsed <= 3600 ? Color.red : client.timeAdded - client.timeUsed <= 7200 ? Color.yellow : nil)
-                    .foregroundColor(client.timeAdded - client.timeUsed <= 3600 ? Color.white : client.timeAdded - client.timeUsed <= 7200 ? Color.black : nil)
+                    .onDelete(perform: deleteItems)
+                } header: {
+                    Text("Active")
                 }
-                .onDelete(perform: deleteItems)
+                
+                Section {
+                    Text("Show all clients")
+                }
             }
             .listStyle(.grouped)
             #if os(macOS)

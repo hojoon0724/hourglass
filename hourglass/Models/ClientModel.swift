@@ -13,6 +13,7 @@ final class Client {
     var id: UUID
     @Attribute(.unique) var name: String
     var color: String
+    var active: Bool = true
 
     @Relationship(deleteRule: .cascade) var timeAdditions = [TimeAddition]()
     var timeAdded: Int {
@@ -28,6 +29,7 @@ final class Client {
         self.id = id
         self.name = name
         self.color = color
+        self.active = active
     }
 
     static let sampleData = [
