@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab = "TimerPage"
     @Environment(\.modelContext) private var modelContext
-
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             TimerPage()
@@ -40,13 +40,6 @@ struct ContentView: View {
                 .tag("SettingsPage")
         }
     }
-
-//    private func startTime() {
-//        withAnimation {
-//            let newTime = Session(running: true, startTime: .now, editedTimestamp: .now)
-//            modelContext.insert(newTime)
-//        }
-//    }
 }
 
 #Preview {

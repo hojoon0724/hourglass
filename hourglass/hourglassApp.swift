@@ -10,6 +10,7 @@ import SwiftUI
 
 @main
 struct hourglassApp: App {
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Session.self,

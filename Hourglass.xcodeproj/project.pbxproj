@@ -51,6 +51,7 @@
 		1FA1F2362BDB3D4300D97F46 /* TextFieldStepperConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22D2BDB3D4300D97F46 /* TextFieldStepperConfig.swift */; };
 		1FA1F2372BDB3D4300D97F46 /* TextFieldStepperImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22E2BDB3D4300D97F46 /* TextFieldStepperImage.swift */; };
 		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
+		1FCD5BA22BDF411400C3F1AE /* alertTimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */; };
 		1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* newClientModal.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
 		1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC82BD464AC00E19500 /* showSession.swift */; };
@@ -111,6 +112,7 @@
 		1FA1F22D2BDB3D4300D97F46 /* TextFieldStepperConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperConfig.swift; sourceTree = "<group>"; };
 		1FA1F22E2BDB3D4300D97F46 /* TextFieldStepperImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperImage.swift; sourceTree = "<group>"; };
 		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
+		1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertTimeModal.swift; sourceTree = "<group>"; };
 		1FD1DFC42BD359D900E19500 /* newClientModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newClientModal.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
 		1FD1DFC82BD464AC00E19500 /* showSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSession.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				1FD1DFC42BD359D900E19500 /* newClientModal.swift */,
 				1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */,
 				1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */,
+				1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */,
 			);
 			path = ModalPages;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				1FA1F2342BDB3D4300D97F46 /* ViewExtension.swift in Sources */,
 				1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */,
 				1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */,
+				1FCD5BA22BDF411400C3F1AE /* alertTimeModal.swift in Sources */,
 				1F6F2FAF2BDB2DDE00C4A04B /* setTimeComponent.swift in Sources */,
 				1FA1F2352BDB3D4300D97F46 /* TextFieldStepper.swift in Sources */,
 			);

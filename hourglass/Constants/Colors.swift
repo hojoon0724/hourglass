@@ -43,6 +43,5 @@ var customColors: [String: Color] = [
     "Brown": .brown,
     "Gray": .gray,
     "Black": .black,
-//    "Black": Color(red: 5 / 255, green: 5 / 255, blue: 5 / 255),
     "White": Color(red: 240 / 255, green: 240 / 255, blue: 240 / 255),
 ]

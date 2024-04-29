@@ -37,7 +37,7 @@ struct ClientsPage: View {
                 } header: {
                     Text("Active")
                 }
-                
+
                 Section {
                     Text("Show all clients")
                 }

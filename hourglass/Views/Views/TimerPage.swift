@@ -24,6 +24,10 @@ struct TimerPage: View {
             VStack(spacing: 0, content: {
 //              Time Log Area
                 List {
+                    Button("print user def") {
+                        print(UserDefaults.standard.dictionaryRepresentation())
+                    }
+                    .flippedUpsideDown()
                     ForEach(sessions.filter { $0.endTime != nil }) { session in
                         NavigationLink(destination: showSession(session: session)) {
                             HStack(content: {
