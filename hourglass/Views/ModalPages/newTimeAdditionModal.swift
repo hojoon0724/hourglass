@@ -19,6 +19,7 @@ struct newTimeAdditionModal: View {
     }
 
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
+//    @State var newTimeAddition: TimeAddition = TimeAddition(timeCreated: .now, timeStamp: .now, timeAdded: 0)
 
     @State private var hours: Double = 0
     @State private var minutes: Double = 0

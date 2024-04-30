@@ -13,7 +13,7 @@ final class Client {
     var id: UUID
     @Attribute(.unique) var name: String
     var color: String
-    var active: Bool = true
+    var active: Bool
 
     @Relationship(deleteRule: .cascade) var timeAdditions = [TimeAddition]()
     var timeAdded: Int {
@@ -25,11 +25,11 @@ final class Client {
         return sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) }
     }
 
-    init(id: UUID = UUID(), name: String, color: String) {
+    init(id: UUID = UUID(), name: String, color: String, active: Bool? = true) {
         self.id = id
         self.name = name
         self.color = color
-        self.active = active
+        self.active = active ?? true
     }
 
     static let sampleData = [
@@ -57,6 +57,12 @@ final class Client {
             id: UUID(uuidString: "E893AF78-7C9C-4417-A1DC-F97B82DD7A57")!,
             name: "NBCUniversal",
             color: "Yellow"
+        ),
+        Client(
+            id: UUID(uuidString: "E893FF97-7C9C-1111-A1B9-F97B82DD1B00")!,
+            name: "Patagonia",
+            color: "Blue",
+            active: false
         ),
     ]
 }

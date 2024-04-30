@@ -18,6 +18,8 @@ struct showClient: View {
     @State var addTimeModal = false
     @State var deleteConfirmationShow = false
 
+//    @State var num: Int = 0
+
     var sortedSessions: [Session] {
         client.sessions.sorted { first, second in
             first.startTime > second.startTime
@@ -26,6 +28,7 @@ struct showClient: View {
 
     var sortedAdditions: [TimeAddition] {
         client.timeAdditions.sorted { first, second in
+//            first.timeCreated > second.timeCreated
             first.timeStamp > second.timeStamp
         }
     }
@@ -59,9 +62,6 @@ struct showClient: View {
                     Toggle(isOn: $client.active) {
                         Text("Active")
                     }
-                    Button("print") {
-                        print(client)
-                    }
                 }
 
                 HStack {
@@ -71,6 +71,10 @@ struct showClient: View {
                         .monospaced()
                 }
                 .opacity(0.5)
+//
+//                Stepper(value: $num, in: 0 ... 10) {
+//                    Text("stepper \(num)")
+//                }
 
                 Section("Lifetime") {
                     HStack(alignment: .center, content: {

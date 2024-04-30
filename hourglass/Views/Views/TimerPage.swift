@@ -24,10 +24,10 @@ struct TimerPage: View {
             VStack(spacing: 0, content: {
 //              Time Log Area
                 List {
-                    Button("print user def") {
-                        print(UserDefaults.standard.dictionaryRepresentation())
-                    }
-                    .flippedUpsideDown()
+//                    Button("print user def") {
+//                        print(UserDefaults.standard.dictionaryRepresentation())
+//                    }
+//                    .flippedUpsideDown()
                     ForEach(sessions.filter { $0.endTime != nil }) { session in
                         NavigationLink(destination: showSession(session: session)) {
                             HStack(content: {
@@ -46,7 +46,6 @@ struct TimerPage: View {
                                         .font(.caption)
                                 })
                             })
-
                             Spacer()
                         }
                         .flippedUpsideDown()
@@ -93,7 +92,13 @@ struct TimerPage: View {
                         })
                     })
                 }
+                #if os(iOS) || os(watchOS)
                 .padding()
+
+                #elseif os(macOS) || os(tvOS) || os(visionOS)
+                .padding(30)
+
+                #endif
                 .sheet(isPresented: self.$newSessionModal) {
                     showNewSession(session: newSession, stopSession: stopSession)
                 }

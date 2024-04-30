@@ -10,12 +10,14 @@ import SwiftData
 
 @Model
 final class TimeAddition {
+//    var timeCreated: Date
     var timeStamp: Date
     var timeAdded: Int
-    var rate: Int?
+    var rate: Double?
     var client: Client?
 
-    init(timeStamp: Date, timeAdded: Int, rate: Int? = nil, client: Client? = nil) {
+    init( /* timeCreated: Date? = .now, */ timeStamp: Date, timeAdded: Int, rate: Double? = nil, client: Client? = nil) {
+//        self.timeCreated = timeCreated ?? .now
         self.timeStamp = timeStamp
         self.timeAdded = timeAdded
         self.rate = rate
@@ -23,10 +25,25 @@ final class TimeAddition {
     }
 
     static let sampleData = [
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 64800),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 43200),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 8481),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 7200),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326357), timeAdded: 3600),
+        TimeAddition(
+//            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 64800),
+        TimeAddition(
+//            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 43200),
+        TimeAddition(
+//            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 8481),
+        TimeAddition(
+//            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 7200),
+        TimeAddition(
+//            timeCreated: Date(timeIntervalSinceReferenceDate: 735326357),
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326357),
+            timeAdded: 3600),
     ]
 }

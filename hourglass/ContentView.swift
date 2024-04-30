@@ -10,8 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTab = "TimerPage"
+    @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+//    @AppStorage("UserColorSetting") var userColorSetting: String = "Auto"
+
     @Environment(\.modelContext) private var modelContext
-    
+
     var body: some View {
         TabView(selection: $selectedTab) {
             TimerPage()
@@ -19,12 +22,6 @@ struct ContentView: View {
                     Label("Timer", systemImage: "timer")
                 }
                 .tag("TimerPage")
-
-//            ProjectsPage()
-//                .tabItem {
-//                    Label("Projects", systemImage: "folder.fill")
-//                }
-//                .tag("ProjectsPage")
 
             ClientsPage()
                 .tabItem {
@@ -36,9 +33,13 @@ struct ContentView: View {
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
-
                 .tag("SettingsPage")
         }
+        // runs function and returns the ColorScheme
+        // colorSchemeManager => class
+        // getPreferredColorScheme => function to get value
+        .preferredColorScheme(colorSchemeManager.getPreferredColorScheme())
+//        .preferredColorScheme(userColorSetting == "Auto" ? nil : (userColorSetting == "Light" ? .light : .dark))
     }
 }
 

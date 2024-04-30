@@ -11,6 +11,7 @@ struct newClientModal: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State var newClient: Client = Client(name: "", color: "")
+//    @State var newTimeAddition: TimeAddition = TimeAddition(timeCreated: .now, timeStamp: .now, timeAdded: 0)
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
     @State var hours: Double = 0
     @State var minutes: Double = 0

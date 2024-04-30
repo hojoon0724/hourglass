@@ -32,6 +32,7 @@
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
 		1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86A9DA2BD4C2DE00718DDA /* borders.swift */; };
+		1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */; };
 		1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
 		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
@@ -93,6 +94,7 @@
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		1F86A9DA2BD4C2DE00718DDA /* borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borders.swift; sourceTree = "<group>"; };
+		1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTimeAdditionModal.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
 				1F3858CF2BDA428600F716D4 /* SwiftUIColors.swift */,
 				1F3858D12BDA48FB00F716D4 /* Colors.swift */,
+				1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */,
 				1F171D932BC21E1300AB5DA4 /* SettingsPage.swift in Sources */,
 				1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */,
+				1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */,
 				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
 				1FA1F2332BDB3D4300D97F46 /* KeyboardGestures.swift in Sources */,
 				1F3858D02BDA428600F716D4 /* SwiftUIColors.swift in Sources */,

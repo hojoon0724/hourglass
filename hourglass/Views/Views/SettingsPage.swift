@@ -5,19 +5,20 @@
 //  Created by Hojoon Kim on 4/6/24.
 //
 
-import Combine
 import SwiftUI
 
 struct SettingsPage: View {
     let nsObject: Any? = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
 
-    @State var switchAlert1: Bool = UserDefaults.standard.bool(forKey: "switchAlert12")
+    @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+
+    // @StateObject private var colorSchemeManager = ColorSchemeManager() also works, but .shared avoids fragmentation and keeps all instances share the same state
+
+    @State var switchAlert1: Bool = UserDefaults.standard.bool(forKey: "switchAlert1")
     @State var firstAlertThreshold: Int = UserDefaults.standard.integer(forKey: "firstAlertThreshold")
 
     @State var switchAlert2: Bool = UserDefaults.standard.bool(forKey: "switchAlert2")
     @State var secondAlertThreshold: Int = UserDefaults.standard.integer(forKey: "secondAlertThreshold")
-
-    @State var appColorScheme: String = UserDefaults.standard.string(forKey: "appColorScheme") ?? "Auto"
 
     @State var firstAlertModal: Bool = false
     @State var secondAlertModal: Bool = false
@@ -26,23 +27,14 @@ struct SettingsPage: View {
         NavigationStack {
             List {
                 Section {
-                    Picker("Color Scheme", selection: $appColorScheme) {
+                    // $colorSchemeManager.selectedColorScheme => acts as @State var in global class
+                    Picker("Color Scheme", selection: $colorSchemeManager.selectedColorScheme) {
                         Text("Auto").tag("Auto")
                         Text("Light").tag("Light")
                         Text("Dark").tag("Dark")
                     }
-                    .onChange(of: appColorScheme) { _, _ in
-                        UserDefaults.standard.set(appColorScheme, forKey: "appColorScheme")
-                    }
                     .pickerStyle(.automatic)
                 }
-
-                //                Button("print user def") {
-                //                    print(UserDefaults.standard.dictionaryRepresentation())
-                //                }
-                //                Button("print user def") {
-                //                    print("---------")
-                //                }
 
                 Section {
                     HStack {
@@ -62,7 +54,9 @@ struct SettingsPage: View {
                                 .monospaced()
                         }
                         .onTapGesture {
-                            self.firstAlertModal = true
+                            withAnimation {
+                                self.firstAlertModal = true
+                            }
                         }
                         .sheet(isPresented: self.$firstAlertModal) {
                             alertTimeModal(threshold: firstAlertThreshold, text: "First Alert at: ")
@@ -129,7 +123,6 @@ struct SettingsPage: View {
                 } footer: {
                     HStack {
                         Text("Version \(nsObject!)")
-                            //                        Text("Version 0.1.1")
                             .font(.subheadline)
                     }
                     .padding(.top, 20)
@@ -138,7 +131,6 @@ struct SettingsPage: View {
             .listStyle(.grouped)
             .navigationTitle("Settings")
         }
-        .preferredColorScheme(appColorScheme == "Auto" ? nil : (appColorScheme == "Light" ? .light : .dark))
     }
 }
 
