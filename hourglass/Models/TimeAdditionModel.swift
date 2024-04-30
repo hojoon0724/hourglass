@@ -28,11 +28,11 @@ final class TimeAddition {
         TimeAddition(
 //            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
             timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
-            timeAdded: 64800),
+            timeAdded: 64900),
         TimeAddition(
 //            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
             timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
-            timeAdded: 43200),
+            timeAdded: 43400),
         TimeAddition(
 //            timeCreated: Date(timeIntervalSinceReferenceDate: 735326390),
             timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),

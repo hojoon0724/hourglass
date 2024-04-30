@@ -28,8 +28,8 @@ struct SettingsPage: View {
             List {
                 Section {
                     // $colorSchemeManager.selectedColorScheme => acts as @State var in global class
-                    Picker("Color Scheme", selection: $colorSchemeManager.selectedColorScheme) {
-                        Text("Auto").tag("Auto")
+                    Picker("Appearance", selection: $colorSchemeManager.selectedColorScheme) {
+                        Text("System Setting").tag("Auto")
                         Text("Light").tag("Light")
                         Text("Dark").tag("Dark")
                     }
@@ -62,8 +62,6 @@ struct SettingsPage: View {
                             alertTimeModal(threshold: firstAlertThreshold, text: "First Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
-
-                        //                            .transition(.slide)
                     }
                 } header: {
                     Text("Notifications (NOT WORKING YET)")
@@ -71,7 +69,6 @@ struct SettingsPage: View {
                     Text("Sends you a notification when the client's account dips below this threshold")
                 }
 
-                //                if switchAlert1 {
                 Section {
                     HStack {
                         Toggle(isOn: $switchAlert2) {
@@ -98,13 +95,11 @@ struct SettingsPage: View {
                             alertTimeModal(threshold: secondAlertThreshold, text: "Second Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
-                        //                                .transition(.slide)
                     }
                 }
                 footer: {
                     Text("Sends you another notification when the client's account dips below this threshold")
                 }
-                //                }
 
                 Section {
                     Button(action: {

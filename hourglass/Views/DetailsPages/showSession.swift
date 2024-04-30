@@ -62,7 +62,7 @@ struct showSession: View {
                         .foregroundColor(customColors[session.client?.color ?? "None"])
                     Picker("", selection: $session.client) {
                         Text("None").tag(nil as Client?)
-                        ForEach(clientList) { client in
+                        ForEach(clientList.filter { $0.active == true }) { client in
                             Text(client.name).tag(client as Client?)
                         }
                     }

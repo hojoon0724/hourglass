@@ -71,25 +71,21 @@ struct showClient: View {
                         .monospaced()
                 }
                 .opacity(0.5)
-//
-//                Stepper(value: $num, in: 0 ... 10) {
-//                    Text("stepper \(num)")
-//                }
 
                 Section("Lifetime") {
-                    HStack(alignment: .center, content: {
+                    HStack {
                         Text("Added")
                         Spacer()
                         Text("\(secondsToFullTime(client.timeAdded))")
                             .monospaced()
-                    })
+                    }
                     .opacity(0.5)
-                    HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                    HStack {
                         Text("Used")
                         Spacer()
                         Text("\(secondsToFullTime(client.timeUsed))")
                             .monospaced()
-                    })
+                    }
                     .opacity(0.5)
                 }
 
@@ -122,6 +118,7 @@ struct showClient: View {
                     .sheet(isPresented: self.$addTimeModal) {
                         NavigationStack {
                             newTimeAdditionModal(clientPassed: client)
+                                .presentationDetents([.height(230)])
                         }
                     }
 

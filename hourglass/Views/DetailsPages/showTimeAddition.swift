@@ -67,6 +67,12 @@ struct showTimeAddition: View {
                 } footer: {
                     Text("Last edited: \(timeAddition.timeStamp.formatted())")
                 }
+//
+//                Button("print stuff") {
+//                    print(hours)
+//                    print(minutes)
+//                    print("timeAddition \(timeAddition.timeAdded)")
+//                }
             }
             .listStyle(.grouped)
             .navigationTitle("Time Addition")
@@ -90,7 +96,7 @@ struct showTimeAddition: View {
         }
         .onAppear(perform: {
             hours = Double(timeAddition.timeAdded / 3600)
-            minutes = Double((timeAddition.timeAdded % 3600) / 3600)
+            minutes = Double((timeAddition.timeAdded % 3600) / 60)
         })
     }
 }

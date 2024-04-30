@@ -61,7 +61,7 @@ struct showNewSession: View {
                 Section(header: Text("")) {
                     Picker("Client", selection: $session.client) {
                         Text("None").tag(nil as Client?)
-                        ForEach(clientList) { client in
+                        ForEach(clientList.filter { $0.active == true }) { client in
                             Text(client.name).tag(client as Client?)
                         }
                     }
