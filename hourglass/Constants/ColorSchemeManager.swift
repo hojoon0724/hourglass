@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Create a globally observable class
+// Create a globally observable class (singleton)
 class ColorSchemeManager: ObservableObject {
     // "shared" makes all called instances consistent
     static let shared = ColorSchemeManager()
