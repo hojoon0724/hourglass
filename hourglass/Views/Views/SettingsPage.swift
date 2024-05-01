@@ -11,14 +11,9 @@ struct SettingsPage: View {
     let nsObject: Any? = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
 
     @StateObject private var colorSchemeManager = ColorSchemeManager.shared
-
     // @StateObject private var colorSchemeManager = ColorSchemeManager() also works, but .shared avoids fragmentation and keeps all instances share the same state
 
-    @State var switchAlert1: Bool = UserDefaults.standard.bool(forKey: "switchAlert1")
-    @State var firstAlertThreshold: Int = UserDefaults.standard.integer(forKey: "firstAlertThreshold")
-
-    @State var switchAlert2: Bool = UserDefaults.standard.bool(forKey: "switchAlert2")
-    @State var secondAlertThreshold: Int = UserDefaults.standard.integer(forKey: "secondAlertThreshold")
+    @StateObject private var userSettingsValues = UserSettingsValues.shared
 
     @State var firstAlertModal: Bool = false
     @State var secondAlertModal: Bool = false
@@ -38,28 +33,26 @@ struct SettingsPage: View {
 
                 Section {
                     HStack {
-                        Toggle(isOn: $switchAlert1) {
+                        Toggle(isOn: userSettingsValues.$switchAlert1) {
                             Text("First Alert")
-                        }.onChange(of: switchAlert1) { _, _ in
-                            UserDefaults.standard.set(switchAlert1, forKey: "switchAlert1")
-                            switchAlert2 = false
+                        }
+                        .onChange(of: userSettingsValues.switchAlert1) {
+                            userSettingsValues.switchAlert2 = false
                         }
                     }
 
-                    if switchAlert1 {
+                    if userSettingsValues.switchAlert1 {
                         HStack {
                             Text("When under")
                             Spacer()
-                            Text("\(secondsToFullTime(firstAlertThreshold))")
+                            Text("\(secondsToFullTime(userSettingsValues.firstAlertThreshold))")
                                 .monospaced()
                         }
                         .onTapGesture {
-                            withAnimation {
-                                self.firstAlertModal = true
-                            }
+                            self.firstAlertModal = true
                         }
                         .sheet(isPresented: self.$firstAlertModal) {
-                            alertTimeModal(threshold: firstAlertThreshold, text: "First Alert at: ")
+                            alertTimeModal(threshold: userSettingsValues.$firstAlertThreshold, text: "First Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
                     }
@@ -71,28 +64,25 @@ struct SettingsPage: View {
 
                 Section {
                     HStack {
-                        Toggle(isOn: $switchAlert2) {
+                        Toggle(isOn: userSettingsValues.$switchAlert2) {
                             Text("Second Alert")
                         }
-                        .disabled(switchAlert1 == false)
-                        .onChange(of: switchAlert2) { _, _ in
-                            UserDefaults.standard.set(switchAlert2, forKey: "switchAlert2")
-                        }
-                        .onDisappear { switchAlert2 = false }
+                        .disabled(userSettingsValues.switchAlert1 == false)
+                        .onDisappear { userSettingsValues.switchAlert2 = false }
                     }
 
-                    if switchAlert2 {
+                    if userSettingsValues.switchAlert2 {
                         HStack {
                             Text("When under")
                             Spacer()
-                            Text("\(secondsToFullTime(secondAlertThreshold))")
+                            Text("\(secondsToFullTime(userSettingsValues.secondAlertThreshold))")
                                 .monospaced()
                         }
                         .onTapGesture {
                             self.secondAlertModal = true
                         }
                         .sheet(isPresented: self.$secondAlertModal) {
-                            alertTimeModal(threshold: secondAlertThreshold, text: "Second Alert at: ")
+                            alertTimeModal(threshold: userSettingsValues.$secondAlertThreshold, text: "Second Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
                     }
@@ -125,6 +115,12 @@ struct SettingsPage: View {
             }
             .listStyle(.grouped)
             .navigationTitle("Settings")
+            .onAppear {
+//                print("switchAlert1 \(switchAlert1)")
+//                print("firstAlertThreshold \(firstAlertThreshold)")
+//                print("switchAlert2 \(switchAlert2)")
+//                print("secondAlertThreshold \(secondAlertThreshold)")
+            }
         }
     }
 }

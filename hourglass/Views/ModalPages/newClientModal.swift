@@ -10,7 +10,7 @@ import SwiftUI
 struct newClientModal: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @State var newClient: Client = Client(name: "", color: "")
+    @State var newClient: Client = Client(name: "", color: "None")
 //    @State var newTimeAddition: TimeAddition = TimeAddition(timeCreated: .now, timeStamp: .now, timeAdded: 0)
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
     @State var hours: Double = 0
@@ -87,16 +87,20 @@ struct newClientModal: View {
             }
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
-                    confirmationShow = true
+                    if newClient.name == "" {
+                        dismiss()
+                    } else {
+                        confirmationShow = true
+                    }
                 }
             }
         }
         .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
-            Button("Yes, delete it.", role: .destructive) {
+            Button("Yes, cancel it.", role: .destructive) {
                 dismiss()
             }
         } message: {
-            Text("Are you sure? You can't undo this.")
+            Text("Are you sure? This won't be saved.")
         }
     }
 }

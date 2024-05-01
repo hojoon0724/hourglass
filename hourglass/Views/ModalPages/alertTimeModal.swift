@@ -13,7 +13,7 @@ struct alertTimeModal: View {
 
     @State var hours: Double = 0
     @State var minutes: Double = 0
-    @State var threshold: Int?
+    @Binding var threshold: Int
 
     var text: String = ""
 
@@ -48,9 +48,19 @@ struct alertTimeModal: View {
                 }
             }
         }
+        .onAppear {
+            hours = Double(threshold / 3600)
+            minutes = Double(threshold % 3600 / 60)
+        }
+        .onChange(of: hours) {
+            threshold = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+        }
+        .onChange(of: minutes) {
+            threshold = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+        }
     }
 }
 
 #Preview {
-    alertTimeModal()
+    alertTimeModal(threshold: UserSettingsValues.shared.$firstAlertThreshold)
 }

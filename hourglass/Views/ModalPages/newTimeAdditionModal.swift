@@ -52,6 +52,11 @@ struct newTimeAdditionModal: View {
                     maximum: 59
                 )
             }
+            .onChange(of: hours) {
+                timeInSec = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+            }.onChange(of: minutes) {
+                timeInSec = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+            }
             .padding()
             List {
                 Section(header: Text("Client")) {
@@ -69,12 +74,12 @@ struct newTimeAdditionModal: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        newTimeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+                        newTimeAddition.timeAdded = timeInSec
                         modelContext.insert(newTimeAddition)
                         clientPassed.timeAdditions.append(newTimeAddition)
                         dismiss()
                     }
-                    .disabled(clientPassed.name.isEmpty)
+                    .disabled(timeInSec == 0)
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {

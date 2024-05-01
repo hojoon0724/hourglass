@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab = "TimerPage"
     @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+    @StateObject private var userSettingsValues = UserSettingsValues.shared
 
     @Environment(\.modelContext) private var modelContext
 

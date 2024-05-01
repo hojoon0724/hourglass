@@ -12,8 +12,9 @@ struct ClientsPage: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Client.name) private var clients: [Client]
 
-//    @State private var warningLabelThreshold: Int = UserDefaults.standard.integer(forKey: "firstAlertThreshold")
-    @State private var warningLabelThreshold: Int = 7200
+    @StateObject private var userSettingsValues = UserSettingsValues.shared
+
+//    private var warningLabelThreshold: Int = UserDefaults.standard.integer(forKey: "firstAlertThreshold")
 
     @State private var show_modal: Bool = false
 
@@ -22,7 +23,7 @@ struct ClientsPage: View {
     var body: some View {
         NavigationStack {
             List {
-//                TextField("Enter Hours", value: $warningLabelThreshold, format: .number)
+//                TextField("Enter Hours", value: userSettingsValues.$firstAlertThreshold, format: .number)
 //                    .keyboardType(.numberPad)
 //                    .multilineTextAlignment(.trailing)
                 Section {
@@ -39,8 +40,8 @@ struct ClientsPage: View {
                                     .monospaced()
                             }
                         }
-                        .listRowBackground(client.timeAdded - client.timeUsed <= 0 ? Color.red : client.timeAdded - client.timeUsed <= warningLabelThreshold ? Color.yellow : nil)
-                        .foregroundColor(client.timeAdded - client.timeUsed <= 0 ? Color.white : client.timeAdded - client.timeUsed <= warningLabelThreshold ? Color.black : nil)
+                        .listRowBackground(client.timeAdded - client.timeUsed <= 0 ? Color.red : client.timeAdded - client.timeUsed <= userSettingsValues.firstAlertThreshold ? Color.yellow : nil)
+                        .foregroundColor(client.timeAdded - client.timeUsed <= 0 ? Color.white : client.timeAdded - client.timeUsed <= userSettingsValues.firstAlertThreshold ? Color.black : nil)
                     }
                     .onDelete(perform: deleteItems)
                 } header: {
@@ -80,7 +81,7 @@ struct ClientsPage: View {
                 }
 
 //                Button("print user def") {
-//                    print(UserDefaults.standard.dictionaryRepresentation())
+//                    dump(userSettingsValues)
 //                }
             }
 
