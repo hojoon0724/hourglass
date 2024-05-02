@@ -43,21 +43,6 @@ struct showTimeAddition: View {
             }
             .padding()
             List {
-                //            Section(header: Text("Time to add")) {
-                //                HStack(alignment: .center, content: {
-                //                    Text("Hours")
-                //                    TextField("Enter Hours", value: $hours, format: .number)
-                //                        .keyboardType(.numberPad)
-                //                        .multilineTextAlignment(.trailing)
-                //                })
-                //                HStack(alignment: .center, content: {
-                //                    Text("Minutes")
-                //                    TextField("Enter Minutes", value: $minutes, format: .number)
-                //                        .keyboardType(.numberPad)
-                //                        .multilineTextAlignment(.trailing)
-                //                })
-                //            }
-
                 Section {
                     Button("Delete Time Addition", role: .destructive) {
                         confirmationShow = true
@@ -65,9 +50,9 @@ struct showTimeAddition: View {
                 } header: {
                     Spacer()
                 } footer: {
-                    Text("Last edited: \(timeAddition.timeStamp.formatted())")
+                    Text("Added: \(timeAddition.timeStamp.formatted())")
                 }
-//
+
 //                Button("print stuff") {
 //                    print(hours)
 //                    print(minutes)
@@ -81,7 +66,6 @@ struct showTimeAddition: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                     timeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
-                    timeAddition.timeStamp = now
                     dismiss()
                 }
             }

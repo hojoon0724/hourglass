@@ -15,6 +15,7 @@ struct showSession: View {
     @Environment(\.modelContext) private var modelContext
 
     @Query(sort: \Client.name) private var clientList: [Client]
+
     @State private var now: Date = .now
 
     @State var confirmationShow = false
@@ -81,6 +82,7 @@ struct showSession: View {
                 Text("Last edited: \(session.editedTimestamp.formatted())")
             }
         }
+
         .navigationTitle("Session")
         .listStyle(.grouped)
         .toolbar {
