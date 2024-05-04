@@ -33,25 +33,34 @@ After MVP is met, extended functions include:
 
 ### Data Models (WIP):
 
-| account | project        | session       |
-| ------- | -------------- | ------------- |
-|         |                | \_id          |
-|         | \_id           | project_id    |
-| \_id    | account_id     | account_id    |
-| name    | account_name   |               |
-|         | time_allocated |               |
-|         | time_remaining |               |
-|         | name           | project_name  |
-|         |                | start_time    |
-|         |                | end_time      |
-|         |                | modified_time |
+| client account | session         | time addition |
+| -------------- | --------------- | ------------- |
+| UUID           |                 |               |
+| Name           |                 |               |
+| Color          |                 |               |
+| Active         |                 |               |
+| sessions       | \[session]      |               |
+|                | running         |               |
+|                | startTime       |               |
+|                | endTime         |               |
+|                | secondsElapsed  |               |
+|                | \[client]       |               |
+|                | editedTimestamp |               |
+|                |                 | timeStamp     |
+|                |                 | timeAdded     |
+|                |                 | rate          |
+|                |                 | \[client]     |
+|                |                 |               |
+|                |                 |               |
+|                |                 |               |
+
+Note: the project data model has been abandoned because it wasn't very useful
 
 ## Views
 
 | Name     | Contents                                                               |
 | -------- | ---------------------------------------------------------------------- |
 | Timer    | Entry view: choose the client/project, run the timer                   |
-| Log      | Show + edit all your entries                                           |
 | Clients  | Show the list of your clients, tapping takes you to their summary page |
 |          | -> Add hours to the client’s account                                   |
 |          | -> Show the log for the selected account                               |
@@ -87,4 +96,4 @@ After MVP is met, extended functions include:
 
 ## UI Mockup
 
-WIP
+![Timer Page] (./hourglass/hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG)
