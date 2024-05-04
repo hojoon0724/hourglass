@@ -102,4 +102,4 @@ Note: the project data model has been abandoned because it wasn't very useful
 <img src="./hourglass/Screenshots/2024-05-03-hourglass-04-clientsDetails.PNG">
 <img src="./hourglass/Screenshots/2024-05-03-hourglass-05-clientAddTimeModal.PNG">
 <img src="./hourglass/Screenshots/2024-05-03-hourglass-06-settings.PNG">
-<img src="./hourglass/Screenshots/2024-05-03-hourglass-07-settingsModal">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-07-settingsModal.PNG">
