@@ -76,13 +76,13 @@ After MVP is met, extended functions include:
 [x] Xcode basics
 [x] Swift basics
 [x] SwiftUI
-[ ] Data persistence
+[x] Data persistence
 [x] API calls in Swift
-[ ] Program's Logic
-[ ] UI
-[ ] Animation
-[ ] User Testing
-[ ] Launch screen graphics
+[x] Program's Logic
+[x] UI
+[x] Animation
+[x] User Testing
+[x] Launch screen graphics
 [ ] Data storage (CloudKit)
 
 ## UI Mockup
