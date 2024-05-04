@@ -25,7 +25,10 @@ final class Client {
         return sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) }
     }
 
-    init(id: UUID = UUID(), name: String, color: String, active: Bool? = true) {
+    init(id: UUID = UUID(), 
+         name: String,
+         color: String,
+         active: Bool? = true) {
         self.id = id
         self.name = name
         self.color = color

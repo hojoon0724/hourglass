@@ -17,7 +17,11 @@ final class Session {
     var client: Client?
     var editedTimestamp: Date
 
-    init(running: Bool, startTime: Date, endTime: Date? = nil, secondsElapsed: Int? = nil, editedTimestamp: Date) {
+    init(running: Bool, 
+         startTime: Date,
+         endTime: Date? = nil,
+         secondsElapsed: Int? = nil,
+         editedTimestamp: Date) {
         self.running = running
         self.startTime = startTime
         self.endTime = endTime

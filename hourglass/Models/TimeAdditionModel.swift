@@ -15,7 +15,10 @@ final class TimeAddition {
     var rate: Double?
     var client: Client?
 
-    init(timeStamp: Date, timeAdded: Int, rate: Double? = nil, client: Client? = nil) {
+    init(timeStamp: Date, 
+         timeAdded: Int,
+         rate: Double? = nil, c
+         lient: Client? = nil) {
         self.timeStamp = timeStamp
         self.timeAdded = timeAdded
         self.rate = rate

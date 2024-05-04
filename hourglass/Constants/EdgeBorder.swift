@@ -1,5 +1,5 @@
 //
-//  borders.swift
+//  EdgeBorder.swift
 //  Hourglass
 //
 //  Created by Hojoon Kim on 4/20/24.

@@ -7,122 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */; };
-		1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F072D432BC5D02F00DED4F0 /* modalTest.swift */; };
+		1F07FFD82BE6B7D900E4DC38 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFCD2BE6B7D900E4DC38 /* DoubleExtension.swift */; };
+		1F07FFD92BE6B7D900E4DC38 /* LongPressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFCE2BE6B7D900E4DC38 /* LongPressButton.swift */; };
+		1F07FFDA2BE6B7D900E4DC38 /* KeyboardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD02BE6B7D900E4DC38 /* KeyboardGestures.swift */; };
+		1F07FFDB2BE6B7D900E4DC38 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD12BE6B7D900E4DC38 /* ViewExtension.swift */; };
+		1F07FFDC2BE6B7D900E4DC38 /* TextFieldStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD32BE6B7D900E4DC38 /* TextFieldStepper.swift */; };
+		1F07FFDD2BE6B7D900E4DC38 /* TextFieldStepperConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD42BE6B7D900E4DC38 /* TextFieldStepperConfig.swift */; };
+		1F07FFDE2BE6B7D900E4DC38 /* TextFieldStepperImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD52BE6B7D900E4DC38 /* TextFieldStepperImage.swift */; };
 		1F0D004A2BCF6BB4004FFD30 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D00492BCF6BB4004FFD30 /* SampleData.swift */; };
-		1F0D004C2BCF6D49004FFD30 /* TimeScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D004B2BCF6D49004FFD30 /* TimeScratchView.swift */; };
 		1F0D6DBF2BE2EB9300758838 /* userSettingsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D6DBE2BE2EB9300758838 /* userSettingsValues.swift */; };
 		1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D772BC2145600AB5DA4 /* hourglassApp.swift */; };
 		1F171D7A2BC2145600AB5DA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D792BC2145600AB5DA4 /* ContentView.swift */; };
-		1F171D7C2BC2145600AB5DA4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D7B2BC2145600AB5DA4 /* Item.swift */; };
 		1F171D7E2BC2145700AB5DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */; };
 		1F171D822BC2145700AB5DA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F171D812BC2145700AB5DA4 /* Preview Assets.xcassets */; };
 		1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */; };
-		1F171D8F2BC2176100AB5DA4 /* ProjectsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D8E2BC2176100AB5DA4 /* ProjectsPage.swift */; };
 		1F171D932BC21E1300AB5DA4 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */; };
-		1F171D982BC2244600AB5DA4 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F171D972BC2244600AB5DA4 /* Project.swift */; };
-		1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */; };
-		1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A46AC2BC6284900F62A27 /* timerModels.swift */; };
-		1F3858D02BDA428600F716D4 /* SwiftUIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3858CF2BDA428600F716D4 /* SwiftUIColors.swift */; };
+		1F2ADC632BE6B61600EA885D /* 2024-05-03-hourglass-01-timer.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC5B2BE6B61600EA885D /* 2024-05-03-hourglass-01-timer.PNG */; };
+		1F2ADC642BE6B61600EA885D /* 2024-05-03-hourglass-02-sessionDetails.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC5C2BE6B61600EA885D /* 2024-05-03-hourglass-02-sessionDetails.PNG */; };
+		1F2ADC652BE6B61600EA885D /* 2024-05-03-hourglass-03-clients.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC5D2BE6B61600EA885D /* 2024-05-03-hourglass-03-clients.PNG */; };
+		1F2ADC662BE6B61600EA885D /* 2024-05-03-hourglass-04-clientsDetails.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC5E2BE6B61600EA885D /* 2024-05-03-hourglass-04-clientsDetails.PNG */; };
+		1F2ADC672BE6B61600EA885D /* 2024-05-03-hourglass-05-clientAddTimeModal.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC5F2BE6B61600EA885D /* 2024-05-03-hourglass-05-clientAddTimeModal.PNG */; };
+		1F2ADC682BE6B61600EA885D /* 2024-05-03-hourglass-06-settings.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC602BE6B61600EA885D /* 2024-05-03-hourglass-06-settings.PNG */; };
+		1F2ADC692BE6B61600EA885D /* 2024-05-03-hourglass-07-settingsModal.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADC612BE6B61600EA885D /* 2024-05-03-hourglass-07-settingsModal.PNG */; };
 		1F3858D22BDA48FB00F716D4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3858D12BDA48FB00F716D4 /* Colors.swift */; };
 		1F43C0A82BD82C1B001C869D /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F43C0A72BD82C1B001C869D /* EmailController.swift */; };
 		1F4EB4402BD7118700326041 /* showTimeAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EB43F2BD7118700326041 /* showTimeAddition.swift */; };
 		1F6F2FAD2BDB271E00C4A04B /* showAllSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FAC2BDB271E00C4A04B /* showAllSessions.swift */; };
-		1F6F2FAF2BDB2DDE00C4A04B /* setTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FAE2BDB2DDE00C4A04B /* setTimeComponent.swift */; };
-		1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75F1C92BD1E1050099F127 /* SessionActions.swift */; };
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
-		1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86A9DA2BD4C2DE00718DDA /* borders.swift */; };
+		1F86A9DB2BD4C2DE00718DDA /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86A9DA2BD4C2DE00718DDA /* EdgeBorder.swift */; };
 		1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */; };
 		1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */; };
 		1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8F3BDB2BC24F8F00F47F8F /* README.md */; };
 		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
-		1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16FB2BC96AC50032AA56 /* darkMode.swift */; };
-		1F9C16FE2BC9720A0032AA56 /* runningTimerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */; };
-		1F9C17002BC9734B0032AA56 /* testData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16FF2BC9734B0032AA56 /* testData.swift */; };
-		1F9C17022BC980450032AA56 /* showProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17012BC980450032AA56 /* showProject.swift */; };
 		1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */; };
 		1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17052BC9956D0032AA56 /* ClientsPage.swift */; };
 		1F9C17082BC996490032AA56 /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17072BC996490032AA56 /* showClient.swift */; };
-		1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversion.swift */; };
-		1FA1F2312BDB3D4300D97F46 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F2262BDB3D4300D97F46 /* DoubleExtension.swift */; };
-		1FA1F2322BDB3D4300D97F46 /* LongPressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F2272BDB3D4300D97F46 /* LongPressButton.swift */; };
-		1FA1F2332BDB3D4300D97F46 /* KeyboardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F2292BDB3D4300D97F46 /* KeyboardGestures.swift */; };
-		1FA1F2342BDB3D4300D97F46 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22A2BDB3D4300D97F46 /* ViewExtension.swift */; };
-		1FA1F2352BDB3D4300D97F46 /* TextFieldStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22C2BDB3D4300D97F46 /* TextFieldStepper.swift */; };
-		1FA1F2362BDB3D4300D97F46 /* TextFieldStepperConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22D2BDB3D4300D97F46 /* TextFieldStepperConfig.swift */; };
-		1FA1F2372BDB3D4300D97F46 /* TextFieldStepperImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1F22E2BDB3D4300D97F46 /* TextFieldStepperImage.swift */; };
-		1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */; };
+		1F9C170A2BC997120032AA56 /* timeConversionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */; };
 		1FCD5BA22BDF411400C3F1AE /* alertTimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */; };
 		1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC42BD359D900E19500 /* newClientModal.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
 		1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC82BD464AC00E19500 /* showSession.swift */; };
 		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEB0EF92BD9D710006F93A1 /* showNewSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */; };
-		1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */; };
-		1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */; };
 		1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = projectAddModal.swift; sourceTree = "<group>"; tabWidth = 4; };
-		1F072D432BC5D02F00DED4F0 /* modalTest.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = modalTest.swift; sourceTree = "<group>"; tabWidth = 4; };
+		1F07FFCD2BE6B7D900E4DC38 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		1F07FFCE2BE6B7D900E4DC38 /* LongPressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressButton.swift; sourceTree = "<group>"; };
+		1F07FFD02BE6B7D900E4DC38 /* KeyboardGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardGestures.swift; sourceTree = "<group>"; };
+		1F07FFD12BE6B7D900E4DC38 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		1F07FFD32BE6B7D900E4DC38 /* TextFieldStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepper.swift; sourceTree = "<group>"; };
+		1F07FFD42BE6B7D900E4DC38 /* TextFieldStepperConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperConfig.swift; sourceTree = "<group>"; };
+		1F07FFD52BE6B7D900E4DC38 /* TextFieldStepperImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperImage.swift; sourceTree = "<group>"; };
 		1F0D00492BCF6BB4004FFD30 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		1F0D004B2BCF6D49004FFD30 /* TimeScratchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScratchView.swift; sourceTree = "<group>"; };
 		1F0D6DBE2BE2EB9300758838 /* userSettingsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userSettingsValues.swift; sourceTree = "<group>"; };
 		1F171D742BC2145600AB5DA4 /* Hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourglass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F171D772BC2145600AB5DA4 /* hourglassApp.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = hourglassApp.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F171D792BC2145600AB5DA4 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
-		1F171D7B2BC2145600AB5DA4 /* Item.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F171D7F2BC2145700AB5DA4 /* hourglass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hourglass.entitlements; sourceTree = "<group>"; };
 		1F171D812BC2145700AB5DA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerPage.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
-		1F171D8E2BC2176100AB5DA4 /* ProjectsPage.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectsPage.swift; sourceTree = "<group>"; tabWidth = 4; };
 		1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; tabWidth = 4; };
-		1F171D972BC2244600AB5DA4 /* Project.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
-		1F171D992BC2280E00AB5DA4 /* scratch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratch2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = bottomScrollView.swift; sourceTree = "<group>"; tabWidth = 4; };
-		1F2A46AC2BC6284900F62A27 /* timerModels.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = timerModels.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
-		1F3858CF2BDA428600F716D4 /* SwiftUIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColors.swift; sourceTree = "<group>"; };
+		1F2ADC5B2BE6B61600EA885D /* 2024-05-03-hourglass-01-timer.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-01-timer.PNG"; sourceTree = "<group>"; };
+		1F2ADC5C2BE6B61600EA885D /* 2024-05-03-hourglass-02-sessionDetails.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-02-sessionDetails.PNG"; sourceTree = "<group>"; };
+		1F2ADC5D2BE6B61600EA885D /* 2024-05-03-hourglass-03-clients.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-03-clients.PNG"; sourceTree = "<group>"; };
+		1F2ADC5E2BE6B61600EA885D /* 2024-05-03-hourglass-04-clientsDetails.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-04-clientsDetails.PNG"; sourceTree = "<group>"; };
+		1F2ADC5F2BE6B61600EA885D /* 2024-05-03-hourglass-05-clientAddTimeModal.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-05-clientAddTimeModal.PNG"; sourceTree = "<group>"; };
+		1F2ADC602BE6B61600EA885D /* 2024-05-03-hourglass-06-settings.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-06-settings.PNG"; sourceTree = "<group>"; };
+		1F2ADC612BE6B61600EA885D /* 2024-05-03-hourglass-07-settingsModal.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2024-05-03-hourglass-07-settingsModal.PNG"; sourceTree = "<group>"; };
 		1F3858D12BDA48FB00F716D4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1F43C0A72BD82C1B001C869D /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		1F4EB43F2BD7118700326041 /* showTimeAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showTimeAddition.swift; sourceTree = "<group>"; };
 		1F6F2FAC2BDB271E00C4A04B /* showAllSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAllSessions.swift; sourceTree = "<group>"; };
-		1F6F2FAE2BDB2DDE00C4A04B /* setTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setTimeComponent.swift; sourceTree = "<group>"; };
-		1F75F1C92BD1E1050099F127 /* SessionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActions.swift; sourceTree = "<group>"; };
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
-		1F86A9DA2BD4C2DE00718DDA /* borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borders.swift; sourceTree = "<group>"; };
+		1F86A9DA2BD4C2DE00718DDA /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
 		1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTimeAdditionModal.swift; sourceTree = "<group>"; };
 		1F8F3BDB2BC24F8F00F47F8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
-		1F9C16FB2BC96AC50032AA56 /* darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = darkMode.swift; sourceTree = "<group>"; };
-		1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runningTimerDetails.swift; sourceTree = "<group>"; };
-		1F9C16FF2BC9734B0032AA56 /* testData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testData.swift; sourceTree = "<group>"; };
-		1F9C17012BC980450032AA56 /* showProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showProject.swift; sourceTree = "<group>"; };
 		1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autoTextContrast.swift; sourceTree = "<group>"; };
 		1F9C17052BC9956D0032AA56 /* ClientsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsPage.swift; sourceTree = "<group>"; };
 		1F9C17072BC996490032AA56 /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
-		1F9C17092BC997120032AA56 /* timeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversion.swift; sourceTree = "<group>"; };
-		1FA1F2262BDB3D4300D97F46 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
-		1FA1F2272BDB3D4300D97F46 /* LongPressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressButton.swift; sourceTree = "<group>"; };
-		1FA1F2292BDB3D4300D97F46 /* KeyboardGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardGestures.swift; sourceTree = "<group>"; };
-		1FA1F22A2BDB3D4300D97F46 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		1FA1F22C2BDB3D4300D97F46 /* TextFieldStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepper.swift; sourceTree = "<group>"; };
-		1FA1F22D2BDB3D4300D97F46 /* TextFieldStepperConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperConfig.swift; sourceTree = "<group>"; };
-		1FA1F22E2BDB3D4300D97F46 /* TextFieldStepperImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStepperImage.swift; sourceTree = "<group>"; };
-		1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerActions.swift; sourceTree = "<group>"; };
+		1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversionFunctions.swift; sourceTree = "<group>"; };
 		1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertTimeModal.swift; sourceTree = "<group>"; };
 		1FD1DFC42BD359D900E19500 /* newClientModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newClientModal.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
 		1FD1DFC82BD464AC00E19500 /* showSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSession.swift; sourceTree = "<group>"; };
 		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showNewSession.swift; sourceTree = "<group>"; };
-		1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSessionForm.swift; sourceTree = "<group>"; };
-		1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formPickerTest.swift; sourceTree = "<group>"; };
 		1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSessionModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,12 +113,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F07FFCF2BE6B7D900E4DC38 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				1F07FFCD2BE6B7D900E4DC38 /* DoubleExtension.swift */,
+				1F07FFCE2BE6B7D900E4DC38 /* LongPressButton.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		1F07FFD22BE6B7D900E4DC38 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1F07FFD02BE6B7D900E4DC38 /* KeyboardGestures.swift */,
+				1F07FFD12BE6B7D900E4DC38 /* ViewExtension.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		1F07FFD62BE6B7D900E4DC38 /* TextFieldStepper */ = {
+			isa = PBXGroup;
+			children = (
+				1F07FFCF2BE6B7D900E4DC38 /* Internal */,
+				1F07FFD22BE6B7D900E4DC38 /* Keyboard */,
+				1F07FFD32BE6B7D900E4DC38 /* TextFieldStepper.swift */,
+				1F07FFD42BE6B7D900E4DC38 /* TextFieldStepperConfig.swift */,
+				1F07FFD52BE6B7D900E4DC38 /* TextFieldStepperImage.swift */,
+			);
+			path = TextFieldStepper;
+			sourceTree = "<group>";
+		};
+		1F07FFD72BE6B7D900E4DC38 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				1F07FFD62BE6B7D900E4DC38 /* TextFieldStepper */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
 		1F171D6B2BC2145600AB5DA4 = {
 			isa = PBXGroup;
 			children = (
 				1F171D762BC2145600AB5DA4 /* hourglass */,
-				1F8F3BDB2BC24F8F00F47F8F /* README.md */,
 				1F171D752BC2145600AB5DA4 /* Products */,
+				1F8F3BDB2BC24F8F00F47F8F /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,19 +171,17 @@
 		1F171D762BC2145600AB5DA4 /* hourglass */ = {
 			isa = PBXGroup;
 			children = (
-				1FB4931C2BD21B3C0023D689 /* Onboarding */,
-				1FEEDF122BCA338200E28DF3 /* scratch */,
 				1F171D8B2BC2153000AB5DA4 /* Constants */,
 				1F171D8A2BC214E600AB5DA4 /* Controllers */,
 				1F171D892BC214DD00AB5DA4 /* Models */,
-				1FA1F2302BDB3D4300D97F46 /* Plugins */,
+				1FB4931C2BD21B3C0023D689 /* Onboarding */,
+				1F171D802BC2145700AB5DA4 /* Preview Content */,
+				1F2ADC622BE6B61600EA885D /* Screenshots */,
 				1F171D882BC2147500AB5DA4 /* Views */,
 				1F171D772BC2145600AB5DA4 /* hourglassApp.swift */,
 				1F171D792BC2145600AB5DA4 /* ContentView.swift */,
-				1F171D7B2BC2145600AB5DA4 /* Item.swift */,
 				1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */,
 				1F171D7F2BC2145700AB5DA4 /* hourglass.entitlements */,
-				1F171D802BC2145700AB5DA4 /* Preview Content */,
 				1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */,
 			);
 			path = hourglass;
@@ -186,12 +198,10 @@
 		1F171D882BC2147500AB5DA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1FFEAE482BD5E1150070AAD7 /* Deprecated */,
 				1F171D942BC21FA200AB5DA4 /* Components */,
 				1F75F1C82BD1A3AC0099F127 /* DetailsPages */,
 				1F75F1C72BD1A18A0099F127 /* ModalPages */,
 				1F75F1C62BD1A14A0099F127 /* Views */,
-				1F0D004B2BCF6D49004FFD30 /* TimeScratchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,7 +209,6 @@
 		1F171D892BC214DD00AB5DA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F2A46AC2BC6284900F62A27 /* timerModels.swift */,
 				1F819CDB2BCF4C74003BE519 /* ClientModel.swift */,
 				1F819CDD2BCF55C4003BE519 /* SessionModel.swift */,
 				1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */,
@@ -210,8 +219,10 @@
 		1F171D8A2BC214E600AB5DA4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1FA57B4E2BCD9CCB0068AE37 /* timerActions.swift */,
-				1F75F1C92BD1E1050099F127 /* SessionActions.swift */,
+				1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */,
+				1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */,
+				1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */,
+				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,17 +230,11 @@
 		1F171D8B2BC2153000AB5DA4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */,
-				1F9C16FB2BC96AC50032AA56 /* darkMode.swift */,
-				1F9C16FF2BC9734B0032AA56 /* testData.swift */,
+				1F07FFD72BE6B7D900E4DC38 /* Plugins */,
 				1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */,
-				1F9C17092BC997120032AA56 /* timeConversion.swift */,
 				1F0D00492BCF6BB4004FFD30 /* SampleData.swift */,
-				1F86A9DA2BD4C2DE00718DDA /* borders.swift */,
-				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
-				1F3858CF2BDA428600F716D4 /* SwiftUIColors.swift */,
+				1F86A9DA2BD4C2DE00718DDA /* EdgeBorder.swift */,
 				1F3858D12BDA48FB00F716D4 /* Colors.swift */,
-				1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */,
 				1F0D6DBE2BE2EB9300758838 /* userSettingsValues.swift */,
 			);
 			path = Constants;
@@ -238,17 +243,28 @@
 		1F171D942BC21FA200AB5DA4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1F171D972BC2244600AB5DA4 /* Project.swift */,
-				1F6F2FAE2BDB2DDE00C4A04B /* setTimeComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		1F2ADC622BE6B61600EA885D /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				1F2ADC5B2BE6B61600EA885D /* 2024-05-03-hourglass-01-timer.PNG */,
+				1F2ADC5C2BE6B61600EA885D /* 2024-05-03-hourglass-02-sessionDetails.PNG */,
+				1F2ADC5D2BE6B61600EA885D /* 2024-05-03-hourglass-03-clients.PNG */,
+				1F2ADC5E2BE6B61600EA885D /* 2024-05-03-hourglass-04-clientsDetails.PNG */,
+				1F2ADC5F2BE6B61600EA885D /* 2024-05-03-hourglass-05-clientAddTimeModal.PNG */,
+				1F2ADC602BE6B61600EA885D /* 2024-05-03-hourglass-06-settings.PNG */,
+				1F2ADC612BE6B61600EA885D /* 2024-05-03-hourglass-07-settingsModal.PNG */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		1F75F1C62BD1A14A0099F127 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */,
-				1F171D8E2BC2176100AB5DA4 /* ProjectsPage.swift */,
 				1F9C17052BC9956D0032AA56 /* ClientsPage.swift */,
 				1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */,
 			);
@@ -258,6 +274,7 @@
 		1F75F1C72BD1A18A0099F127 /* ModalPages */ = {
 			isa = PBXGroup;
 			children = (
+				1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */,
 				1FD1DFC42BD359D900E19500 /* newClientModal.swift */,
 				1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */,
 				1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */,
@@ -271,49 +288,10 @@
 			children = (
 				1F9C17072BC996490032AA56 /* showClient.swift */,
 				1FD1DFC82BD464AC00E19500 /* showSession.swift */,
-				1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */,
 				1F4EB43F2BD7118700326041 /* showTimeAddition.swift */,
 				1F6F2FAC2BDB271E00C4A04B /* showAllSessions.swift */,
 			);
 			path = DetailsPages;
-			sourceTree = "<group>";
-		};
-		1FA1F2282BDB3D4300D97F46 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				1FA1F2262BDB3D4300D97F46 /* DoubleExtension.swift */,
-				1FA1F2272BDB3D4300D97F46 /* LongPressButton.swift */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
-		1FA1F22B2BDB3D4300D97F46 /* Keyboard */ = {
-			isa = PBXGroup;
-			children = (
-				1FA1F2292BDB3D4300D97F46 /* KeyboardGestures.swift */,
-				1FA1F22A2BDB3D4300D97F46 /* ViewExtension.swift */,
-			);
-			path = Keyboard;
-			sourceTree = "<group>";
-		};
-		1FA1F22F2BDB3D4300D97F46 /* TextFieldStepper */ = {
-			isa = PBXGroup;
-			children = (
-				1FA1F2282BDB3D4300D97F46 /* Internal */,
-				1FA1F22B2BDB3D4300D97F46 /* Keyboard */,
-				1FA1F22C2BDB3D4300D97F46 /* TextFieldStepper.swift */,
-				1FA1F22D2BDB3D4300D97F46 /* TextFieldStepperConfig.swift */,
-				1FA1F22E2BDB3D4300D97F46 /* TextFieldStepperImage.swift */,
-			);
-			path = TextFieldStepper;
-			sourceTree = "<group>";
-		};
-		1FA1F2302BDB3D4300D97F46 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				1FA1F22F2BDB3D4300D97F46 /* TextFieldStepper */,
-			);
-			path = Plugins;
 			sourceTree = "<group>";
 		};
 		1FB4931C2BD21B3C0023D689 /* Onboarding */ = {
@@ -321,29 +299,6 @@
 			children = (
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		1FEEDF122BCA338200E28DF3 /* scratch */ = {
-			isa = PBXGroup;
-			children = (
-				1F2A46A82BC6092600F62A27 /* bottomScrollView.swift */,
-				1F072D432BC5D02F00DED4F0 /* modalTest.swift */,
-				1F171D992BC2280E00AB5DA4 /* scratch.playground */,
-				1F171D9A2BC2426B00AB5DA4 /* scratch2.playground */,
-				1FEEDF132BCA33A400E28DF3 /* formPickerTest.swift */,
-			);
-			path = scratch;
-			sourceTree = "<group>";
-		};
-		1FFEAE482BD5E1150070AAD7 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				1F9C17012BC980450032AA56 /* showProject.swift */,
-				1F072D3F2BC5AA6F00DED4F0 /* projectAddModal.swift */,
-				1F9C16FD2BC9720A0032AA56 /* runningTimerDetails.swift */,
-				1FEEDF102BCA278500E28DF3 /* addSessionForm.swift */,
-			);
-			path = Deprecated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,9 +360,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */,
+				1F2ADC652BE6B61600EA885D /* 2024-05-03-hourglass-03-clients.PNG in Resources */,
+				1F2ADC662BE6B61600EA885D /* 2024-05-03-hourglass-04-clientsDetails.PNG in Resources */,
 				1F171D822BC2145700AB5DA4 /* Preview Assets.xcassets in Resources */,
+				1F2ADC692BE6B61600EA885D /* 2024-05-03-hourglass-07-settingsModal.PNG in Resources */,
+				1F2ADC642BE6B61600EA885D /* 2024-05-03-hourglass-02-sessionDetails.PNG in Resources */,
 				1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */,
 				1F171D7E2BC2145700AB5DA4 /* Assets.xcassets in Resources */,
+				1F2ADC632BE6B61600EA885D /* 2024-05-03-hourglass-01-timer.PNG in Resources */,
+				1F2ADC672BE6B61600EA885D /* 2024-05-03-hourglass-05-clientAddTimeModal.PNG in Resources */,
+				1F2ADC682BE6B61600EA885D /* 2024-05-03-hourglass-06-settings.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,56 +381,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F171D7A2BC2145600AB5DA4 /* ContentView.swift in Sources */,
+				1F07FFDD2BE6B7D900E4DC38 /* TextFieldStepperConfig.swift in Sources */,
 				1F3858D22BDA48FB00F716D4 /* Colors.swift in Sources */,
-				1F171D7C2BC2145600AB5DA4 /* Item.swift in Sources */,
 				1FEB0EF92BD9D710006F93A1 /* showNewSession.swift in Sources */,
 				1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */,
+				1F07FFDA2BE6B7D900E4DC38 /* KeyboardGestures.swift in Sources */,
 				1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */,
 				1F43C0A82BD82C1B001C869D /* EmailController.swift in Sources */,
 				1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */,
-				1FA1F2322BDB3D4300D97F46 /* LongPressButton.swift in Sources */,
-				1FEEDF112BCA278500E28DF3 /* addSessionForm.swift in Sources */,
-				1F9C17002BC9734B0032AA56 /* testData.swift in Sources */,
+				1F07FFDB2BE6B7D900E4DC38 /* ViewExtension.swift in Sources */,
+				1F07FFDC2BE6B7D900E4DC38 /* TextFieldStepper.swift in Sources */,
 				1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */,
 				1F4EB4402BD7118700326041 /* showTimeAddition.swift in Sources */,
-				1F9C16FE2BC9720A0032AA56 /* runningTimerDetails.swift in Sources */,
-				1F171D8F2BC2176100AB5DA4 /* ProjectsPage.swift in Sources */,
-				1F2A46A92BC6092600F62A27 /* bottomScrollView.swift in Sources */,
 				1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */,
-				1F9C170A2BC997120032AA56 /* timeConversion.swift in Sources */,
+				1F9C170A2BC997120032AA56 /* timeConversionFunctions.swift in Sources */,
 				1F171D932BC21E1300AB5DA4 /* SettingsPage.swift in Sources */,
-				1F75F1CA2BD1E1050099F127 /* SessionActions.swift in Sources */,
 				1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */,
-				1F072D402BC5AA6F00DED4F0 /* projectAddModal.swift in Sources */,
-				1FA1F2332BDB3D4300D97F46 /* KeyboardGestures.swift in Sources */,
-				1F3858D02BDA428600F716D4 /* SwiftUIColors.swift in Sources */,
 				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
-				1FA1F2362BDB3D4300D97F46 /* TextFieldStepperConfig.swift in Sources */,
 				1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */,
-				1F86A9DB2BD4C2DE00718DDA /* borders.swift in Sources */,
-				1F9C16FC2BC96AC50032AA56 /* darkMode.swift in Sources */,
-				1F9C17022BC980450032AA56 /* showProject.swift in Sources */,
-				1F072D442BC5D02F00DED4F0 /* modalTest.swift in Sources */,
-				1F0D004C2BCF6D49004FFD30 /* TimeScratchView.swift in Sources */,
+				1F07FFD82BE6B7D900E4DC38 /* DoubleExtension.swift in Sources */,
+				1F86A9DB2BD4C2DE00718DDA /* EdgeBorder.swift in Sources */,
 				1F0D004A2BCF6BB4004FFD30 /* SampleData.swift in Sources */,
-				1FA1F2312BDB3D4300D97F46 /* DoubleExtension.swift in Sources */,
-				1FA1F2372BDB3D4300D97F46 /* TextFieldStepperImage.swift in Sources */,
+				1F07FFD92BE6B7D900E4DC38 /* LongPressButton.swift in Sources */,
 				1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */,
-				1FEEDF142BCA33A400E28DF3 /* formPickerTest.swift in Sources */,
-				1F171D982BC2244600AB5DA4 /* Project.swift in Sources */,
 				1F6F2FAD2BDB271E00C4A04B /* showAllSessions.swift in Sources */,
 				1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */,
 				1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */,
 				1F9C17062BC9956D0032AA56 /* ClientsPage.swift in Sources */,
-				1F2A46AD2BC6284900F62A27 /* timerModels.swift in Sources */,
 				1F9C17082BC996490032AA56 /* showClient.swift in Sources */,
-				1FA1F2342BDB3D4300D97F46 /* ViewExtension.swift in Sources */,
 				1FD1DFC52BD359D900E19500 /* newClientModal.swift in Sources */,
-				1FA57B4F2BCD9CCB0068AE37 /* timerActions.swift in Sources */,
 				1F0D6DBF2BE2EB9300758838 /* userSettingsValues.swift in Sources */,
+				1F07FFDE2BE6B7D900E4DC38 /* TextFieldStepperImage.swift in Sources */,
 				1FCD5BA22BDF411400C3F1AE /* alertTimeModal.swift in Sources */,
-				1F6F2FAF2BDB2DDE00C4A04B /* setTimeComponent.swift in Sources */,
-				1FA1F2352BDB3D4300D97F46 /* TextFieldStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
