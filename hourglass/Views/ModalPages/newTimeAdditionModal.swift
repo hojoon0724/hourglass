@@ -19,8 +19,10 @@ struct newTimeAdditionModal: View {
     }
 
     @State var newTimeAddition: TimeAddition = TimeAddition(timeStamp: .now, timeAdded: 0)
-    @State var hours: Int?
-    @State var minutes: Int?
+//    @State var newTimeAddition: TimeAddition = TimeAddition(timeCreated: .now, timeStamp: .now, timeAdded: 0)
+
+    @State private var hours: Double = 0
+    @State private var minutes: Double = 0
 
     @State var clientColor = Color.gray
 
@@ -31,59 +33,78 @@ struct newTimeAdditionModal: View {
     @State private var now: Date = .now
 
     var body: some View {
-        List {
-            Section(header: Text("Client")) {
-                HStack(alignment: .center, content: {
-                    Text("Name")
-                    Spacer()
-                    Text("\(clientPassed.name)")
-                        .multilineTextAlignment(.trailing)
-                })
+        VStack {
+            HStack {
+                Spacer()
+                Text("Time to add")
+                    .font(.title3)
+                Spacer()
+                TextFieldStepper(
+                    doubleValue: $hours,
+                    unit: "h",
+                    label: ""
+                )
+
+                TextFieldStepper(
+                    doubleValue: $minutes,
+                    unit: "m",
+                    label: "",
+                    maximum: 59
+                )
+            }
+            .onChange(of: hours) {
+                timeInSec = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+            }.onChange(of: minutes) {
+                timeInSec = fullTimeToSeconds(Int(hours), Int(minutes), 0)
+            }
+            .padding()
+            List {
+                Section(header: Text("Client")) {
+                    HStack(alignment: .center, content: {
+                        Text("Name")
+                        Spacer()
+                        Text("\(clientPassed.name)")
+                            .multilineTextAlignment(.trailing)
+                    })
+                }
             }
 
-            Section(header: Text("Time to add")) {
-                HStack(alignment: .center, content: {
-                    Text("Hours")
-                    TextField("Enter Hours", value: $hours, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-                HStack(alignment: .center, content: {
-                    Text("Minutes")
-                    TextField("Enter Minutes", value: $minutes, format: .number)
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.trailing)
-                })
-            }
-        }
-        .listStyle(.grouped)
-        .navigationTitle("New Client")
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Add") {
-                    newTimeAddition.timeAdded = fullTimeToSeconds(hours ?? 0, minutes ?? 0, 0)
-                    modelContext.insert(newTimeAddition)
-                    clientPassed.timeAdditions.append(newTimeAddition)
-                    dismiss()
+            .listStyle(.grouped)
+            //        .navigationTitle("New Client")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add") {
+                        newTimeAddition.timeAdded = timeInSec
+                        modelContext.insert(newTimeAddition)
+                        clientPassed.timeAdditions.append(newTimeAddition)
+                        dismiss()
+                    }
+                    .disabled(timeInSec == 0)
                 }
-                .disabled(clientPassed.name.isEmpty)
-            }
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    confirmationShow = true
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
             }
-        }
-        .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
-            Button("Yes, delete it.", role: .destructive) {
-                dismiss()
-            }
-        } message: {
-            Text("Are you sure? You can't undo this.")
         }
     }
 }
 
 #Preview {
-    newTimeAdditionModal(clientPassed: SampleData.shared.client)
+    NavigationStack {
+        VStack {
+            Spacer()
+            Button("Show Modal") {
+            }
+            .padding()
+        }
+        .sheet(isPresented: .constant(true)) {
+            NavigationView {
+                newTimeAdditionModal(clientPassed: SampleData.shared.client)
+                    .modelContainer(SampleData.shared.modelContainer)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
 }

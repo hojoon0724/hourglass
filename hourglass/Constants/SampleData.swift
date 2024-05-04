@@ -53,6 +53,13 @@ class SampleData {
         Session.sampleData[2].client = Client.sampleData[1]
         Session.sampleData[3].client = Client.sampleData[1]
         Session.sampleData[4].client = Client.sampleData[2]
+        Session.sampleData[5].client = Client.sampleData[0]
+        Session.sampleData[6].client = Client.sampleData[0]
+        Session.sampleData[7].client = Client.sampleData[0]
+        Session.sampleData[8].client = Client.sampleData[0]
+        Session.sampleData[8].client = Client.sampleData[1]
+        Session.sampleData[9].client = Client.sampleData[2]
+        Session.sampleData[10].client = Client.sampleData[0]
 
         TimeAddition.sampleData[0].client = Client.sampleData[0]
         TimeAddition.sampleData[1].client = Client.sampleData[1]

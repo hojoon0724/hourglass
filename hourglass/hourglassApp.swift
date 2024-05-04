@@ -13,6 +13,8 @@ struct hourglassApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Session.self,
+            Client.self,
+            TimeAddition.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -27,7 +29,6 @@ struct hourglassApp: App {
         WindowGroup {
             ContentView()
         }
-//        .modelContainer(for: timerModel.self)
         .modelContainer(sharedModelContainer)
     }
 }

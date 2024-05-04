@@ -25,13 +25,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="HourglassLogo" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-cz-Tn9">
-                                <rect key="frame" x="-96" y="359" width="625" height="214"/>
+                                <rect key="frame" x="-97" y="359" width="625" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-LM-b00">
-                                <rect key="frame" x="170" y="646" width="84" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +45,7 @@
     </scenes>
     <color key="tintColor" red="0.8880177843" green="1" blue="0.30540259530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
-        <image name="Hourglass BG" width="1024" height="1024"/>
-        <image name="HourglassLogo" width="623" height="673"/>
+        <image name="Hourglass BG" width="682.66668701171875" height="682.66668701171875"/>
+        <image name="HourglassLogo" width="555" height="673"/>
     </resources>
 </document>

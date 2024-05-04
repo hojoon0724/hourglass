@@ -10,27 +10,32 @@ import SwiftUI
 
 struct TimerPage: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
 
     @State private var newSession: Session = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
-    @State private var newSessionModal: Bool = false
     @State var clock: Int = 0
+
+    @State private var newSessionModal: Bool = false
     @State var timer: Timer?
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0, content: {
-                // Time Log Area
+//              Time Log Area
                 List {
-                    // Replace with data - maybe refactor as component
-                    ForEach(sessions) { session in
+//                    Button("print user def") {
+//                        print(UserDefaults.standard.dictionaryRepresentation())
+//                    }
+//                    .flippedUpsideDown()
+                    ForEach(sessions.filter { $0.endTime != nil }) { session in
                         NavigationLink(destination: showSession(session: session)) {
-//                            Text("\(session.startTime)")
                             HStack(content: {
                                 Image(systemName: "circle.fill")
                                     // change color to variable
-                                    .foregroundColor(.red)
+                                    .foregroundColor(customColors[session.client?.color ?? "None"])
                                     .padding(.trailing, 10)
+                                    .shadow(radius: 3)
 
                                 VStack(alignment: .leading, content: {
                                     Text(session.secondsElapsed != nil ? secondsToFullTime(session.secondsElapsed!) : "Running")
@@ -41,7 +46,6 @@ struct TimerPage: View {
                                         .font(.caption)
                                 })
                             })
-
                             Spacer()
                         }
                         .flippedUpsideDown()
@@ -52,60 +56,67 @@ struct TimerPage: View {
                 .frame(maxWidth: .infinity)
                 .defaultScrollAnchor(.top)
                 .flippedUpsideDown()
+                .ignoresSafeArea()
 
-                //            Button + Timer - Refactor as component
-                Button(action: { self.newSessionModal = true }, label: {
-                    HStack(content: {
-                        // Button - Dynamic
-                        if newSession.running == false {
-                            Button(action: startSession) {
-                                Image(systemName: "play.circle.fill")
-                            }
-                            .font(.largeTitle)
-                            .foregroundColor(.green)
-                        } else {
-                            Button(action: stopSession) {
-                                Image(systemName: "stop.circle.fill")
-                            }
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
+//              Button + Timer - Refactor as component
+                HStack {
+                    // Button - Dynamic
+                    if newSession.running == false {
+                        Button(action: startSession) {
+                            Image(systemName: "play.circle.fill")
                         }
-                        Spacer()
+                        .font(.largeTitle)
+                        .foregroundColor(.green)
+                    } else {
+                        Button(action: stopSession) {
+                            Image(systemName: "stop.circle.fill")
+                        }
+                        .font(.largeTitle)
+                        .foregroundColor(.red)
+                    }
+                    Spacer()
 
-                        // Timer + Project Details
+//                  Timer + Project Details
+                    VStack(alignment: .trailing, content: {
+                        HStack(content: {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(customColors[newSession.client?.color ?? "None"])
+                                .shadow(radius: 3)
+                            Text("\(secondsToFullTime(clock))")
+                                .monospaced()
+                                .font(.system(size: 24))
+                        })
 
-                        VStack(alignment: .trailing, content: {
-                            HStack(content: {
-                                Image(systemName: "circle.fill")
-                                    // change color to variable
-                                    .foregroundColor(.red)
-                                Text("\(secondsToFullTime(clock))")
-                                    .monospaced()
-                                    .font(.system(size: 24))
-
-                            })
-
-                            HStack(content: {
-                                Text("\(newSession.client?.name ?? "")").font(.footnote)
-                            })
+                        HStack(content: {
+                            Text("\(newSession.client?.name ?? "No Client Selected")").font(.footnote)
                         })
                     })
-                    .padding()
-                    .sheet(isPresented: self.$newSessionModal) {
-                        showSession(session: newSession)
-                    }
-                })
-                .buttonStyle(PlainButtonStyle())
+                }
+                #if os(iOS) || os(watchOS)
+                .padding()
+
+                #elseif os(macOS) || os(tvOS) || os(visionOS)
+                .padding(30)
+
+                #endif
+                .sheet(isPresented: self.$newSessionModal) {
+                    showNewSession(session: newSession, stopSession: stopSession)
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.newSessionModal = true
+                }
                 .border(width: 1, edges: [.top], color: .gray.opacity(0.5))
             })
         }
     }
 
     func startSession() {
-        newSession = Session(running: true, startTime: .now, editedTimestamp: .now)
+        newSession.running = true
+        newSession.startTime = .now
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            clock = Int(Date.now.timeIntervalSince(newSession.startTime)
-            )
+            clock = Int(Date.now.timeIntervalSince(newSession.startTime))
+            newSession.secondsElapsed = clock
         }
     }
 
@@ -115,8 +126,17 @@ struct TimerPage: View {
         newSession.secondsElapsed = Int((newSession.endTime?.timeIntervalSince(newSession.startTime))!)
         timer?.invalidate()
         modelContext.insert(newSession)
+        newSession = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
         clock = 0
     }
+
+//    private func deleteSession(offsets: IndexSet) {
+//        withAnimation {
+//            for index in offsets {
+//                modelContext.delete(sessions[index])
+//            }
+//        }
+//    }
 }
 
 #Preview {

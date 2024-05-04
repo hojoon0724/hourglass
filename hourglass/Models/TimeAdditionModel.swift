@@ -12,10 +12,10 @@ import SwiftData
 final class TimeAddition {
     var timeStamp: Date
     var timeAdded: Int
-    var rate: Int?
+    var rate: Double?
     var client: Client?
 
-    init(timeStamp: Date, timeAdded: Int, rate: Int? = nil, client: Client? = nil) {
+    init(timeStamp: Date, timeAdded: Int, rate: Double? = nil, client: Client? = nil) {
         self.timeStamp = timeStamp
         self.timeAdded = timeAdded
         self.rate = rate
@@ -23,10 +23,20 @@ final class TimeAddition {
     }
 
     static let sampleData = [
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 64800),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 43200),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 28800),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326390), timeAdded: 50400),
-        TimeAddition(timeStamp: Date(timeIntervalSinceReferenceDate: 735326357), timeAdded: 14000),
+        TimeAddition(
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 64900),
+        TimeAddition(
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 43400),
+        TimeAddition(
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 8481),
+        TimeAddition(
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326390),
+            timeAdded: 7200),
+        TimeAddition(
+            timeStamp: Date(timeIntervalSinceReferenceDate: 735326357),
+            timeAdded: 3600),
     ]
 }

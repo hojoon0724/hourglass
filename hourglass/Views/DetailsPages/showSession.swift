@@ -15,6 +15,7 @@ struct showSession: View {
     @Environment(\.modelContext) private var modelContext
 
     @Query(sort: \Client.name) private var clientList: [Client]
+
     @State private var now: Date = .now
 
     @State var confirmationShow = false
@@ -26,6 +27,7 @@ struct showSession: View {
                     DatePicker("Start", selection: $session.startTime)
                         .onChange(of: session.startTime) {
                             session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
+                            session.editedTimestamp = .now
                         }
                 })
                 HStack(content: {
@@ -41,6 +43,7 @@ struct showSession: View {
                         DatePicker("", selection: Binding<Date>($session.endTime)!)
                             .onChange(of: session.endTime) {
                                 session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
+                                session.editedTimestamp = .now
                             }
                     }
 
@@ -53,26 +56,38 @@ struct showSession: View {
                 })
             }
 
-            Section(header: Text("")) {
-                Picker("Client", selection: $session.client) {
-                    Text("None").tag(nil as Client?)
-                    ForEach(clientList) { client in
-                        Text(client.name).tag(client as Client?)
+            Section {
+                HStack {
+                    Text("Client")
+                    Spacer()
+                        .foregroundColor(customColors[session.client?.color ?? "None"])
+                    Picker("", selection: $session.client) {
+                        Text("None").tag(nil as Client?)
+                        ForEach(clientList.filter { $0.active == true }) { client in
+                            Text(client.name).tag(client as Client?)
+                        }
+                    }
+                    .pickerStyle(.automatic)
+                    .onChange(of: session.client) {
+                        session.editedTimestamp = .now
                     }
                 }
-                .pickerStyle(.automatic)
             }
 
-            Button("Delete Session", role: .destructive) {
-                confirmationShow = true
+            Section {
+                Button("Delete Session", role: .destructive) {
+                    confirmationShow = true
+                }
+            } footer: {
+                Text("Last edited: \(session.editedTimestamp.formatted())")
             }
         }
+
         .navigationTitle("Session")
         .listStyle(.grouped)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
-                    session.secondsElapsed = Int((session.endTime?.timeIntervalSince(session.startTime))!)
                     dismiss()
                 }
             }

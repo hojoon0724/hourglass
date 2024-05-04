@@ -9,6 +9,7 @@ import Foundation
 import MessageUI
 
 class EmailController: NSObject, MFMailComposeViewControllerDelegate {
+    var someValue: Int = 0
     public static let shared = EmailController()
     override private init() { }
 
@@ -32,7 +33,9 @@ class EmailController: NSObject, MFMailComposeViewControllerDelegate {
     }
 
     static func getRootViewController() -> UIViewController? {
-        // In SwiftUI 2.0
-        UIApplication.shared.windows.first?.rootViewController
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            return windowScene.windows.first?.rootViewController
+        }
+        return nil
     }
 }

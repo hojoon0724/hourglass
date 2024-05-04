@@ -13,18 +13,14 @@ func fullTimeToSeconds(_ hour: Int, _ minute: Int, _ second: Int) -> Int {
     return hourInSec + minuteInSec + second
 }
 
-func secondsToFullTime(_ seconds: Int) -> String {
-    if seconds < 0 {
-        let positiveSeconds = seconds * -1
-        let hr = convertToTwoDigits(positiveSeconds / 3600)
-        let min = convertToTwoDigits((positiveSeconds % 3600) / 60)
-        let sec = convertToTwoDigits((positiveSeconds % 3600) % 60)
-        return "-\(hr):\(min):\(sec)"
-    }
-    let hr = convertToTwoDigits(seconds / 3600)
-    let min = convertToTwoDigits((seconds % 3600) / 60)
-    let sec = convertToTwoDigits((seconds % 3600) % 60)
-    return "\(hr):\(min):\(sec)"
+func secondsToFullTime(_ intakeSeconds: Int) -> String {
+    let workingSeconds = abs(intakeSeconds)
+    let hr = convertToTwoDigits(workingSeconds / 3600)
+    let min = convertToTwoDigits((workingSeconds % 3600) / 60)
+    let sec = convertToTwoDigits((workingSeconds % 3600) % 60)
+    let returnString = "\(hr):\(min):\(sec)"
+
+    return intakeSeconds < 0 ? ("-" + returnString) : returnString
 }
 
 func convertToTwoDigits(_ number: Int) -> String {
