@@ -96,4 +96,4 @@ Note: the project data model has been abandoned because it wasn't very useful
 
 ## UI Mockup
 
-![Timer Page] (./hourglass/hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG)
+<img src="./hourglass/hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG">
