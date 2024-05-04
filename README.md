@@ -97,3 +97,9 @@ Note: the project data model has been abandoned because it wasn't very useful
 ## UI Mockup
 
 <img src="./hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-02-sessionDetails.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-03-clients.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-04-clientsDetails.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-05-clientAddTimeModal.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-06-settings.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-07-settingsModal">
