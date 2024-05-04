@@ -96,4 +96,4 @@ Note: the project data model has been abandoned because it wasn't very useful
 
 ## UI Mockup
 
-<img src="./hourglass/hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG">
+<img src="./hourglass/Screenshots/2024-05-03-hourglass-01-timer.PNG">
