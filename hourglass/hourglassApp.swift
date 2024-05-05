@@ -10,6 +10,8 @@ import SwiftUI
 
 @main
 struct hourglassApp: App {
+    @StateObject var localNotifications = LocalNotificationsManager()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Session.self,
@@ -28,6 +30,7 @@ struct hourglassApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(localNotifications)
         }
         .modelContainer(sharedModelContainer)
     }

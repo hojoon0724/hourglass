@@ -122,5 +122,6 @@ struct ClientsPage: View {
 
 #Preview {
     ContentView(selectedTab: "ClientsPage")
+        .environmentObject(LocalNotificationsManager())
         .modelContainer(SampleData.shared.modelContainer)
 }

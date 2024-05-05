@@ -50,6 +50,7 @@
 		1FD1DFC92BD464AC00E19500 /* showSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC82BD464AC00E19500 /* showSession.swift */; };
 		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEB0EF92BD9D710006F93A1 /* showNewSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */; };
+		1FEFD0F82BE7289C00083985 /* LocalNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFD0F72BE7289C00083985 /* LocalNotificationsManager.swift */; };
 		1FFEAE4A2BD5E1550070AAD7 /* newSessionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		1FD1DFC82BD464AC00E19500 /* showSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSession.swift; sourceTree = "<group>"; };
 		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showNewSession.swift; sourceTree = "<group>"; };
+		1FEFD0F72BE7289C00083985 /* LocalNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsManager.swift; sourceTree = "<group>"; };
 		1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSessionModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +224,7 @@
 				1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */,
 				1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */,
 				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
+				1FEFD0F72BE7289C00083985 /* LocalNotificationsManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				1F0D004A2BCF6BB4004FFD30 /* SampleData.swift in Sources */,
 				1F07FFD92BE6B7D900E4DC38 /* LongPressButton.swift in Sources */,
 				1F171D8D2BC215CE00AB5DA4 /* TimerPage.swift in Sources */,
+				1FEFD0F82BE7289C00083985 /* LocalNotificationsManager.swift in Sources */,
 				1F6F2FAD2BDB271E00C4A04B /* showAllSessions.swift in Sources */,
 				1F890E552BD5F2DA00096D9E /* newTimeAdditionModal.swift in Sources */,
 				1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */,
@@ -606,11 +610,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Hojoon-Kim.hourglass";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -647,11 +651,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Hojoon-Kim.hourglass";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};

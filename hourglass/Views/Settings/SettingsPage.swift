@@ -127,5 +127,6 @@ struct SettingsPage: View {
 
 #Preview {
     ContentView(selectedTab: "SettingsPage")
+        .environmentObject(LocalNotificationsManager())
         .modelContainer(SampleData.shared.modelContainer)
 }

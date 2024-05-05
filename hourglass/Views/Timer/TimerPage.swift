@@ -141,5 +141,6 @@ struct TimerPage: View {
 
 #Preview {
     ContentView()
+        .environmentObject(LocalNotificationsManager())
         .modelContainer(SampleData.shared.modelContainer)
 }
