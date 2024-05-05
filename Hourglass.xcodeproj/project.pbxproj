@@ -179,7 +179,6 @@
 				1F2ADC622BE6B61600EA885D /* Screenshots */,
 				1F171D882BC2147500AB5DA4 /* Views */,
 				1F171D772BC2145600AB5DA4 /* hourglassApp.swift */,
-				1F171D792BC2145600AB5DA4 /* ContentView.swift */,
 				1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */,
 				1F171D7F2BC2145700AB5DA4 /* hourglass.entitlements */,
 				1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */,
@@ -198,10 +197,10 @@
 		1F171D882BC2147500AB5DA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F171D942BC21FA200AB5DA4 /* Components */,
-				1F75F1C82BD1A3AC0099F127 /* DetailsPages */,
-				1F75F1C72BD1A18A0099F127 /* ModalPages */,
-				1F75F1C62BD1A14A0099F127 /* Views */,
+				1F171D792BC2145600AB5DA4 /* ContentView.swift */,
+				1F2E55F52BE7010300E09D64 /* Timer */,
+				1F2E55F62BE7010C00E09D64 /* Clients */,
+				1F2E55F72BE7011A00E09D64 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,13 +239,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		1F171D942BC21FA200AB5DA4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		1F2ADC622BE6B61600EA885D /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,37 +253,85 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
-		1F75F1C62BD1A14A0099F127 /* Views */ = {
+		1F2E55F52BE7010300E09D64 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				1F171D8C2BC215CE00AB5DA4 /* TimerPage.swift */,
-				1F9C17052BC9956D0032AA56 /* ClientsPage.swift */,
-				1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */,
+				1F2E55F82BE7013800E09D64 /* Details */,
+				1F2E55F92BE7013F00E09D64 /* Modals */,
 			);
-			path = Views;
+			path = Timer;
 			sourceTree = "<group>";
 		};
-		1F75F1C72BD1A18A0099F127 /* ModalPages */ = {
+		1F2E55F62BE7010C00E09D64 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C17052BC9956D0032AA56 /* ClientsPage.swift */,
+				1F2E55FB2BE7014D00E09D64 /* Details */,
+				1F2E55FA2BE7014D00E09D64 /* Modals */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		1F2E55F72BE7011A00E09D64 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1F171D922BC21E1300AB5DA4 /* SettingsPage.swift */,
+				1F2E55FC2BE7015100E09D64 /* Details */,
+				1F2E55FD2BE7015100E09D64 /* Modals */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1F2E55F82BE7013800E09D64 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1FD1DFC82BD464AC00E19500 /* showSession.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1F2E55F92BE7013F00E09D64 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
 				1FEB0EF82BD9D710006F93A1 /* showNewSession.swift */,
-				1FD1DFC42BD359D900E19500 /* newClientModal.swift */,
 				1FFEAE492BD5E1550070AAD7 /* newSessionModal.swift */,
-				1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */,
-				1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */,
 			);
-			path = ModalPages;
+			path = Modals;
 			sourceTree = "<group>";
 		};
-		1F75F1C82BD1A3AC0099F127 /* DetailsPages */ = {
+		1F2E55FA2BE7014D00E09D64 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				1FD1DFC42BD359D900E19500 /* newClientModal.swift */,
+				1F890E542BD5F2DA00096D9E /* newTimeAdditionModal.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		1F2E55FB2BE7014D00E09D64 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				1F9C17072BC996490032AA56 /* showClient.swift */,
-				1FD1DFC82BD464AC00E19500 /* showSession.swift */,
 				1F4EB43F2BD7118700326041 /* showTimeAddition.swift */,
 				1F6F2FAC2BDB271E00C4A04B /* showAllSessions.swift */,
 			);
-			path = DetailsPages;
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1F2E55FC2BE7015100E09D64 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1F2E55FD2BE7015100E09D64 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				1FCD5BA12BDF411400C3F1AE /* alertTimeModal.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 		1FB4931C2BD21B3C0023D689 /* Onboarding */ = {
