@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @State var firstRun = true
     @State var selectedTab = "TimerPage"
     @StateObject private var colorSchemeManager = ColorSchemeManager.shared
     @StateObject private var userSettingsValues = UserSettingsValues.shared
@@ -21,23 +22,11 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if localNotifications.isGranted {
-                TabView(selection: $selectedTab) {
-                    TimerPage()
-                        .tabItem { Label("Timer", systemImage: "timer") }
-                        .tag("TimerPage")
-
-                    ClientsPage()
-                        .tabItem { Label("Clients", systemImage: "building.2.fill") }
-                        .tag("ClientsPage")
-
-                    SettingsPage()
-                        .tabItem { Label("Settings", systemImage: "gear") }
-                        .tag("SettingsPage")
-                }
-            } else {
+            if !localNotifications.isGranted {
                 Image("Hourglass BG")
+                    .scaledToFit()
                     .ignoresSafeArea()
+
                 Rectangle()
                     .foregroundColor(.black)
                     .blendMode(colorScheme == .dark ? .darken : .normal)
@@ -59,6 +48,20 @@ struct ContentView: View {
                     .cornerRadius(/*@START_MENU_TOKEN@*/16.0/*@END_MENU_TOKEN@*/)
                     .padding()
                 }
+            } else {
+                TabView(selection: $selectedTab) {
+                    TimerPage()
+                        .tabItem { Label("Timer", systemImage: "timer") }
+                        .tag("TimerPage")
+
+                    ClientsPage()
+                        .tabItem { Label("Clients", systemImage: "building.2.fill") }
+                        .tag("ClientsPage")
+
+                    SettingsPage()
+                        .tabItem { Label("Settings", systemImage: "gear") }
+                        .tag("SettingsPage")
+                }
             }
         }
         // runs function and returns the ColorScheme
@@ -75,6 +78,7 @@ struct ContentView: View {
                 }
             }
         }
+        
     }
 }
 

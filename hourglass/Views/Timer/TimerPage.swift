@@ -22,17 +22,11 @@ struct TimerPage: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0, content: {
-//              Time Log Area
                 List {
-//                    Button("print user def") {
-//                        print(UserDefaults.standard.dictionaryRepresentation())
-//                    }
-//                    .flippedUpsideDown()
                     ForEach(sessions.filter { $0.endTime != nil }) { session in
                         NavigationLink(destination: showSession(session: session)) {
                             HStack(content: {
                                 Image(systemName: "circle.fill")
-                                    // change color to variable
                                     .foregroundColor(customColors[session.client?.color ?? "None"])
                                     .padding(.trailing, 10)
                                     .shadow(radius: 3)
@@ -50,7 +44,6 @@ struct TimerPage: View {
                         }
                         .flippedUpsideDown()
                     }
-//                    .onDelete(perform: deleteSession)
                 }
                 .listStyle(.grouped)
                 .frame(maxWidth: .infinity)

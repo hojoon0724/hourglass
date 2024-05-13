@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import NotificationCenter
+import UIKit
+import UserNotifications
 
 @MainActor
 class LocalNotificationsManager: ObservableObject {
@@ -25,6 +26,8 @@ class LocalNotificationsManager: ObservableObject {
     func getCurrentSettings() async {
         let currentSettings = await notificationCenter.notificationSettings()
         isGranted = (currentSettings.authorizationStatus == .authorized)
+        print("isGranted: \(isGranted)")
+        print("currentSettings: \(currentSettings.authorizationStatus)")
     }
 
     // open settings
