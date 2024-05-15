@@ -14,6 +14,8 @@ struct SettingsPage: View {
     // @StateObject private var colorSchemeManager = ColorSchemeManager() also works, but .shared avoids fragmentation and keeps all instances share the same state
 
     @StateObject private var userSettingsValues = UserSettingsValues.shared
+    
+    @EnvironmentObject var localNotificationsManager: LocalNotificationManager
 
     @State var firstAlertModal: Bool = false
     @State var secondAlertModal: Bool = false
@@ -92,6 +94,24 @@ struct SettingsPage: View {
                 }
 
                 Section {
+                    Button("Notify") {
+                        Task {
+                            let testNotification = LocalNotification(identifier: UUID().uuidString,
+                                                                       title: "time warning",
+                                                                       body: "client has Xhrs left",
+                                                                       timeInterval: 5.0,
+                                                                       repeats: false)
+                            await localNotificationsManager.schedule(localNotification: testNotification)
+                        }
+                    }
+                    Button("Cancel") {
+                        Task {
+                            localNotificationsManager.removeRequest()
+                        }
+                    }
+                }
+
+                Section {
                     Button(action: {
                         EmailController.shared.sendEmail(subject: "Hourglass Feedback", body: "", to: "hojoon.kim@iCloud.com")
                     }) {
@@ -127,6 +147,6 @@ struct SettingsPage: View {
 
 #Preview {
     ContentView(selectedTab: "SettingsPage")
-        .environmentObject(LocalNotificationsManager())
+        .environmentObject(LocalNotificationManager())
         .modelContainer(SampleData.shared.modelContainer)
 }

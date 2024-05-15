@@ -11,6 +11,9 @@ import SwiftUI
 struct TimerPage: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) var colorScheme
+    
+    @EnvironmentObject var localNotificationsManager: LocalNotificationManager
+    
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
 
     @State private var newSession: Session = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
@@ -68,7 +71,6 @@ struct TimerPage: View {
                         .foregroundColor(.red)
                     }
                     Spacer()
-
 //                  Timer + Project Details
                     VStack(alignment: .trailing, content: {
                         HStack(content: {
@@ -111,6 +113,7 @@ struct TimerPage: View {
             clock = Int(Date.now.timeIntervalSince(newSession.startTime))
             newSession.secondsElapsed = clock
         }
+        // schedule timer based on the client's leftover
     }
 
     func stopSession() {
@@ -134,6 +137,6 @@ struct TimerPage: View {
 
 #Preview {
     ContentView()
-        .environmentObject(LocalNotificationsManager())
+        .environmentObject(LocalNotificationManager())
         .modelContainer(SampleData.shared.modelContainer)
 }

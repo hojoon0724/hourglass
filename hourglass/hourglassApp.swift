@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct hourglassApp: App {
-    @StateObject var localNotifications = LocalNotificationsManager()
+    @StateObject var localNotifications = LocalNotificationManager()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([

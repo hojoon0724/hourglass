@@ -70,12 +70,13 @@ struct ClientsPage: View {
                             Text("Inactive")
                         }
                     }
-                }
-
-                if clients.filter({ $0.active == false }).count > 0 {
-                    Button((showInactiveClients ? "Hide " : "Show ") + "inactive clients") {
-                        withAnimation {
-                            showInactiveClients.toggle()
+                    
+                    
+                    if clients.filter({ $0.active == false }).count > 0 {
+                        Button((showInactiveClients ? "Hide " : "Show ") + "inactive clients") {
+                            withAnimation {
+                                showInactiveClients.toggle()
+                            }
                         }
                     }
                 }
@@ -122,6 +123,6 @@ struct ClientsPage: View {
 
 #Preview {
     ContentView(selectedTab: "ClientsPage")
-        .environmentObject(LocalNotificationsManager())
+        .environmentObject(LocalNotificationManager())
         .modelContainer(SampleData.shared.modelContainer)
 }

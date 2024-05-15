@@ -14,7 +14,7 @@ struct ContentView: View {
     @StateObject private var colorSchemeManager = ColorSchemeManager.shared
     @StateObject private var userSettingsValues = UserSettingsValues.shared
 
-    @EnvironmentObject var localNotifications: LocalNotificationsManager
+    @EnvironmentObject var localNotificationsManager: LocalNotificationManager
     @Environment(\.scenePhase) var scenePhase
 
     @Environment(\.colorScheme) var colorScheme
@@ -22,7 +22,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if !localNotifications.isGranted {
+            if !localNotificationsManager.isGranted {
                 Image("Hourglass BG")
                     .scaledToFit()
                     .ignoresSafeArea()
@@ -40,8 +40,8 @@ struct ContentView: View {
                         .frame(width: /*@START_MENU_TOKEN@*/300.0/*@END_MENU_TOKEN@*/)
                     GroupBox {
                         Button("Enable Notifications") {
-                            print(localNotifications.isGranted)
-                            localNotifications.openSettings()
+                            print(localNotificationsManager.isGranted)
+                            localNotificationsManager.openSettings()
                         }
                         .buttonBorderShape(.capsule)
                     }
@@ -69,21 +69,21 @@ struct ContentView: View {
         // getPreferredColorScheme => function to get value
         .preferredColorScheme(colorSchemeManager.getPreferredColorScheme())
         .task {
-            try? await localNotifications.requestAuth()
+            try? await localNotificationsManager.requestAuth()
         }
         .onChange(of: scenePhase) { _, newValue in
             if newValue == .active {
                 Task {
-                    await localNotifications.getCurrentSettings()
+                    await localNotificationsManager.getCurrentSettings()
+                    await localNotificationsManager.getRequests()
                 }
             }
         }
-        
     }
 }
 
 #Preview {
     ContentView()
-        .environmentObject(LocalNotificationsManager())
+        .environmentObject(LocalNotificationManager())
         .modelContainer(SampleData.shared.modelContainer)
 }
