@@ -96,11 +96,7 @@ struct SettingsPage: View {
                 Section {
                     Button("Notify") {
                         Task {
-                            let testNotification = LocalNotification(identifier: UUID().uuidString,
-                                                                       title: "time warning",
-                                                                       body: "client has Xhrs left",
-                                                                       timeInterval: 5.0,
-                                                                       repeats: false)
+                            let testNotification = LocalNotification(identifier: UUID().uuidString,title: "time warning",body: "client has Xhrs left",timeInterval: 5.0, repeats: false)
                             await localNotificationsManager.schedule(localNotification: testNotification)
                         }
                     }
@@ -108,6 +104,9 @@ struct SettingsPage: View {
                         Task {
                             localNotificationsManager.removeRequest()
                         }
+                    }
+                    Button("alert values log") {
+                        print(userSettingsValues.firstAlertThreshold)
                     }
                 }
 

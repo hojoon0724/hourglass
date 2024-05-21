@@ -11,9 +11,11 @@ import SwiftUI
 struct TimerPage: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) var colorScheme
-    
+
     @EnvironmentObject var localNotificationsManager: LocalNotificationManager
-    
+    @StateObject private var userSettingsValues = UserSettingsValues.shared
+
+    @Query(sort: \Client.name) private var clients: [Client]
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
 
     @State private var newSession: Session = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
@@ -109,14 +111,31 @@ struct TimerPage: View {
     func startSession() {
         newSession.running = true
         newSession.startTime = .now
+        var clientTimeUsed: Int = newSession.client?.sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) } ?? 0
+        var clientTimeAdded: Int = newSession.client?.timeAdditions.reduce(0) { $0 + ($1.timeAdded) } ?? 0
+        let notificationTime: Double = Double(clientTimeAdded - clientTimeUsed - userSettingsValues.firstAlertThreshold)
+        Task {
+            let testNotification = LocalNotification(identifier: UUID().uuidString, title: "time warning", body: "client has Xhrs left", timeInterval: notificationTime, repeats: false)
+            await localNotificationsManager.schedule(localNotification: testNotification)
+        }
+
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             clock = Int(Date.now.timeIntervalSince(newSession.startTime))
             newSession.secondsElapsed = clock
+            clientTimeUsed = newSession.client?.sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) } ?? 0
+            clientTimeAdded = newSession.client?.timeAdditions.reduce(0) { $0 + ($1.timeAdded) } ?? 0
+            print("used \(clientTimeUsed) - added \(clientTimeAdded) - mathed \(clientTimeAdded - clientTimeUsed)")
+            print("notify \(notificationTime)")
+            print("threshold \(userSettingsValues.firstAlertThreshold)")
         }
+
         // schedule timer based on the client's leftover
     }
 
     func stopSession() {
+        Task {
+            localNotificationsManager.removeRequest()
+        }
         newSession.running = false
         newSession.endTime = .now
         newSession.secondsElapsed = Int((newSession.endTime?.timeIntervalSince(newSession.startTime))!)
