@@ -52,12 +52,6 @@ struct showTimeAddition: View {
                 } footer: {
                     Text("Added: \(timeAddition.timeStamp.formatted())")
                 }
-
-//                Button("print stuff") {
-//                    print(hours)
-//                    print(minutes)
-//                    print("timeAddition \(timeAddition.timeAdded)")
-//                }
             }
             .listStyle(.grouped)
             .navigationTitle("Time Addition")

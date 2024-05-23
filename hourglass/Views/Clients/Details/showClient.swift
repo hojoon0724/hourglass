@@ -26,12 +26,25 @@ struct showClient: View {
         }
     }
 
+    @State private var cachedSortedAdditions: [TimeAddition]?
+
     var sortedAdditions: [TimeAddition] {
-        client.timeAdditions.sorted { first, second in
-//            first.timeCreated > second.timeCreated
-            first.timeStamp > second.timeStamp
+        if let cachedSortedAdditions = cachedSortedAdditions {
+            return cachedSortedAdditions
+        } else {
+            let sorted = client.timeAdditions.sorted { first, second in
+                first.timeStamp > second.timeStamp
+            }
+            cachedSortedAdditions = sorted
+            return sorted
         }
     }
+
+//    var sortedAdditions: [TimeAddition] {
+//        client.timeAdditions.sorted { first, second in
+//            first.timeStamp > second.timeStamp
+//        }
+//    }
 
     var body: some View {
         NavigationStack {
@@ -141,11 +154,6 @@ struct showClient: View {
                 Button("Delete Client", role: .destructive) {
                     deleteConfirmationShow = true
                 }
-            }
-            .onAppear {
-                //            ForEach(colorList) { color in
-                //                print(color)
-                //            }
             }
             .listStyle(.grouped)
             .navigationTitle(client.name)

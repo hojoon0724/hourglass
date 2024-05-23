@@ -36,6 +36,7 @@ struct alertTimeModal: View {
                 maximum: 59
             )
         }
+//        .padding(60)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {
