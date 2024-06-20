@@ -5,14 +5,31 @@
 //  Created by Hojoon Kim on 6/20/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct clientsListItem: View {
+    // not using because the colors don't re-render when changed and then canceled
+    @Environment(\.colorScheme) var colorScheme
+
+    @Bindable var client: Client
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "circle.fill")
+                .foregroundColor(customColors[client.color])
+                .shadow(radius: 3)
+            Text("\(client.name)")
+            Spacer()
+            Text(secondsToFullTime(client.timeAdded - client.timeUsed))
+                .monospaced()
+        }
     }
 }
 
 #Preview {
-    clientsListItem()
+    List {
+        clientsListItem(client: SampleData.shared.client)
+            .modelContainer(SampleData.shared.modelContainer)
+    }
 }

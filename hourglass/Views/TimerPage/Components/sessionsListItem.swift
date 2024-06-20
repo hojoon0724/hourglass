@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct sessionsListItem: View {
+    // not using because the colors don't re-render when changed and then canceled
     @Environment(\.colorScheme) var colorScheme
 
     var session: Session

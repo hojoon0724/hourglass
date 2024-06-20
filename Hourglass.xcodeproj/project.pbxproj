@@ -37,6 +37,9 @@
 		1FA6DE682C23787100DD206F /* showSessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE672C23787100DD206F /* showSessionDetails.swift */; };
 		1FA6DE6D2C23796C00DD206F /* sessionsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE6C2C23796C00DD206F /* sessionsListItem.swift */; };
 		1FA6DE6F2C238EAF00DD206F /* newSessionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE6E2C238EAF00DD206F /* newSessionModal.swift */; };
+		1FB8D6EC2C24BB8400EFFFDE /* showClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8D6EB2C24BB8400EFFFDE /* showClient.swift */; };
+		1FB8D6EE2C24C0CE00EFFFDE /* newClientModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */; };
+		1FB8D6F02C24C1BF00EFFFDE /* clientsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8D6EF2C24C1BF00EFFFDE /* clientsListItem.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
 		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEFD0F82BE7289C00083985 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFD0F72BE7289C00083985 /* LocalNotificationManager.swift */; };
@@ -75,6 +78,9 @@
 		1FA6DE672C23787100DD206F /* showSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSessionDetails.swift; sourceTree = "<group>"; };
 		1FA6DE6C2C23796C00DD206F /* sessionsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sessionsListItem.swift; sourceTree = "<group>"; };
 		1FA6DE6E2C238EAF00DD206F /* newSessionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSessionModal.swift; sourceTree = "<group>"; };
+		1FB8D6EB2C24BB8400EFFFDE /* showClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showClient.swift; sourceTree = "<group>"; };
+		1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newClientModal.swift; sourceTree = "<group>"; };
+		1FB8D6EF2C24C1BF00EFFFDE /* clientsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsListItem.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
 		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		1FEFD0F72BE7289C00083985 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 		1FA6DE632C23720600DD206F /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -276,6 +283,7 @@
 		1FA6DE642C23720600DD206F /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				1FB8D6EB2C24BB8400EFFFDE /* showClient.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -305,6 +313,7 @@
 		1FA6DE6A2C23790200DD206F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1FB8D6EF2C24C1BF00EFFFDE /* clientsListItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -401,12 +410,14 @@
 				1F07FFDC2BE6B7D900E4DC38 /* TextFieldStepper.swift in Sources */,
 				1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */,
 				1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */,
+				1FB8D6F02C24C1BF00EFFFDE /* clientsListItem.swift in Sources */,
 				1F9C170A2BC997120032AA56 /* timeConversionFunctions.swift in Sources */,
 				1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */,
 				1FA6DE6D2C23796C00DD206F /* sessionsListItem.swift in Sources */,
 				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
 				1F07FFD82BE6B7D900E4DC38 /* DoubleExtension.swift in Sources */,
 				1FA6DE6F2C238EAF00DD206F /* newSessionModal.swift in Sources */,
+				1FB8D6EE2C24C0CE00EFFFDE /* newClientModal.swift in Sources */,
 				1FA6DE5C2C23712700DD206F /* TimerPage.swift in Sources */,
 				1F86A9DB2BD4C2DE00718DDA /* EdgeBorder.swift in Sources */,
 				1F0D004A2BCF6BB4004FFD30 /* SampleData.swift in Sources */,
@@ -417,6 +428,7 @@
 				1F0D6DBF2BE2EB9300758838 /* userSettingsValues.swift in Sources */,
 				1F07FFDE2BE6B7D900E4DC38 /* TextFieldStepperImage.swift in Sources */,
 				1FA6DE682C23787100DD206F /* showSessionDetails.swift in Sources */,
+				1FB8D6EC2C24BB8400EFFFDE /* showClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

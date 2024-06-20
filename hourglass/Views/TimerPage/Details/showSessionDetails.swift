@@ -42,7 +42,7 @@ struct showSessionDetails: View {
                 HStack {
                     Text("Duration")
                     Spacer()
-                    Text("\(secondsToFullTime(session.secondsElapsed!))")
+                    Text("\(secondsToFullTime(session.secondsElapsed ?? 0))")
                         .monospaced()
                 }
             }

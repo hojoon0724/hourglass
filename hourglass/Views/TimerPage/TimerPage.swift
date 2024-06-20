@@ -13,12 +13,14 @@ struct TimerPage: View {
     @Environment(\.colorScheme) var colorScheme
 
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
+    @Query(sort: \Client.name) private var clients: [Client]
 
     @State var timerIsRunning = false
     @State var newSession: Session =
         Session(
             running: false,
             startTime: .now,
+            secondsElapsed: 0,
             editedTimestamp: .now
         )
     @State var clockCount = 0
@@ -33,7 +35,22 @@ struct TimerPage: View {
                 List {
                     ForEach(sessions.filter { $0.endTime != nil }) { session in
                         NavigationLink(destination: showSessionDetails(session: session)) {
-                            sessionsListItem(session: session)
+                            HStack {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(customColors[session.client?.color ?? "None"])
+                                    .padding(.trailing, 10)
+                                    .shadow(radius: 3)
+
+                                VStack(alignment: .leading) {
+                                    Text(session.secondsElapsed != nil ? secondsToFullTime(session.secondsElapsed!) : "Running")
+                                        .monospaced()
+                                    Text("\(session.startTime.formatted(date: .numeric, time: .standard))")
+                                        .font(.caption)
+                                    Text(session.client != nil ? "\(session.client!.name)" : "")
+                                        .font(.caption)
+                                }
+                            }
+//                            sessionsListItem(session: session)
                         }
                         .flippedUpsideDown()
                     }
@@ -106,10 +123,11 @@ struct TimerPage: View {
     func stopTimer() {
         timerIsRunning = false
 
-        newSession.running = true
+        newSession.running = false
         newSession.endTime = .now
 
         modelContext.insert(newSession)
+        try? modelContext.save()
 
         timer?.invalidate()
         newSession = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
