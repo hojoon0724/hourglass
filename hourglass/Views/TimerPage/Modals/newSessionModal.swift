@@ -18,7 +18,6 @@ struct newSessionModal: View {
     @Bindable var session: Session
 
     @State var now: Date = .now
-    var sessionCache: Session
 
     var stopTimer: () -> Void
 
@@ -32,12 +31,13 @@ struct newSessionModal: View {
                     HStack {
                         Text("End")
                         Spacer()
-                        if session.endTime == nil {
+                        if session.running == true {
                             Button("Stop Timer") {
                                 stopTimer()
                                 dismiss()
                             }
                         } else {
+                            Spacer()
                         }
                     }
                     HStack {
@@ -61,15 +61,8 @@ struct newSessionModal: View {
             .navigationTitle(session.running == true ? "Current Session" : "New Session")
             .listStyle(.grouped)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        modelContext.rollback()
-                        dismiss()
-                    }
-                }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        try? modelContext.save()
+                    Button("Done") {
                         dismiss()
                     }
                 }
@@ -92,11 +85,7 @@ struct newSessionModal: View {
                 Session(running: false,
                         startTime: .now, secondsElapsed: 0,
                         editedTimestamp: .now),
-                sessionCache:
-                Session(running: false,
-                        startTime: .now, secondsElapsed: 0,
-                        editedTimestamp: .now),
-                stopTimer: { print("stopSession Func pressed") }
+                stopTimer: {}
             )
         }
         .modelContainer(SampleData.shared.modelContainer)

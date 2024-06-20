@@ -15,7 +15,12 @@ struct TimerPage: View {
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
 
     @State var timerIsRunning = false
-    @State var newSession: Session = Session(running: false, startTime: .now, editedTimestamp: .now)
+    @State var newSession: Session =
+        Session(
+            running: false,
+            startTime: .now,
+            editedTimestamp: .now
+        )
     @State var clockCount = 0
 
     @State var sessionModalPageShowing = false
@@ -39,8 +44,6 @@ struct TimerPage: View {
                 .flippedUpsideDown()
                 .ignoresSafeArea()
 
-                .background(.gray)
-
                 HStack {
                     if timerIsRunning == false {
                         Image(systemName: "play.circle.fill")
@@ -51,13 +54,13 @@ struct TimerPage: View {
                             .foregroundColor(.green)
                     } else {
                         Image(systemName: "stop.circle.fill")
-                            .padding(0)
                             .onTapGesture {
                                 stopTimer()
                             }
                             .font(.largeTitle)
                             .foregroundColor(.red)
                     }
+
                     Spacer()
 
                     VStack(alignment: .trailing) {
@@ -80,7 +83,7 @@ struct TimerPage: View {
                     sessionModalPageShowing = true
                 }
                 .sheet(isPresented: self.$sessionModalPageShowing) {
-                    newSessionModal(session: newSession, sessionCache: newSession, stopTimer: stopTimer)
+                    newSessionModal(session: newSession, stopTimer: stopTimer)
                 }
                 .padding()
                 .border(width: 1, edges: [.top], color: .gray.opacity(0.5))
