@@ -59,7 +59,13 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         content.sound = .default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: localNotification.timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: localNotification.identifier, content: content, trigger: trigger)
-        try? await notificationCenter.add(request)
+//        print("trigger \(trigger)")
+//        print("request \(request)")
+        do {
+            try await notificationCenter.add(request)
+        } catch {
+            print("error \(error)")
+        }
         await getRequests()
     }
 

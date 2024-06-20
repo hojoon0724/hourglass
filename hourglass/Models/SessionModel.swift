@@ -14,10 +14,10 @@ final class Session {
     var startTime: Date
     var endTime: Date?
     var secondsElapsed: Int?
-    var client: Client?
+    @Relationship(deleteRule: .noAction) var client: Client?
     var editedTimestamp: Date
 
-    init(running: Bool, 
+    init(running: Bool,
          startTime: Date,
          endTime: Date? = nil,
          secondsElapsed: Int? = nil,
