@@ -31,6 +31,10 @@
 		1F9C16FA2BC961080032AA56 /* flippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */; };
 		1F9C17042BC9936F0032AA56 /* autoTextContrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */; };
 		1F9C170A2BC997120032AA56 /* timeConversionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */; };
+		1FA629792C2500C8005E5858 /* newTimeAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA629782C2500C8005E5858 /* newTimeAdd.swift */; };
+		1FA6297B2C250616005E5858 /* showAllAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6297A2C250616005E5858 /* showAllAdd.swift */; };
+		1FA6297D2C250624005E5858 /* showAllSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6297C2C250624005E5858 /* showAllSessions.swift */; };
+		1FA6297F2C2507EE005E5858 /* alertTimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6297E2C2507EE005E5858 /* alertTimeModal.swift */; };
 		1FA6DE5C2C23712700DD206F /* TimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE5B2C23712700DD206F /* TimerPage.swift */; };
 		1FA6DE5E2C23712F00DD206F /* ClientsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE5D2C23712F00DD206F /* ClientsPage.swift */; };
 		1FA6DE602C23716B00DD206F /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6DE5F2C23716B00DD206F /* SettingsPage.swift */; };
@@ -72,6 +76,10 @@
 		1F9C16F92BC961080032AA56 /* flippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flippedUpsideDown.swift; sourceTree = "<group>"; };
 		1F9C17032BC9936F0032AA56 /* autoTextContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autoTextContrast.swift; sourceTree = "<group>"; };
 		1F9C17092BC997120032AA56 /* timeConversionFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConversionFunctions.swift; sourceTree = "<group>"; };
+		1FA629782C2500C8005E5858 /* newTimeAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTimeAdd.swift; sourceTree = "<group>"; };
+		1FA6297A2C250616005E5858 /* showAllAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAllAdd.swift; sourceTree = "<group>"; };
+		1FA6297C2C250624005E5858 /* showAllSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAllSessions.swift; sourceTree = "<group>"; };
+		1FA6297E2C2507EE005E5858 /* alertTimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertTimeModal.swift; sourceTree = "<group>"; };
 		1FA6DE5B2C23712700DD206F /* TimerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPage.swift; sourceTree = "<group>"; };
 		1FA6DE5D2C23712F00DD206F /* ClientsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsPage.swift; sourceTree = "<group>"; };
 		1FA6DE5F2C23716B00DD206F /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
@@ -276,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */,
+				1FA629782C2500C8005E5858 /* newTimeAdd.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -284,6 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				1FB8D6EB2C24BB8400EFFFDE /* showClient.swift */,
+				1FA6297A2C250616005E5858 /* showAllAdd.swift */,
+				1FA6297C2C250624005E5858 /* showAllSessions.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -291,6 +302,7 @@
 		1FA6DE652C23720800DD206F /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				1FA6297E2C2507EE005E5858 /* alertTimeModal.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -407,6 +419,7 @@
 				1F0B958A2BF4F0F5002314D2 /* LocalNotification.swift in Sources */,
 				1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */,
 				1F07FFDB2BE6B7D900E4DC38 /* ViewExtension.swift in Sources */,
+				1FA6297D2C250624005E5858 /* showAllSessions.swift in Sources */,
 				1F07FFDC2BE6B7D900E4DC38 /* TextFieldStepper.swift in Sources */,
 				1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */,
 				1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */,
@@ -415,12 +428,15 @@
 				1F86BAE82BE1774B0072CA21 /* ColorSchemeManager.swift in Sources */,
 				1FA6DE6D2C23796C00DD206F /* sessionsListItem.swift in Sources */,
 				1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */,
+				1FA6297B2C250616005E5858 /* showAllAdd.swift in Sources */,
 				1F07FFD82BE6B7D900E4DC38 /* DoubleExtension.swift in Sources */,
+				1FA629792C2500C8005E5858 /* newTimeAdd.swift in Sources */,
 				1FA6DE6F2C238EAF00DD206F /* newSessionModal.swift in Sources */,
 				1FB8D6EE2C24C0CE00EFFFDE /* newClientModal.swift in Sources */,
 				1FA6DE5C2C23712700DD206F /* TimerPage.swift in Sources */,
 				1F86A9DB2BD4C2DE00718DDA /* EdgeBorder.swift in Sources */,
 				1F0D004A2BCF6BB4004FFD30 /* SampleData.swift in Sources */,
+				1FA6297F2C2507EE005E5858 /* alertTimeModal.swift in Sources */,
 				1F07FFD92BE6B7D900E4DC38 /* LongPressButton.swift in Sources */,
 				1FA6DE5E2C23712F00DD206F /* ClientsPage.swift in Sources */,
 				1FEFD0F82BE7289C00083985 /* LocalNotificationManager.swift in Sources */,

@@ -15,15 +15,16 @@ struct showClient: View {
     @Environment(\.modelContext) private var modelContext
     var colorList: Array = colorArray
 
-//    @State var confirmationShow = false
-//    @State var addTimeModal = false
-//    @State var deleteConfirmationShow = false
+    @State var discardChagesConfirmationShow = false
+    @State var addTimeModal = false
+    @State var deleteConfirmationShow = false
 //
-//    var sortedSessions: [Session] {
-//        client.sessions.sorted { first, second in
-//            first.startTime > second.startTime
-//        }
-//    }
+    var sortedSessions: [Session] {
+        client.sessions.sorted { first, second in
+            first.startTime > second.startTime
+        }
+    }
+
 //
 //    @State private var cachedSortedAdditions: [TimeAddition]?
 //
@@ -38,6 +39,7 @@ struct showClient: View {
 //            return sorted
 //        }
 //    }
+
 //
 //        var sortedAdditions: [TimeAddition] {
 //            client.timeAdditions.sorted { first, second in
@@ -84,75 +86,39 @@ struct showClient: View {
                 }
                 .opacity(0.5)
 
-                Section("Lifetime") {
-                    HStack {
-                        Text("Added")
-                        Spacer()
-                        Text("\(secondsToFullTime(client.timeAdded))")
-                            .monospaced()
+                Button("Add more time") {
+                    addTimeModal = true
+                }
+                .sheet(isPresented: self.$addTimeModal) {
+                    NavigationStack {
+                        newTimeAdd(clientPassed: client)
+                            .presentationDetents([.height(230)])
                     }
-                    .opacity(0.5)
-                    HStack {
-                        Text("Used")
-                        Spacer()
-                        Text("\(secondsToFullTime(client.timeUsed))")
-                            .monospaced()
-                    }
-                    .opacity(0.5)
                 }
 
-//                if !client.sessions.isEmpty {
-//                    Section("Sessions") {
-//                        ForEach(sortedSessions.prefix(3)) { session in
-//                            HStack {
-//                                Text(String("\(session.startTime.formatted())"))
-//                                Spacer()
-//                                Text(String("\(secondsToFullTime(session.secondsElapsed!))"))
-//                                    .monospaced()
-//                            }
-//                            .opacity(0.5)
-//                        }
-//
-//                        if sortedSessions.count > 3 {
-//                            NavigationLink(destination: showAllSessions(sortedSessions: sortedSessions)) {
-//                                Text("See all sessions")
-//                                    .foregroundColor(.blue)
-//                            }
-//                        } else {
-//                        }
-//                    }
-//                }
-//
-//                Section("Time Additions") {
-//                    Button("Add more time") {
-//                        addTimeModal = true
-//                    }
-//                    .sheet(isPresented: self.$addTimeModal) {
-//                        NavigationStack {
-//                            newTimeAdditionModal(clientPassed: client)
-//                                .presentationDetents([.height(230)])
-//                        }
-//                    }
-//
-//                    if !client.timeAdditions.isEmpty {
-//                        ForEach(sortedAdditions) { addition in
-//                            NavigationLink(destination: showTimeAddition(timeAddition: addition)) {
-//                                HStack {
-//                                    Text(String("\(addition.timeStamp.formatted())"))
-//                                    Spacer()
-//                                    Text(String("\(secondsToFullTime(addition.timeAdded))"))
-//                                        .monospaced()
-//                                }
-//
-//                                .opacity(0.5)
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                Button("Delete Client", role: .destructive) {
-//                    deleteConfirmationShow = true
-//                }
+                Section("Lifetime") {
+                    NavigationLink(destination: showAllAdd()) {
+                        HStack {
+                            Text("Added")
+                            Spacer()
+                            Text("\(secondsToFullTime(client.timeAdded))")
+                                .monospaced()
+                        }
+                    }
+
+                    NavigationLink(destination: showAllSessions()) {
+                        HStack {
+                            Text("Used")
+                            Spacer()
+                            Text("\(secondsToFullTime(client.timeUsed))")
+                                .monospaced()
+                        }
+                    }
+                }
+
+                Button("Delete Client", role: .destructive) {
+                    deleteConfirmationShow = true
+                }
             }
             .listStyle(.grouped)
             .navigationTitle(client.name)
@@ -160,8 +126,11 @@ struct showClient: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        modelContext.rollback()
-                        dismiss()
+                        if modelContext.hasChanges {
+                            discardChagesConfirmationShow = true
+                        } else {
+                            dismiss()
+                        }
                     } label: {
                         HStack {
                             Image(systemName: "chevron.backward")
@@ -177,14 +146,23 @@ struct showClient: View {
                     .disabled(modelContext.hasChanges ? false : true)
                 }
             }
-//            .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
-//                Button("Yes, delete it.", role: .destructive) {
-//                    modelContext.delete(client)
-//                    dismiss()
-//                }
-//            } message: {
-//                Text("Are you sure? This will delete the client and all associated data. This cannot be undone.")
-//            }
+            .confirmationDialog("Are you sure?", isPresented: $discardChagesConfirmationShow) {
+                Button("Yes, discard changes.", role: .destructive) {
+                    modelContext.rollback()
+                    dismiss()
+                }
+            } message: {
+                Text("Are you sure? This will discard all changes made.")
+            }
+
+            .confirmationDialog("Are you sure?", isPresented: $deleteConfirmationShow) {
+                Button("Yes, delete it.", role: .destructive) {
+                    modelContext.delete(client)
+                    dismiss()
+                }
+            } message: {
+                Text("Are you sure? This will delete the client and all associated data. This cannot be undone.")
+            }
         }
     }
 }
