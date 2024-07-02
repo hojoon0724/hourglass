@@ -41,11 +41,11 @@ struct showClient: View {
 //    }
 
 //
-//        var sortedAdditions: [TimeAddition] {
-//            client.timeAdditions.sorted { first, second in
-//                first.timeStamp > second.timeStamp
-//            }
-//        }
+    var sortedAdditions: [TimeAddition] {
+        client.timeAdditions.sorted { first, second in
+            first.timeStamp > second.timeStamp
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -97,7 +97,7 @@ struct showClient: View {
                 }
 
                 Section("Lifetime") {
-                    NavigationLink(destination: showAllAdd()) {
+                    NavigationLink(destination: showAllAdd(sortedAddition: sortedAdditions)) {
                         HStack {
                             Text("Added")
                             Spacer()
@@ -106,7 +106,7 @@ struct showClient: View {
                         }
                     }
 
-                    NavigationLink(destination: showAllSessions()) {
+                    NavigationLink(destination: showAllSessions(sortedSessions: sortedSessions)) {
                         HStack {
                             Text("Used")
                             Spacer()

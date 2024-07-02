@@ -71,13 +71,13 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
 
     func getRequests() async {
         requests = await notificationCenter.pendingNotificationRequests()
-        print("pending \(requests.count) \n \(requests)")
+//        print("pending \(requests.count) \n \(requests)")
     }
 
     func removeRequest() {
-        print("pending \(requests.count) \n \(requests)")
+//        print("pending \(requests.count) \n \(requests)")
         notificationCenter.removeAllPendingNotificationRequests()
         requests.removeAll()
-        print("pending \(requests.count) \n \(requests)")
+//        print("pending \(requests.count) \n \(requests)")
     }
 }

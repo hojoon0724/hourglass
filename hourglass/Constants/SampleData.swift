@@ -62,10 +62,12 @@ class SampleData {
         Session.sampleData[10].client = Client.sampleData[0]
 
         TimeAddition.sampleData[0].client = Client.sampleData[0]
-        TimeAddition.sampleData[1].client = Client.sampleData[1]
-        TimeAddition.sampleData[2].client = Client.sampleData[2]
+        TimeAddition.sampleData[1].client = Client.sampleData[0]
+        TimeAddition.sampleData[2].client = Client.sampleData[1]
         TimeAddition.sampleData[3].client = Client.sampleData[3]
         TimeAddition.sampleData[4].client = Client.sampleData[4]
+        TimeAddition.sampleData[5].client = Client.sampleData[4]
+        TimeAddition.sampleData[6].client = Client.sampleData[3]
 
         do {
             try context.save()

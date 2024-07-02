@@ -54,7 +54,7 @@ struct SettingsPage: View {
                             self.firstAlertModal = true
                         }
                         .sheet(isPresented: self.$firstAlertModal) {
-                            alertTimeModal(threshold: userSettingsValues.firstAlertThreshold, text: "First Alert at: ")
+                            alertTimeModal(threshold: userSettingsValues.$firstAlertThreshold, text: "First Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
 
@@ -78,7 +78,7 @@ struct SettingsPage: View {
                             self.secondAlertModal = true
                         }
                         .sheet(isPresented: self.$secondAlertModal) {
-                            alertTimeModal(threshold: userSettingsValues.secondAlertThreshold, text: "Second Alert at: ")
+                            alertTimeModal(threshold: userSettingsValues.$secondAlertThreshold, text: "Second Alert at: ")
                                 .presentationDetents([.height(230)])
                         }
                     }
@@ -92,7 +92,7 @@ struct SettingsPage: View {
                 Section {
                     Button("Notify") {
                         Task {
-                            let testNotification = LocalNotification(identifier: UUID().uuidString, title: "time warning", body: "client has Xhrs left", timeInterval: 5.0, repeats: false)
+                            let testNotification = LocalNotification(identifier: UUID().uuidString, title: "time warning", body: "client has Xhrs left \(userSettingsValues.firstAlertThreshold)", timeInterval: 5.0, repeats: false)
                             await localNotificationsManager.schedule(localNotification: testNotification)
                         }
                     }
