@@ -5,12 +5,12 @@
 //  Created by Hojoon Kim on 6/20/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct showAllAdd: View {
 //    @State private var editAddModal: Bool = false
     @State private var selectedItem: TimeAddition?
-
     var sortedAddition: [TimeAddition]
 
     var body: some View {
@@ -36,12 +36,10 @@ struct showAllAdd: View {
                             }
                             .onTapGesture {
                                 self.selectedItem = timeAddition
-//                                self.editAddModal = true
-                                print("\(String(describing: selectedItem))")
                             }
                             .sheet(item: $selectedItem) { timeAddition in
                                 editTimeAdd(timeAddition: timeAddition)
-                                    .presentationDetents([.height(230)])
+//                                    .presentationDetents([.height(350)])
                             }
                         }
                     } else {

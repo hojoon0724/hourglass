@@ -25,22 +25,6 @@ struct showClient: View {
         }
     }
 
-//
-//    @State private var cachedSortedAdditions: [TimeAddition]?
-//
-//    var sortedAdditions: [TimeAddition] {
-//        if let cachedSortedAdditions = cachedSortedAdditions {
-//            return cachedSortedAdditions
-//        } else {
-//            let sorted = client.timeAdditions.sorted { first, second in
-//                first.timeStamp > second.timeStamp
-//            }
-//            cachedSortedAdditions = sorted
-//            return sorted
-//        }
-//    }
-
-//
     var sortedAdditions: [TimeAddition] {
         client.timeAdditions.sorted { first, second in
             first.timeStamp > second.timeStamp
@@ -98,6 +82,7 @@ struct showClient: View {
 
                 Section("Lifetime") {
                     NavigationLink(destination: showAllAdd(sortedAddition: sortedAdditions)) {
+//                    NavigationLink(destination: showAllAdd(clientName: client.name)) {
                         HStack {
                             Text("Added")
                             Spacer()

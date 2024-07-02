@@ -12,6 +12,9 @@ struct TimerPage: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) var colorScheme
 
+    @StateObject private var userSettingsValues = UserSettingsValues.shared
+    @EnvironmentObject var localNotificationsManager: LocalNotificationManager
+
     @Query(sort: \Session.startTime, order: .reverse) private var sessions: [Session]
     @Query(sort: \Client.name) private var clients: [Client]
 
@@ -24,6 +27,9 @@ struct TimerPage: View {
             editedTimestamp: .now
         )
     @State var clockCount = 0
+
+    @State var clientRemainingTime: Double?
+    @State var clientSelected: Bool = false
 
     @State var sessionModalPageShowing = false
 
@@ -66,6 +72,9 @@ struct TimerPage: View {
                         Image(systemName: "play.circle.fill")
                             .onTapGesture {
                                 startTimer()
+                                Task {
+                                    await scheduleNotification()
+                                }
                             }
                             .font(.largeTitle)
                             .foregroundColor(.green)
@@ -132,6 +141,20 @@ struct TimerPage: View {
         timer?.invalidate()
         newSession = Session(running: false, startTime: .now, secondsElapsed: 0, editedTimestamp: .now)
         clockCount = 0
+
+        localNotificationsManager.removeRequest()
+        print(localNotificationsManager.schedule)
+    }
+
+    func scheduleNotification() async {
+        if newSession.client?.name != nil && newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold > 0 {
+            clientRemainingTime = Double(newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold)
+
+            print(clientRemainingTime!)
+
+            let firstNotification = LocalNotification(identifier: UUID().uuidString, title: "First Alert", body: "\(newSession.client?.name ?? "") has \(userSettingsValues.firstAlertThreshold) left", timeInterval: clientRemainingTime ?? 1.0, repeats: false)
+            await localNotificationsManager.schedule(localNotification: firstNotification)
+        }
     }
 }
 

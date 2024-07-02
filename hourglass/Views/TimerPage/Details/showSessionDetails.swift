@@ -38,7 +38,6 @@ struct showSessionDetails: View {
                             session.editedTimestamp = .now
                         }
                 }
-
                 HStack {
                     Text("Duration")
                     Spacer()
@@ -46,6 +45,7 @@ struct showSessionDetails: View {
                         .monospaced()
                 }
             }
+            
             Section {
                 HStack {
                     Text("Client")
