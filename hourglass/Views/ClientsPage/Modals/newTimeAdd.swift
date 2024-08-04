@@ -58,19 +58,6 @@ struct newTimeAdd: View {
                 timeInSec = fullTimeToSeconds(Int(hours), Int(minutes), 0)
             }
             .padding()
-            List {
-                Section(header: Text("Client")) {
-                    HStack(alignment: .center, content: {
-                        Text("Name")
-                        Spacer()
-                        Text("\(clientPassed.name)")
-                            .multilineTextAlignment(.trailing)
-                    })
-                }
-            }
-
-            .listStyle(.grouped)
-            //        .navigationTitle("New Client")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {

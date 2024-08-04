@@ -16,7 +16,7 @@ struct showAllSessions: View {
                     HStack {
                         Text("Lifetime Sum")
                         Spacer()
-                        Text("\(secondsToFullTime(sortedSessions[0].client!.timeUsed))")
+                        Text("\(secondsToFullTime(sortedSessions[0].client?.timeUsed ?? 0))")
                             .monospaced()
                     }
                 }
@@ -40,7 +40,7 @@ struct showAllSessions: View {
 }
 
 #Preview {
-    NavigationStack{
+    NavigationStack {
         showAllSessions(sortedSessions: SampleData.shared.client.sessions)
             .modelContainer(SampleData.shared.modelContainer)
     }

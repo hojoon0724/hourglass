@@ -76,13 +76,12 @@ struct showClient: View {
                 .sheet(isPresented: self.$addTimeModal) {
                     NavigationStack {
                         newTimeAdd(clientPassed: client)
-                            .presentationDetents([.height(230)])
+                            .presentationDetents([.medium])
                     }
                 }
 
                 Section("Lifetime") {
                     NavigationLink(destination: showAllAdd(sortedAddition: sortedAdditions)) {
-                        //                    NavigationLink(destination: showAllAdd(clientName: client.name)) {
                         HStack {
                             Text("Added")
                             Spacer()

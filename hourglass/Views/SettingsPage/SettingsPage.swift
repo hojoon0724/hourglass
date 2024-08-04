@@ -63,7 +63,6 @@ struct SettingsPage: View {
                                 Text("Second Alert")
                             }
                             .disabled(userSettingsValues.switchAlert1 == false)
-                            .onDisappear { userSettingsValues.switchAlert2 = false }
                         }
                     }
 
@@ -88,34 +87,6 @@ struct SettingsPage: View {
                 } footer: {
                     Text("Sends you a notification when the client's remaining time goes below this threshold")
                 }
-
-//                Section {
-//                    Button("Notify") {
-//                        Task {
-//                            let testNotification = LocalNotification(identifier: UUID().uuidString, title: "time warning", body: "client has Xhrs left \(userSettingsValues.firstAlertThreshold)", timeInterval: 5.0, repeats: false)
-//                            await localNotificationsManager.schedule(localNotification: testNotification)
-//                        }
-//                    }
-//                    Button("Cancel") {
-//                        Task {
-//                            localNotificationsManager.removeRequest()
-//                        }
-//                    }
-//                }
-
-//                Section {
-//                    Button(action: {
-//                        EmailController.shared.sendEmail(subject: "Hourglass Feedback", body: "", to: "hojoon.kim@iCloud.com")
-//                    }) {
-//                        Text("Email Feedback")
-//                    }
-//                } header: {
-//                    Text("Feedback")
-//                        .padding(.top, 50.0)
-//                } footer: {
-//                    Text("Help me make it better! \nSend me your feature requests or bug reports anytime")
-//                }
-
                 Section {
                 } footer: {
                     HStack {

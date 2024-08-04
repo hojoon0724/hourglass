@@ -147,50 +147,61 @@ struct TimerPage: View {
     }
 
     func scheduleNotification() async {
-        let remainingTime = Double(newSession.client!.timeAdded - newSession.client!.timeUsed)
-
         let secondThreshold = userSettingsValues.secondAlertThreshold
         let firstThreshold = userSettingsValues.firstAlertThreshold
 
         if alertsOn() {
-            clientRemainingTime = Double(newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold)
-            print("clientRemainingTime \(String(describing: clientRemainingTime))")
-            if Int(remainingTime) > secondThreshold {
-                print("remainingTime \(remainingTime)")
-                print("secondThreshold \(secondThreshold)")
+            let remainingTime = Int(newSession.client!.timeAdded - newSession.client!.timeUsed)
+            clientRemainingTime = Double(remainingTime - userSettingsValues.firstAlertThreshold)
+
+            let firstNotification = LocalNotification(
+                identifier: UUID().uuidString,
+                title: "First Alert",
+                body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(firstThreshold)) left",
+                timeInterval: clientRemainingTime ?? 1.0,
+                repeats: false)
+            await localNotificationsManager.schedule(localNotification: firstNotification)
+
+            if secondAlertOn() {
                 let secondNotification = LocalNotification(
                     identifier: UUID().uuidString,
                     title: "Second Alert",
-                    body: "\(newSession.client?.name ?? "") has \(secondThreshold) left",
+                    body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(secondThreshold)) left",
                     timeInterval: clientRemainingTime ?? 1.0,
                     repeats: false)
                 await localNotificationsManager.schedule(localNotification: secondNotification)
-            } else {
-                let firstNotification = LocalNotification(
-                    identifier: UUID().uuidString,
-                    title: "First Alert",
-                    body: "\(newSession.client?.name ?? "") has \(firstThreshold) left",
-                    timeInterval: clientRemainingTime ?? 1.0,
-                    repeats: false)
-                await localNotificationsManager.schedule(localNotification: firstNotification)
             }
         }
     }
 
     func alertsOn() -> Bool {
         if newSession.client == nil {
-            print("newSession.client is nil")
             return false
         }
-        if !userSettingsValues.switchAlert1 || !userSettingsValues.switchAlert2 {
-            print("userSettingsValues.switchAlert1 or userSettingsValues.switchAlert2 is false")
+
+        if firstAlertOn() == false {
             return false
         }
-        if newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold > 0 {
-            print("newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold > 0")
+
+        if newSession.client!.timeAdded - newSession.client!.timeUsed - userSettingsValues.firstAlertThreshold < 0 {
             return false
         } else {
-            print("return true")
+            return true
+        }
+    }
+
+    func firstAlertOn() -> Bool {
+        if !userSettingsValues.switchAlert1 {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    func secondAlertOn() -> Bool {
+        if !userSettingsValues.switchAlert2 {
+            return false
+        } else {
             return true
         }
     }
