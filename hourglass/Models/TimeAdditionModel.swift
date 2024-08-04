@@ -13,7 +13,7 @@ final class TimeAddition {
     var timeStamp: Date
     var timeAdded: Int
     var rate: Double?
-    var client: Client?
+    @Relationship var client: Client?
 
     init(timeStamp: Date,
          timeAdded: Int,

@@ -60,7 +60,6 @@ struct editTimeAdd: View {
                     Button("Save") {
                         timeAddition.timeAdded = fullTimeToSeconds(Int(hours), Int(minutes), 0)
                         dismiss()
-                        try? modelContext.save()
                     }
                     .disabled((timeAddition.timeAdded == fullTimeToSeconds(Int(hours), Int(minutes), 0)) ? true : false)
                 }

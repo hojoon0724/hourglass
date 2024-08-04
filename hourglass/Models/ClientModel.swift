@@ -25,7 +25,7 @@ final class Client {
         return sessions.reduce(0) { $0 + ($1.secondsElapsed ?? 0) }
     }
 
-    init(id: UUID = UUID(), 
+    init(id: UUID = UUID(),
          name: String,
          color: String,
          active: Bool? = true) {
@@ -37,32 +37,37 @@ final class Client {
 
     static let sampleData = [
         Client(
-            id: UUID(uuidString: "9A45A7C6-B833-4C41-B34D-8DDDDCAB8C18")!,
+//            id: UUID(uuidString: "9A45A7C6-B833-4C41-B34D-8DDDDCAB8C18")!,
             name: "The Boring Company",
-            color: "Black"
+            color: "Black",
+            active: true
         ),
         Client(
-            id: UUID(uuidString: "21A5BC17-6843-495F-A73C-AD3E4B95CF96")!,
-            name: "HudsonAlpha",
-            color: "Teal"
+//            id: UUID(uuidString: "21A5BC17-6843-495F-A73C-AD3E4B95CF96")!,
+            name: "Delta",
+            color: "Teal",
+            active: true
         ),
         Client(
-            id: UUID(uuidString: "F219D5ED-1C59-40E5-B243-4B6A16B8F36B")!,
+//            id: UUID(uuidString: "F219D5ED-1C59-40E5-B243-4B6A16B8F36B")!,
             name: "Scuderia Ferrari",
-            color: "Red"
+            color: "Red",
+            active: true
         ),
         Client(
-            id: UUID(uuidString: "9245B764-725C-4911-8F7F-FBB9A107EBC9")!,
+//            id: UUID(uuidString: "9245B764-725C-4911-8F7F-FBB9A107EBC9")!,
             name: "Syncopy",
-            color: "Gray"
+            color: "Gray",
+            active: true
         ),
         Client(
-            id: UUID(uuidString: "E893AF78-7C9C-4417-A1DC-F97B82DD7A57")!,
+//            id: UUID(uuidString: "E893AF78-7C9C-4417-A1DC-F97B82DD7A57")!,
             name: "NBCUniversal",
-            color: "Yellow"
+            color: "Yellow",
+            active: true
         ),
         Client(
-            id: UUID(uuidString: "E893FF97-7C9C-1111-A1B9-F97B82DD1B00")!,
+//            id: UUID(uuidString: "E893FF97-7C9C-1111-A1B9-F97B82DD1B00")!,
             name: "Patagonia",
             color: "Blue",
             active: false

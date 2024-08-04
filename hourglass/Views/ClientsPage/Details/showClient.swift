@@ -82,7 +82,7 @@ struct showClient: View {
 
                 Section("Lifetime") {
                     NavigationLink(destination: showAllAdd(sortedAddition: sortedAdditions)) {
-//                    NavigationLink(destination: showAllAdd(clientName: client.name)) {
+                        //                    NavigationLink(destination: showAllAdd(clientName: client.name)) {
                         HStack {
                             Text("Added")
                             Spacer()
@@ -125,7 +125,7 @@ struct showClient: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        try? modelContext.save()
+//                        try? modelContext.save()
                         dismiss()
                     }
                     .disabled(modelContext.hasChanges ? false : true)

@@ -45,7 +45,7 @@ struct showSessionDetails: View {
                         .monospaced()
                 }
             }
-            
+
             Section {
                 HStack {
                     Text("Client")
@@ -88,7 +88,11 @@ struct showSessionDetails: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
-                    try? modelContext.save()
+//                    do {
+//                        try modelContext.save()
+//                    } catch {
+//                        print("Error deleting session: \(error)")
+//                    }
                     dismiss()
                 }
                 .disabled(modelContext.hasChanges ? false : true)
@@ -97,7 +101,11 @@ struct showSessionDetails: View {
 
         .confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
             Button("Yes, delete it.", role: .destructive) {
+                session.client = nil
                 modelContext.delete(session)
+//                    try modelContext.save()
+                dismiss()
+
                 dismiss()
             }
         } message: {

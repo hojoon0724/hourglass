@@ -189,10 +189,10 @@
 		1F171D882BC2147500AB5DA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F171D792BC2145600AB5DA4 /* ContentView.swift */,
 				1FA6DE572C2370E600DD206F /* TimerPage */,
 				1FA6DE592C2370F900DD206F /* ClientsPage */,
 				1FA6DE5A2C2370FB00DD206F /* SettingsPage */,
-				1F171D792BC2145600AB5DA4 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
