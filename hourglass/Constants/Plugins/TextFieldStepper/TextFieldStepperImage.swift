@@ -8,15 +8,30 @@ public struct TextFieldStepperImage: View {
         self.image = image
         self.color = color
     }
-    
-    public init(systemName: String, color: Color = Color.accentColor) {
-        self.init(image: Image(systemName: systemName), color: color)
-    }
-    
-    public var body: some View {
-        image
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 35)
-    }
+
+    #if os(visionOS)
+        public init(systemName: String, color: Color = Color.primary) {
+            self.init(image: Image(systemName: systemName), color: color)
+        }
+    #else
+        public init(systemName: String, color: Color = Color.accentColor) {
+            self.init(image: Image(systemName: systemName), color: color)
+        }
+    #endif
+
+    #if os(visionOS)
+        public var body: some View {
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15, height: 15)
+        }
+    #else
+        public var body: some View {
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 35, height: 35)
+        }
+    #endif
 }

@@ -32,7 +32,7 @@ struct hourglassApp: App {
             ContentView()
                 .environmentObject(localNotifications)
         }
-        .defaultSize(CGSize(width: 600, height: 1000))
+        .defaultSize(width: 0.5, height: 0.5, depth: 0.1, in: .meters)
         .modelContainer(sharedModelContainer)
     }
 }

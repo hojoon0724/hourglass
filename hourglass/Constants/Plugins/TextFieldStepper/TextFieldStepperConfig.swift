@@ -18,39 +18,77 @@ public struct TextFieldStepperConfig {
     var minimumDecimalPlaces: Int
     var maximumDecimalPlaces: Int
 
-    public init(
-        unit: String = "",
-        label: String = "",
-        increment: Double = 1,
-        minimum: Double = 0.0,
-        maximum: Double = .infinity,
-        decrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "minus.circle.fill"),
-        incrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "plus.circle.fill"),
-        declineImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "xmark.circle.fill", color: Color.red),
-        confirmImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "checkmark.circle.fill", color: Color.green),
-        disabledColor: Color = Color(UIColor.lightGray),
-        labelOpacity: Double = 1.0,
-        labelColor: Color = .primary,
-        valueColor: Color = .primary,
-        shouldShowAlert: Bool = true,
-        minimumDecimalPlaces: Int = 0,
-        maximumDecimalPlaces: Int = 8
-    ) {
-        self.unit = unit
-        self.label = label
-        self.increment = increment
-        self.minimum = minimum
-        self.maximum = maximum
-        self.decrementImage = decrementImage
-        self.incrementImage = incrementImage
-        self.declineImage = declineImage
-        self.confirmImage = confirmImage
-        self.disabledColor = disabledColor
-        self.labelOpacity = labelOpacity
-        self.labelColor = labelColor
-        self.valueColor = valueColor
-        self.shouldShowAlert = shouldShowAlert
-        self.minimumDecimalPlaces = minimumDecimalPlaces
-        self.maximumDecimalPlaces = maximumDecimalPlaces
-    }
+    #if os(visionOS)
+        public init(
+            unit: String = "",
+            label: String = "",
+            increment: Double = 1,
+            minimum: Double = 0.0,
+            maximum: Double = .infinity,
+            decrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "minus"),
+            incrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "plus"),
+            declineImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "xmark", color: Color.red),
+            confirmImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "checkmark", color: Color.green),
+            disabledColor: Color = Color(UIColor.lightGray),
+            labelOpacity: Double = 1.0,
+            labelColor: Color = .primary,
+            valueColor: Color = .primary,
+            shouldShowAlert: Bool = true,
+            minimumDecimalPlaces: Int = 0,
+            maximumDecimalPlaces: Int = 8
+        ) {
+            self.unit = unit
+            self.label = label
+            self.increment = increment
+            self.minimum = minimum
+            self.maximum = maximum
+            self.decrementImage = decrementImage
+            self.incrementImage = incrementImage
+            self.declineImage = declineImage
+            self.confirmImage = confirmImage
+            self.disabledColor = disabledColor
+            self.labelOpacity = labelOpacity
+            self.labelColor = labelColor
+            self.valueColor = valueColor
+            self.shouldShowAlert = shouldShowAlert
+            self.minimumDecimalPlaces = minimumDecimalPlaces
+            self.maximumDecimalPlaces = maximumDecimalPlaces
+        }
+    #else
+        public init(
+            unit: String = "",
+            label: String = "",
+            increment: Double = 1,
+            minimum: Double = 0.0,
+            maximum: Double = .infinity,
+            decrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "minus.circle.fill"),
+            incrementImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "plus.circle.fill"),
+            declineImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "xmark.circle.fill", color: Color.red),
+            confirmImage: TextFieldStepperImage = TextFieldStepperImage(systemName: "checkmark.circle.fill", color: Color.green),
+            disabledColor: Color = Color(UIColor.lightGray),
+            labelOpacity: Double = 1.0,
+            labelColor: Color = .primary,
+            valueColor: Color = .primary,
+            shouldShowAlert: Bool = true,
+            minimumDecimalPlaces: Int = 0,
+            maximumDecimalPlaces: Int = 8
+        ) {
+            self.unit = unit
+            self.label = label
+            self.increment = increment
+            self.minimum = minimum
+            self.maximum = maximum
+            self.decrementImage = decrementImage
+            self.incrementImage = incrementImage
+            self.declineImage = declineImage
+            self.confirmImage = confirmImage
+            self.disabledColor = disabledColor
+            self.labelOpacity = labelOpacity
+            self.labelColor = labelColor
+            self.valueColor = valueColor
+            self.shouldShowAlert = shouldShowAlert
+            self.minimumDecimalPlaces = minimumDecimalPlaces
+            self.maximumDecimalPlaces = maximumDecimalPlaces
+        }
+    #endif
 }

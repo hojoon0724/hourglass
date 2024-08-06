@@ -76,15 +76,24 @@ struct TimerPage: View {
                                     await scheduleNotification()
                                 }
                             }
-                            .font(.largeTitle)
                             .foregroundColor(.green)
+                        #if os(visionOS)
+                            .font(.extraLargeTitle)
+                            .padding()
+                        #else
+                            .font(.largeTitle)
+                        #endif
                     } else {
                         Image(systemName: "stop.circle.fill")
                             .onTapGesture {
                                 stopTimer()
                             }
-                            .font(.largeTitle)
                             .foregroundColor(.red)
+                        #if os(visionOS)
+                            .padding()
+                        #else
+                            .font(.largeTitle)
+                        #endif
                     }
 
                     Spacer()
@@ -103,6 +112,9 @@ struct TimerPage: View {
                                 .font(.footnote)
                         }
                     }
+                    #if os(visionOS)
+                    .padding()
+                    #endif
                 }
                 .contentShape(Rectangle())
                 .onTapGesture {
@@ -111,7 +123,11 @@ struct TimerPage: View {
                 .sheet(isPresented: self.$sessionModalPageShowing) {
                     newSessionModal(session: newSession, stopTimer: stopTimer)
                 }
+                #if os(visionOS)
+                .padding(20)
+                #else
                 .padding()
+                #endif
                 .border(width: 1, edges: [.top], color: .gray.opacity(0.5))
             }
         }
@@ -147,29 +163,34 @@ struct TimerPage: View {
     }
 
     func scheduleNotification() async {
-        let secondThreshold = userSettingsValues.secondAlertThreshold
         let firstThreshold = userSettingsValues.firstAlertThreshold
+        let secondThreshold = userSettingsValues.secondAlertThreshold
 
         if alertsOn() {
             let remainingTime = Int(newSession.client!.timeAdded - newSession.client!.timeUsed)
-            clientRemainingTime = Double(remainingTime - userSettingsValues.firstAlertThreshold)
 
-            let firstNotification = LocalNotification(
-                identifier: UUID().uuidString,
-                title: "First Alert",
-                body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(firstThreshold)) left",
-                timeInterval: clientRemainingTime ?? 1.0,
-                repeats: false)
-            await localNotificationsManager.schedule(localNotification: firstNotification)
+            let timeToFirstThreshold = Double(remainingTime - firstThreshold)
+            let timeToSecondThreshold = Double(remainingTime - secondThreshold)
 
-            if secondAlertOn() {
-                let secondNotification = LocalNotification(
+            if timeToFirstThreshold > 0 {
+                let firstNotification = LocalNotification(
                     identifier: UUID().uuidString,
-                    title: "Second Alert",
-                    body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(secondThreshold)) left",
-                    timeInterval: clientRemainingTime ?? 1.0,
+                    title: "First Alert",
+                    body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(firstThreshold)) left",
+                    timeInterval: timeToFirstThreshold,
                     repeats: false)
-                await localNotificationsManager.schedule(localNotification: secondNotification)
+                await localNotificationsManager.schedule(localNotification: firstNotification)
+            }
+            if secondAlertOn() {
+                if timeToSecondThreshold > 0 {
+                    let secondNotification = LocalNotification(
+                        identifier: UUID().uuidString,
+                        title: "Second Alert",
+                        body: "\(newSession.client?.name ?? "")'s account has \(secondsToFullTime(secondThreshold)) left",
+                        timeInterval: timeToSecondThreshold,
+                        repeats: false)
+                    await localNotificationsManager.schedule(localNotification: secondNotification)
+                }
             }
         }
     }
@@ -207,7 +228,7 @@ struct TimerPage: View {
     }
 }
 
-#Preview {
+#Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
     ContentView()
         .environmentObject(LocalNotificationManager())
         .modelContainer(SampleData.shared.modelContainer)
