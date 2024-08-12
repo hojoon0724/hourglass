@@ -61,11 +61,11 @@ struct TimerPage: View {
                         .flippedUpsideDown()
                     }
                 }
-                .listStyle(.grouped)
                 .frame(maxWidth: .infinity)
                 .defaultScrollAnchor(.top)
                 .flippedUpsideDown()
                 .ignoresSafeArea()
+                .listStyle(.grouped)
 
                 HStack {
                     if timerIsRunning == false {
@@ -228,8 +228,16 @@ struct TimerPage: View {
     }
 }
 
-#Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
-    ContentView()
-        .environmentObject(LocalNotificationManager())
-        .modelContainer(SampleData.shared.modelContainer)
-}
+#if os(visionOS)
+    #Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
+        ContentView()
+            .environmentObject(LocalNotificationManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#else
+    #Preview {
+        ContentView()
+            .environmentObject(LocalNotificationManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#endif

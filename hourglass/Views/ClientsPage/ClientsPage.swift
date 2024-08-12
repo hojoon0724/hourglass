@@ -67,29 +67,43 @@ struct ClientsPage: View {
                     }
                 }
             }
+            #if os(visionOS)
+            .listStyle(.insetGrouped)
+            #else
             .listStyle(.grouped)
-            #if os(macOS)
-                .navigationSplitViewColumnWidth(min: 180, ideal: 200)
             #endif
-                .toolbar {
-                    ToolbarItem {
-                        Button("Add New Client", systemImage: "plus") {
-                            newClientModalPageShowing = true
-                        }
-                        .sheet(isPresented: $newClientModalPageShowing) {
-                            NavigationStack {
-                                newClientModal()
-                            }
-                        }
-                        .navigationTitle("Clients")
+
+            #if os(macOS)
+            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+            #endif
+            .toolbar {
+                ToolbarItem {
+                    Button("Add New Client", systemImage: "plus") {
+                        newClientModalPageShowing = true
                     }
+                    .sheet(isPresented: $newClientModalPageShowing) {
+                        NavigationStack {
+                            newClientModal()
+                        }
+                    }
+                    .navigationTitle("Clients")
                 }
+            }
+            .navigationTitle("Clients")
         }
     }
 }
 
-#Preview {
-    ContentView(selectedTab: "ClientsPage")
-        .environmentObject(LocalNotificationManager())
-        .modelContainer(SampleData.shared.modelContainer)
-}
+#if os(visionOS)
+    #Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
+        ContentView(selectedTab: "ClientsPage")
+            .environmentObject(LocalNotificationManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#else
+    #Preview {
+        ContentView(selectedTab: "ClientsPage")
+            .environmentObject(LocalNotificationManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#endif

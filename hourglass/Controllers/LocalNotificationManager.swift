@@ -14,8 +14,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     let notificationCenter = UNUserNotificationCenter.current()
 
     // CHANGE TO FALSE WHEN SHIPPING
-//    @Published var isGranted = true
-    @Published var isGranted = false
+    @Published var isGranted = true
+//    @Published var isGranted = false
     @Published var requests: [UNNotificationRequest] = []
 
     override init() {

@@ -12,7 +12,8 @@ struct SettingsPage: View {
     let nsObject: Any? = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
 
     // @StateObject private var colorSchemeManager = ColorSchemeManager() also works, but .shared avoids fragmentation and keeps all instances share the same state
-    @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+//    @StateObject var colorSchemeManager = ColorSchemeManager.shared
+    @EnvironmentObject var csManager: ColorSchemeManager
     @StateObject var userSettingsValues = UserSettingsValues.shared
 
     @EnvironmentObject var localNotificationsManager: LocalNotificationManager
@@ -25,10 +26,10 @@ struct SettingsPage: View {
             List {
                 Section {
                     // $colorSchemeManager.selectedColorScheme => acts as @State var in global class
-                    Picker("Appearance", selection: $colorSchemeManager.selectedColorScheme) {
-                        Text("System Setting").tag("Auto")
-                        Text("Light").tag("Light")
-                        Text("Dark").tag("Dark")
+                    Picker("Appearance", selection: $csManager.colorScheme) {
+                        Text("System Setting").tag(ColorScheme.unspecified)
+                        Text("Light").tag(ColorScheme.light)
+                        Text("Dark").tag(ColorScheme.dark)
                     }
                     .pickerStyle(.automatic)
                 }
@@ -104,8 +105,18 @@ struct SettingsPage: View {
     }
 }
 
-#Preview {
-    ContentView(selectedTab: "SettingsPage")
-        .environmentObject(LocalNotificationManager())
-        .modelContainer(SampleData.shared.modelContainer)
-}
+#if os(visionOS)
+    #Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
+        ContentView(selectedTab: "SettingsPage")
+            .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#else
+    #Preview {
+        ContentView(selectedTab: "SettingsPage")
+            .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#endif

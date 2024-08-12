@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @State var firstRun = true
     @State var selectedTab = "TimerPage"
-    @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+//    @StateObject private var colorSchemeManager = ColorSchemeManager.shared
+    @EnvironmentObject var csManager: ColorSchemeManager
     @StateObject private var userSettingsValues = UserSettingsValues.shared
 
     @EnvironmentObject var localNotificationsManager: LocalNotificationManager
@@ -67,7 +68,7 @@ struct ContentView: View {
         // runs function and returns the ColorScheme
         // colorSchemeManager => class
         // getPreferredColorScheme => function to get value
-        .preferredColorScheme(colorSchemeManager.getPreferredColorScheme())
+//        .preferredColorScheme(colorSchemeManager.getPreferredColorScheme())
         .task {
             try? await localNotificationsManager.requestAuth()
         }
@@ -82,8 +83,18 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .environmentObject(LocalNotificationManager())
-        .modelContainer(SampleData.shared.modelContainer)
-}
+#if os(visionOS)
+    #Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
+        ContentView()
+            .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#else
+    #Preview {
+        ContentView()
+            .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
+            .modelContainer(SampleData.shared.modelContainer)
+    }
+#endif
