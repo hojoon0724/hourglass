@@ -232,12 +232,14 @@ struct TimerPage: View {
     #Preview(windowStyle: .automatic, traits: .fixedLayout(width: 600, height: 1000)) {
         ContentView()
             .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
             .modelContainer(SampleData.shared.modelContainer)
     }
 #else
     #Preview {
         ContentView()
             .environmentObject(LocalNotificationManager())
+            .environmentObject(ColorSchemeManager())
             .modelContainer(SampleData.shared.modelContainer)
     }
 #endif

@@ -23,6 +23,7 @@
 		1F171D822BC2145700AB5DA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F171D812BC2145700AB5DA4 /* Preview Assets.xcassets */; };
 		1F3858D22BDA48FB00F716D4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3858D12BDA48FB00F716D4 /* Colors.swift */; };
 		1F43C0A82BD82C1B001C869D /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F43C0A72BD82C1B001C869D /* EmailController.swift */; };
+		1F6635BF2CD176AB007FC263 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6635BE2CD176AB007FC263 /* Launch Screen.storyboard */; };
 		1F7195C62C2DE395003307FA /* editTimeAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7195C52C2DE395003307FA /* editTimeAdd.swift */; };
 		1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDB2BCF4C74003BE519 /* ClientModel.swift */; };
 		1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F819CDD2BCF55C4003BE519 /* SessionModel.swift */; };
@@ -46,7 +47,6 @@
 		1FB8D6EE2C24C0CE00EFFFDE /* newClientModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */; };
 		1FB8D6F02C24C1BF00EFFFDE /* clientsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8D6EF2C24C1BF00EFFFDE /* clientsListItem.swift */; };
 		1FD1DFC72BD42E0600E19500 /* TimeAdditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */; };
-		1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */; };
 		1FEFD0F82BE7289C00083985 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFD0F72BE7289C00083985 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +69,7 @@
 		1F171D812BC2145700AB5DA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F3858D12BDA48FB00F716D4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1F43C0A72BD82C1B001C869D /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
+		1F6635BE2CD176AB007FC263 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1F7195C52C2DE395003307FA /* editTimeAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTimeAdd.swift; sourceTree = "<group>"; };
 		1F819CDB2BCF4C74003BE519 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		1F819CDD2BCF55C4003BE519 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		1FB8D6ED2C24C0CE00EFFFDE /* newClientModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newClientModal.swift; sourceTree = "<group>"; };
 		1FB8D6EF2C24C1BF00EFFFDE /* clientsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsListItem.swift; sourceTree = "<group>"; };
 		1FD1DFC62BD42E0600E19500 /* TimeAdditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdditionModel.swift; sourceTree = "<group>"; };
-		1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/hojoon/Downloads/Local/Code-GA/active-dev/hourglass/hourglass/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		1FEFD0F72BE7289C00083985 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +173,7 @@
 				1F171D772BC2145600AB5DA4 /* hourglassApp.swift */,
 				1F171D7D2BC2145700AB5DA4 /* Assets.xcassets */,
 				1F171D7F2BC2145700AB5DA4 /* hourglass.entitlements */,
-				1FD60EF12BD2414C00DE6BA6 /* Launch Screen.storyboard */,
+				1F6635BE2CD176AB007FC263 /* Launch Screen.storyboard */,
 			);
 			path = hourglass;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			files = (
 				1F8F3BDC2BC24F8F00F47F8F /* README.md in Resources */,
 				1F171D822BC2145700AB5DA4 /* Preview Assets.xcassets in Resources */,
-				1FD60EF22BD2414C00DE6BA6 /* Launch Screen.storyboard in Resources */,
+				1F6635BF2CD176AB007FC263 /* Launch Screen.storyboard in Resources */,
 				1F171D7E2BC2145700AB5DA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +592,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -635,7 +635,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
