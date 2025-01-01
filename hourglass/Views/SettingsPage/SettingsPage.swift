@@ -88,6 +88,14 @@ struct SettingsPage: View {
                 } footer: {
                     Text("Sends you a notification when the client's remaining time goes below this threshold")
                 }
+                
+                Section {
+                    HStack{
+                        Button("Export Data") {
+                            print("Export Data Button Pressed")
+                        }
+                    }
+                }
                 Section {
                 } footer: {
                     HStack {
