@@ -33,6 +33,7 @@ struct showAllAdd: View {
                                 Spacer()
                                 Text("\(secondsToFullTime(timeAddition.timeAdded))")
                                     .monospaced()
+                                    .foregroundColor(.blue)
                             }
                             .onTapGesture {
                                 self.selectedItem = timeAddition
@@ -47,6 +48,11 @@ struct showAllAdd: View {
                             Text("Nothing added")
                                 .opacity(0.5)
                         }
+                    }
+                } header: {
+                    HStack {
+                        Text("Added on")
+                            .font(.subheadline)
                     }
                 }
             }

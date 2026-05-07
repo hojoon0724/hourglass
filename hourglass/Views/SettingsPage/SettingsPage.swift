@@ -9,10 +9,10 @@ import SwiftData
 import SwiftUI
 
 struct SettingsPage: View {
-    let nsObject: Any? = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
+    private let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown"
 
     // @StateObject private var colorSchemeManager = ColorSchemeManager() also works, but .shared avoids fragmentation and keeps all instances share the same state
-//    @StateObject var colorSchemeManager = ColorSchemeManager.shared
+    // @StateObject var colorSchemeManager = ColorSchemeManager.shared
     @EnvironmentObject var csManager: ColorSchemeManager
     @StateObject var userSettingsValues = UserSettingsValues.shared
 
@@ -88,18 +88,18 @@ struct SettingsPage: View {
                 } footer: {
                     Text("Sends you a notification when the client's remaining time goes below this threshold")
                 }
-                
-                Section {
-                    HStack{
-                        Button("Export Data") {
-                            print("Export Data Button Pressed")
-                        }
-                    }
-                }
+
+//                Section {
+//                    HStack {
+//                        Button("Export Data") {
+//                            print("Export Data Button Pressed")
+//                        }
+//                    }
+//                }
                 Section {
                 } footer: {
                     HStack {
-                        Text("Version \(nsObject!)")
+                        Text("Version \(appVersion)")
                             .font(.subheadline)
                     }
                     .padding(.top, 20)

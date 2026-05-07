@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F007A6D2D31DA7A009001E7 /* translateDataToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F007A6C2D31DA7A009001E7 /* translateDataToJson.swift */; };
 		1F07FFD82BE6B7D900E4DC38 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFCD2BE6B7D900E4DC38 /* DoubleExtension.swift */; };
 		1F07FFD92BE6B7D900E4DC38 /* LongPressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFCE2BE6B7D900E4DC38 /* LongPressButton.swift */; };
 		1F07FFDA2BE6B7D900E4DC38 /* KeyboardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07FFD02BE6B7D900E4DC38 /* KeyboardGestures.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F007A6C2D31DA7A009001E7 /* translateDataToJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = translateDataToJson.swift; sourceTree = "<group>"; };
 		1F07FFCD2BE6B7D900E4DC38 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		1F07FFCE2BE6B7D900E4DC38 /* LongPressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressButton.swift; sourceTree = "<group>"; };
 		1F07FFD02BE6B7D900E4DC38 /* KeyboardGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardGestures.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				1F86BAE72BE1774B0072CA21 /* ColorSchemeManager.swift */,
 				1F43C0A72BD82C1B001C869D /* EmailController.swift */,
 				1FEFD0F72BE7289C00083985 /* LocalNotificationManager.swift */,
+				1F007A6C2D31DA7A009001E7 /* translateDataToJson.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				1F819CDE2BCF55C4003BE519 /* SessionModel.swift in Sources */,
 				1F07FFDB2BE6B7D900E4DC38 /* ViewExtension.swift in Sources */,
 				1FA6297D2C250624005E5858 /* showAllSessions.swift in Sources */,
+				1F007A6D2D31DA7A009001E7 /* translateDataToJson.swift in Sources */,
 				1F07FFDC2BE6B7D900E4DC38 /* TextFieldStepper.swift in Sources */,
 				1F819CDC2BCF4C74003BE519 /* ClientModel.swift in Sources */,
 				1F171D782BC2145600AB5DA4 /* hourglassApp.swift in Sources */,
